@@ -1,84 +1,81 @@
-{%- assign collection = collections[section.settings.collection] -%}
-{%- assign products = collection.products -%}
-
 <div id="staff-picks" data-section-id="{{ section.id }}">
   <div class="container">
-    <div class="row">
-      {%- for product in products -%}
-        {%- if product.available -%}
-          {%- if forloop.index == 1 -%}
-            <div class="seven columns">
-            {%- elsif forloop.index == 2 -%}
-              <div class="five columns">
-            {%- elsif forloop.index == 3 -%}
-              </div>
-              <div class="row">
-                <div class="six columns">
-                {%- elsif forloop.index == 4 -%}
+      <div class="row">
+          {% assign collection = collections[section.settings.collection] %}
+          {% assign products = collection.products %}
+          {% for product in products %}
+              {% if product.available %}
+                  {% if forloop.index == 1 %}
+                  <div class="seven columns">
+                  {% elsif forloop.index == 2 %}
+                  <div class="five columns">
+                  {% elsif forloop.index == 3 %}
+                  </div> <!-- .row --> 
+                  <div class="row">
+                  <div class="six columns">
+                  {% elsif forloop.index == 4 %}
                   <div class="six columns staff-picks__quart-cards__outer">
-                    <div class="staff-picks__quart-cards__inner">
-                      {%- elsif forloop.index == 5 -%}
-                      {%- endif -%}
+                      <div class="staff-picks__quart-cards__inner">
+                  {% elsif forloop.index == 5 %}
+                       
+                  {% endif %} 
                       <div class="staff-picks__product">
-                        <a href="{{ product.url }}">
-                          <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image | img_alt }}"/>
-                          <div class="staff-picks__details">
-                            <h6>{{ product.title }}</h6>
-                            <p>{{ product.price | money }}</p>
-                          </div>
-                        </a>
+                          <a href="{{product.url}}">
+                              <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image | img_alt }}">
+                              <div class="staff-picks__details">
+                                  <h6>{{product.title}}</h6>
+                                  <p>{{product.price | money }}</p>
+                              </div>
+                          </a>
                       </div>
 
-                      {%- if forloop.index != 4 -%}
-                    </div>
-                  {%- endif -%}
-                  {%- if forloop.index == 5 -%}
-                    <div class="staff-picks__section-details">
-                      <p>{{ collection.description }}</p>
-                      <h2>{{ collection.title }}</h2>
-                      <a href="{{ collection.url }}" class="btn">
-                        {{ section.settings.button }}
-                      </a>
-                    </div>
-                  </div> <!-- .staff-picks__quart-cards__outer -->
-                {%- endif -%}
-              {%- endif -%}
-              {%- if forloop.index == 5 -%}
-                {%- break -%}
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-        </div>
-      </div>
-    </div>
+                  {% if forloop.index != 4 %}
+                  </div> <!-- .columns -->
+                  {% endif %}
+                  {% if forloop.index ==  5 %}
+                  <div class="staff-picks__section-details">
+                      <p>{{collection.description}}</p>
+                      <h2>{{collection.title}}</h2>
+                      <a href="{{collection.url}}" class="btn">{{section.settings.button-text}}</a>
+                  </div>
+
+              </div> <!-- .staff-picks__quart-cards__outer -->
+              {% endif %}
+
+              {% endif %}
+
+              {% if forloop.index == 5 %}
+              {% break %}
+              {% endif %}
+
+          {% endfor %}
+          </div> <!-- .row -->
   </div>
 </div>
 
-
 {% schema %}
 
-{ "name": "Staff Picks",
-     "class": "shopify-section--full-width",
-     "settings": [
-       { 
-         "type": "collection",
-         "id": "collection",
-         "label": "Collection",
-         "info": "Make sure that there are at least 5 items in collection, of which all are available to buy (ie, have stock)"
-       },
-       { 
-         "type": "text",
-         "id": "button-text",
-         "label": "Button text"
-       }
-     ],
-     "presets":
-     [
-       {
-         "name": "Staff Picks",
-         "category": "Collection"
-       }
-     ]
-   }
+{
+"name": "Staff Picks",
+"class": "shopify-section--full-width",
+"settings": [
+  {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection",
+    "info": "Make sure that there are at least 5 items in collection, of which all are available to buy (ie, have stock)"
+  }, {
+    "type": "text",
+    "id": "button-text",
+    "label": "Button text"
+  }
+],
+"presets": [
+  {
+    "name": "Staff Picks",
+    "category": "Collection"
+  }
+]
+}
 
 {% endschema %}

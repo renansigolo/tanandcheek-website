@@ -22,8 +22,7 @@
           {%- assign icon_words = block.settings.icon | split: ' ' -%}
           {%- capture icon -%}
             {%- for word in icon_words -%}
-              {%- unless forloop.index == 1 -%}
-                -
+              {%- unless forloop.index == 1 -%}-
               {%- endunless -%}
               {{ word | downcase }}
             {%- endfor -%}
