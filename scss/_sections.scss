@@ -99,6 +99,7 @@
 
 /* Instagram List */
 .insta-list {
+  margin-top: 32px;
   &__title {
     text-align: center;
     font-weight: 700;
@@ -108,7 +109,7 @@
     text-align: center;
     @include desktop {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
     }
     .logo,
     .placeholder-svg {

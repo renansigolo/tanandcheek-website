@@ -1,0 +1,25 @@
+/* Product Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+button#AddToCart--product-template {
+  .btn {
+    height: 44px
+  }
+}
+
+#ProductSection--product-template {
+  margin-top: 115px
+}
+
+.single-option-radio label {
+  border-radius: 25px;
+  border: 1px solid $dark-gray;
+  color: $dark-gray;
+  background-color: $light-gray;
+}
+
+.single-option-radio input[type='radio']:checked + label {
+  color: $light;
+  background-color: $orange;
+  border-color: $orange;
+}

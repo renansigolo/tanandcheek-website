@@ -40,7 +40,7 @@
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
   {%- paginate collection.products by 12 -%}
-  <header class="section-header text-center">
+  <header class="section-header">
     <h1>{{ collection.title }}</h1>
     <hr class="hr--small">
     {%- if collection.description != blank -%}

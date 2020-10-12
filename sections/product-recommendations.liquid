@@ -2,10 +2,9 @@
   {%- if recommendations.performed -%}
     {%- if recommendations.products_count > 0 -%}
       <div class="product-recommendations">
-        <div class="section-header text-center">
+        <div class="section-header text-left">
           {%- if section.settings.heading != blank -%}
             <h2 class="h1 section-header__title">{{ section.settings.heading | escape }}</h2>
-            <hr class="hr--small">
           {%- endif -%}
         </div>
         <div class="grid-uniform">
