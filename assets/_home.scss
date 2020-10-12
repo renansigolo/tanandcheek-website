@@ -1,0 +1,187 @@
+/* Home Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#hero__section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  video {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
+  .container {
+    min-height: 30vh;
+    .row {
+      min-height: 250px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      h1 {
+        font-weight: 700;
+        color: #fff;
+      }
+      .sub-headings {
+        display: flex;
+        justify-content: space-between;
+        .sub-heading {
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+#featured-collection {
+  .row {
+    margin: 100px 0;
+    display: flex;
+    @media screen and (max-width: $desktop) {
+      display: block;
+    }
+    min-height: 700px;
+    align-items: center;
+    .columns {
+      align-self: stretch;
+      flex: 1;
+      &:nth-child(1) {
+        .feat__card {
+          height: 100%;
+        }
+      }
+      &:nth-child(2) {
+        @include desktop {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+
+          .feat__card:nth-child(2) {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      .feat__card {
+        @media screen and (max-width: $desktop) {
+          margin-top: 8px;
+        }
+        flex: 1;
+        a {
+          color: #fff;
+          position: relative;
+          img {
+            height: 100%;
+            vertical-align: bottom;
+            @media screen and (max-width: $desktop) {
+              height: 350px;
+            }
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 6px;
+          }
+          .feat__details {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 0 16px 16px 16px;
+            text-align: right;
+            max-width: 500px;
+            @include desktop {
+              padding: 40px;
+            }
+            h3 {
+              color: #fff;
+              font-weight: 600;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#staff-picks {
+  .row {
+    // display: flex;
+    &:nth-child(1) {
+      height: 400px;
+    }
+    &:nth-child(2) {
+      height: 600px;
+      @include desktop {
+        margin-top: 8px;
+      }
+    }
+    .columns {
+      height: 100%;
+      flex: 1;
+      &.seven {
+        flex: 1.25;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        @include desktop {
+          margin-left: 10px;
+        }
+      }
+      &.staff-picks__quart-cards__outer {
+        display: flex;
+        flex-direction: column;
+        .staff-picks__quart-cards__inner {
+          display: flex;
+          flex: 0.75;
+          .staff-picks__product:nth-child(2) {
+            margin-left: 10px;
+          }
+        }
+        .staff-picks__section-details {
+          flex: 0.25;
+          margin-top: 5.3rem;
+          @include desktop {
+            margin-left: 4.4rem;
+          }
+          h2 {
+            font-weight: 700;
+            margin-bottom: 1.6rem;
+          }
+        }
+      }
+      .staff-picks__product {
+        height: 100%;
+        position: relative;
+        padding-top: 8px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          vertical-align: bottom;
+          object-position: center;
+          border-radius: 6px;
+        }
+        .staff-picks__details {
+          position: absolute;
+          bottom: 0;
+          right: 5.4rem;
+          color: $light;
+
+          h6 {
+            color: inherit;
+            font-size: 1.8rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

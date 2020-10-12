@@ -1,0 +1,91 @@
+{%- if section.blocks.size > 0 -%}
+<div class="cards-grid">
+  <div class="grid-{{ section.settings.grid_size }}">
+    {%- for block in section.blocks -%}
+      <div class="card" {{ block.shopify_attributes }}>
+        <div class="card__content">
+          {%- if block.settings.title != blank -%}
+            <h4 class="card__title">{{ block.settings.title }}</h4>
+          {%- endif -%}
+
+          {%- if block.settings.description != blank -%}
+            <p class="card__description">{{ block.settings.description }}</p>
+          {%- endif -%}
+        </div>
+
+        {%- if block.settings.link != blank -%}
+          <div class="card__footer">
+            <div></div>
+            <a href="{{ block.settings.link }}" class="btn">Track an order</a>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Cards",
+  "class": "cards-section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type":      "range",
+      "id":        "grid_size",
+      "min":       1,
+      "max":       4,
+      "step":      1,
+      "label":     "Cards per row",
+      "default":   2
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_list",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut. Nullam et sem efficitur nisi eleifend rutrum sit amet sed diam. Nullam dictum justo ut felis fermentum, et rhoncus massa venenatis. Ut diam enim, iaculis id arcu pretium, vehicula pharetra quam. Curabitur non egestas odio."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Card Button",
+          "info": "Optional"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "card_list"
+        },
+        {
+          "type": "card_list"
+        },
+        {
+          "type": "card_list"
+        },
+        {
+          "type": "card_list"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

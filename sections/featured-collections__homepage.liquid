@@ -1,0 +1,55 @@
+<div id="featured-collection" data-section-id="{{ section.id }}">
+    <div class="container">
+        <div class="row">
+            {% for block in section.blocks %}
+                {% assign collection = collections[block.settings.collection] %}
+
+                {% if forloop.index == 1 or forloop.index == 2 %}
+                    <div class="six columns">
+                    {% endif %}
+                    <div class="feat__card">
+                        <a href="{{collection.url}}">
+                            <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.image | img_alt }}">
+                            <div class="feat__details">
+                                <h3 class="heading">Shop
+                                    {{collection.title}}</h3>
+                                <p>{{collection.description}}</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    {% if forloop.index == 1 or forloop.index == 3 %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom Featured",
+    "class": "shopify-section--full-width",
+    "max_blocks": 3,
+    "blocks": [
+        {
+            "type": "collection",
+            "name": "Featured Collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Featured",
+            "category": "Collection"
+        }
+    ]
+}
+{% endschema %}

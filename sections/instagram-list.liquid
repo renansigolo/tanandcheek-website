@@ -1,0 +1,113 @@
+<style>
+  .insta-row__item {
+    margin: 8px;
+    display: inline-block;
+  }
+  .insta-row__item img {
+    object-fit: cover;
+    border-radius: 8px;
+    width: {{ section.settings.image_size }};
+    height: {{ section.settings.image_size }};
+  }
+</style>
+
+<div class="insta-list">
+  <h3 class="insta-list__title">{{ section.settings.title | escape }}</h3>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="insta-row row">
+      {%- for block in section.blocks -%}
+        <div class="insta-row__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}">
+            {%- endif -%}
+
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | img_url: '512x512' | img_tag: block.settings.image.alt }}
+            {%- else -%}
+              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+
+            {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Instagram List",
+  "class": "index-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "#tanandcheek"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image width",
+      "default": "300px",
+      "options": [
+        {
+          "label": "Small",
+          "value": "200px"
+        },
+        {
+          "label": "Medium",
+          "value": "300px"
+        },
+        {
+          "label": "Large",
+          "value": "500px"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "insta_image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram List",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "insta_image"
+        },
+        {
+          "type": "insta_image"
+        },
+        {
+          "type": "insta_image"
+        },
+        {
+          "type": "insta_image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

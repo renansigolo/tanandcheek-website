@@ -1,0 +1,30 @@
+<!-- /templates/page.full-width.liquid -->
+<section class="page">
+  <div class="page__header">
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="page__content">
+        {{ page.content }}
+      </div>
+    </div>
+    <div class="row">
+
+      {% section 'product-featured-row' %}
+      
+      {% section 'image-full-width' %} 
+
+      {% section 'cards' %} 
+      
+      {% section 'customer-reviews' %} 
+      
+      {% section 'instagram-list' %}
+      
+      {% section 'newsletter' %}
+      
+      {% section 'icons-row' %}
+    </div>
+  </div>
+</section>

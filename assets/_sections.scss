@@ -1,0 +1,168 @@
+/* Global Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Cards Section */
+.cards-grid {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    background-color: $light-gray;
+    border-radius: 8px;
+    box-shadow: $card-2;
+
+    // &__content {
+    // }
+    &__title {
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    &__description {
+      margin-bottom: 32px;
+      white-space: pre-line;
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon-star-solid {
+        color: $dark;
+      }
+      .icon-arrow-right-solid {
+        color: $orange;
+      }
+      .btn {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+/* Customer Reviews Cards */
+.customer-reviews-section {
+  margin: 64px 0;
+
+  h5 {
+    color: $orange;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+}
+
+.product-featured-row {
+  h2 {
+    color: $orange;
+  }
+}
+
+/* Icons Row */
+.text-row {
+  padding: 30px 35px;
+
+  &[data-text-alignment='left'] {
+    text-align: left;
+  }
+  &[data-text-alignment='center'] {
+    text-align: center;
+  }
+
+  .icon {
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon__column__icon {
+    text-align: center;
+    @include desktop {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+
+  .icon__column__text {
+    font-size: 1.6rem;
+    @include desktop {
+      padding-left: 16px;
+    }
+
+    h5 {
+      font-size: inherit;
+      font-weight: 700;
+    }
+  }
+}
+
+/* Instagram List */
+.insta-list {
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+  }
+  .insta-row {
+    text-align: center;
+    @include desktop {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .logo,
+    .placeholder-svg {
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: unset;
+
+  form {
+    max-width: unset;
+  }
+
+  &__card {
+    border-radius: 8px;
+    box-shadow: $card-2;
+    @include desktop {
+      max-height: 370px;
+    }
+  }
+
+  .placeholder-svg {
+    max-height: 370px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px !important;
+  }
+
+  &__content {
+    display: block;
+    padding: 16px;
+    max-height: 100%;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 370px;
+      padding-right: 10%;
+    }
+
+    @include mobile {
+      .btn {
+        min-width: 100%;
+      }
+    }
+
+    h3 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+  }
+}

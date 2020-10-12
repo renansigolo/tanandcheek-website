@@ -1,0 +1,37 @@
+<div {{ block.shopify_attributes }}>
+  {%- if block.settings.image != blank -%}
+    {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }}
+  {%- else -%}
+    <img src="https://placeholder.pics/svg/1600x330" alt="Image Placeholder">
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Image Full Width",
+  "blocks": [
+    {
+      "type": "image_full_width",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Full Width",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image_full_width"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

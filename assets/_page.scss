@@ -1,0 +1,21 @@
+/* Page Template
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.page {
+  &__header {
+    min-height: 40vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include desktop {
+      align-items: start;
+    }
+  }
+
+  &__content {
+    margin-bottom: 32px;
+  }
+}

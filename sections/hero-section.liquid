@@ -1,0 +1,71 @@
+<div id="hero__section">
+  <video autoplay muted loop id="myVideo" poster="{{section.settings.banner}}">
+    <source src="{{section.settings.video}}" type="video/mp4">
+  </video>
+  <div class="container">
+    <div class="row">
+      <div class="sub-headings">
+        {% for block in section.blocks %}
+          <span class="sub-heading">{{block.settings.sub-heading}}
+          </span>
+        {% endfor %}
+      </div>
+      <h1>{{ section.settings.title }}</h1>
+      <a href="{{section.settings.link}}" class="btn">{{section.settings.linktext}}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+  "name": "Home Hero Section",
+  "class": "shopify-section--full-width",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Title"
+    }, {
+      "id": "link",
+      "type": "url",
+      "label": "Button link"
+    }, {
+      "id": "linktext",
+      "type": "text",
+      "label": "Button text",
+      "default": "Click here"
+    }, {
+      "id": "video",
+      "type": "url",
+      "label": "Video URL"
+    }, {
+      "type": "image_picker",
+      "id": "banner",
+      "label": "Video Banner"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Sub-Headings",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub-heading",
+          "label": "Sub-Heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Hero Section",
+      "category": "Hero Sections"
+    }
+  ]
+}
+
+{% endschema %}

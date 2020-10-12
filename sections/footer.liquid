@@ -1,0 +1,255 @@
+<footer class="site-footer small--text-center" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+
+  <div class="container">
+
+      {% comment %}
+        Default to 1 footer column (copyright/powered_by/payment_types)
+      {% endcomment %}
+      {% assign num_footer_columns = 0 %}
+
+      {% comment %}
+        Determine whether there are social links
+      {% endcomment %}
+      {% assign footer_social_enable = false %}
+      {% if
+        settings.social_twitter_link != blank
+        or settings.social_facebook_link != blank
+        or settings.social_pinterest_link != blank
+        or settings.social_google_plus_link != blank
+        or settings.social_instagram_link != blank
+        or settings.social_tumblr_link != blank
+        or settings.social_youtube_link != blank
+        or settings.social_vimeo_link != blank
+        or settings.social_fancy_link != blank
+        or settings.social_snapchat_link != blank
+      %}
+        {% assign footer_social_enable = true %}
+      {% endif %}
+
+      {% comment %}
+        Create an extra menu column if link list has more than 5 links
+      {% endcomment %}
+      {% if linklists[section.settings.footer_link_list].links.size > 0 %}
+        {% comment %}
+          We have a Footer menu that isn't empty, we will need another column
+        {% endcomment %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+        {% assign extra_footer_linklist_column = false %}
+        {% assign footer_linklist_count = linklists[section.settings.footer_link_list].links.size %}
+        {% if footer_linklist_count > 5 %}
+          {% assign extra_footer_linklist_column = true %}
+          {% comment %}
+            We split the links so we'll need another column
+          {% endcomment %}
+          {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+        {% endif %}
+        {% comment %}
+          If we have an odd amount of links, we need to show 1 more link in 1st column
+        {% endcomment %}
+        {% assign extra_link = footer_linklist_count | modulo: 2 %}
+        {% comment %}
+          We start with a 2nd column after first column is filled up.
+        {% endcomment %}
+        {% assign footer_linklist_split = footer_linklist_count | divided_by: 2 | plus: extra_link | plus: 1 %}
+      {% endif %}
+
+      {% comment %}
+        Calculate the number of footer columns shown. Default to 1.
+      {% endcomment %}
+      {% if footer_social_enable %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+
+      {% case num_footer_columns %}
+        {% when 0 %}
+        {% when 1 %}
+          {% assign footer_column_width = '' %}
+        {% when 2 %}
+          {% assign footer_column_width = 'one-half small--one-whole' %}
+        {% when 3 %}
+          {% assign footer_column_width = 'one-third small--one-whole' %}
+        {% when 4 %}
+          {% assign footer_column_width = 'large--one-quarter medium--one-half' %}
+      {% endcase %}
+
+
+
+      {% if footer_social_enable %}
+      <div class="row">
+          <div class="six columns">
+            <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
+              <img class="footer-logo" src="{{'logo.svg' | asset_url }}" alt=" Tan + Cheek" itemprop="logo">
+            </a>
+              <ul class="no-bullets social-icons">
+                {% if settings.social_facebook_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+                      <span class="icon icon-facebook" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_twitter_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+                      <span class="icon icon-twitter" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_pinterest_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_pinterest_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
+                      <span class="icon icon-pinterest" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_instagram_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+                      <span class="icon icon-instagram" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_snapchat_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_snapchat_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
+                      <span class="icon icon-snapchat" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_google_plus_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_google_plus_link | escape }}" rel="publisher" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Google Plus' }}">
+                      <span class="icon icon-google_plus" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_tumblr_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_tumblr_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
+                      <span class="icon icon-tumblr" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_youtube_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_youtube_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
+                      <span class="icon icon-youtube" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_vimeo_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_vimeo_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
+                      <span class="icon icon-vimeo" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_fancy_link != blank %}
+                  <li>
+                    <a href="{{ settings.social_fancy_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}">
+                      <span class="icon icon-fancy" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+          </div>
+      {% endif %}
+
+      {% if linklists[section.settings.footer_link_list].links.size > 0 %}
+      <div class="two columns email-link">
+        <a href="#">{{section.settings.footer_email}}</a>
+      </div>
+      <div class="two columns">
+        <ul class="no-bullets site-footer__linklist">
+          {% for link in linklists[section.settings.footer_link_list].links %}
+
+    {% comment %}
+      Create a second column
+    {% endcomment %}
+    {% if extra_footer_linklist_column and forloop.index == footer_linklist_split %}
+        </ul>
+      </div>
+     <div class="two columns">
+        <ul class="no-bullets site-footer__linklist">
+    {% endif %}
+
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="copyright__container">
+  <div class="container ">
+    <div class="row">       
+      <p class="site-footer__copyright-content">&copy; Copyright {{ shop.name | link_to: routes.root_url }} {{ 'now' | date: '%Y' }}. All Rights Reserved. </p>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+
+{
+    "name": {
+        "da": "Sidefod",
+        "de": "Fußzeile",
+        "en": "Footer",
+        "es": "Pie de página",
+        "fi": "Alatunniste",
+        "fr": "Pied de page",
+        "hi": "फुटर",
+        "it": "Footer",
+        "ja": "フッター",
+        "ko": "바닥글",
+        "nb": "Footer",
+        "nl": "Voettekst",
+        "pt-BR": "Rodapé",
+        "pt-PT": "Rodapé",
+        "sv": "Sidfot",
+        "th": "ส่วนท้าย",
+        "zh-CN": "页脚",
+        "zh-TW": "頁尾"
+    },
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "footer_link_list",
+            "label": {
+                "da": "Sidefodsmenu",
+                "de": "Fußzeilenmenü",
+                "en": "Footer menu",
+                "es": "Menú inferior",
+                "fi": "Alatunniste-valikko",
+                "fr": "Menu pied de page",
+                "hi": "फुटर मेनू",
+                "it": "Menu footer",
+                "ja": "フッターメニュー",
+                "ko": "바닥글 메뉴",
+                "nb": "Bunntekstmeny",
+                "nl": "Voettekstmenu",
+                "pt-BR": "Menu de rodapé",
+                "pt-PT": "Menu do rodapé",
+                "sv": "Sidfotsmeny",
+                "th": "เมนูส่วนท้าย",
+                "zh-CN": "页脚菜单",
+                "zh-TW": "頁尾選單"
+            },
+            "default": "footer"
+        }, 
+        {
+          "type": "text",
+          "id": "footer_email",
+          "label": "footer email"
+      }
+    ]
+}
+
+{% endschema %}

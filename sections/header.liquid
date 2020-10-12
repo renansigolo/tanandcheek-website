@@ -1,0 +1,552 @@
+<div id="NavDrawer" class="drawer drawer--left">
+  {% render 'drawer-menu' %}
+</div>
+{% if section.settings.show_announcement %}
+  {% if section.settings.home_page_only == false or request.page_type == 'index' %}
+    <style>
+      .announcement-bar {
+        background-color: {{ section.settings.color_bg }};
+      }
+
+      .announcement-bar--link:hover {
+        {% assign brightness = section.settings.color_bg | color_brightness %}
+
+        {% if brightness <= 192 %}
+          {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+          background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+        {% else %}
+          {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+          background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+        {% endif %}
+      }
+
+      .announcement-bar__message {
+        color: {{ section.settings.color_text }};
+      }
+    </style>
+
+    {% if section.settings.link == blank %}
+      <div class="announcement-bar">
+    {% else %}
+      <a href="{{ section.settings.link }}" class="announcement-bar announcement-bar--link">
+    {% endif %}
+
+      <p class="announcement-bar__message">{{ section.settings.text | escape }}</p>
+
+    {% if section.settings.link == blank %}
+      </div>
+    {% else %}
+      </a>
+    {% endif %}
+
+  {% endif %}
+{% endif %}
+    
+<header>
+  <div class="container drawer__header-container">
+    <div class="row">
+    <!-- mobile nav button -->
+      <div id="nav-btn__cus" class="site-nav--open site-nav--mobile">
+        <button type="button" class="icon-fallback-text site-nav__link site-nav__link--burger js-drawer-open-button-left" aria-controls="NavDrawer">
+          <span class="burger-icon burger-icon--top"></span>
+          <span class="burger-icon burger-icon--mid"></span>
+          <span class="burger-icon burger-icon--bottom"></span>
+          <span class="fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+        </button>
+      </div>
+      <!-- logo  -->
+      <div id="logo_id"class="logo">
+        <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
+          <img class="site-header__logo-image" src="{{'logo.svg' | asset_url }}" alt=" Tan + Cheek" itemprop="logo">
+        </a>
+      </div>
+      <!-- desktop nav items -->
+      <nav class="nav-items">
+        <ul class="site-nav" id="AccessibleNav">
+          {% for link in linklists[section.settings.main_menu_link_list].links %}
+            {% if link.links != blank %}
+            {% assign parent_index = forloop.index %}
+              <li
+                class="site-nav__item site-nav--has-dropdown {% if link.active %}site-nav--active{% endif %}"
+                aria-haspopup="true"
+                data-meganav-type="parent">
+                <a
+                  href="{{ link.url }}"
+                  class="site-nav__link"
+                  data-meganav-type="parent"
+                  aria-controls="MenuParent-{{ parent_index }}"
+                  aria-expanded="false"
+                  {% unless request.page_type == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
+                    {{ link.title | escape }}
+                    <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                </a>
+                <ul
+                  id="MenuParent-{{ parent_index }}"
+                  class="site-nav__dropdown {% if link.levels == 2 %}site-nav--has-grandchildren{% endif %}"
+                  data-meganav-dropdown>
+                  {% for childlink in link.links %}
+                    {% if childlink.links != blank %}
+                    {% assign child_index = forloop.index %}
+                      <li
+                        class="site-nav__item site-nav--has-dropdown site-nav--has-dropdown-grandchild {% if childlink.active %}site-nav--active{% endif %}"
+                        aria-haspopup="true">
+                        <a
+                          href="{{ childlink.url }}"
+                          class="site-nav__dropdown-link"
+                          aria-controls="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                          data-meganav-type="parent"
+                          {% unless request.page_type == 'index' %}{% if childlink.active %}aria-current="page"{% endif %}{% endunless%}
+                          tabindex="-1">
+                            {{ childlink.title | escape }}
+                            <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                        </a>
+                        <div class="site-nav__dropdown-grandchild">
+                          <ul
+                            id="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                            data-meganav-dropdown>
+                            {% for grandchildlink in childlink.links %}
+                              <li{% if grandchildlink.active %} class="site-nav--active"{% endif %}>
+                                <a
+                                  href="{{ grandchildlink.url }}"
+                                  class="site-nav__dropdown-link"
+                                  data-meganav-type="child"
+                                  {% unless request.page_type == 'index' %}{% if grandchildlink.active %}aria-current="page"{% endif %}{% endunless %}
+                                  tabindex="-1">
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </li>
+                    {% else %}
+                      <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+                        <a
+                          href="{{ childlink.url }}"
+                          class="site-nav__dropdown-link"
+                          data-meganav-type="child"
+                          {% if childlink.active %}aria-current="page"{% endif %}
+                          tabindex="-1">
+                            {{ childlink.title | escape }}
+                        </a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="site-nav__item{% if link.active %} site-nav--active{% endif %}">
+                <a
+                  href="{{ link.url }}"
+                  class="site-nav__link"
+                  data-meganav-type="child"
+                  {% unless request.page_type == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
+                    {{ link.title | escape }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          {% if shop.customer_accounts_enabled %}
+            <li class="site-nav__item site-nav__expanded-item site-nav__item--compressed">
+              <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
+                <span class="icon-fallback-text">
+                  <span class="icon icon-customer" aria-hidden="true"></span>
+                  <span class="fallback-text">
+                    {% if customer %}
+                      {{ 'layout.customer.account' | t }}
+                    {% else %}
+                      {{ 'layout.customer.log_in' | t }}
+                    {% endif %}
+                  </span>
+                </span>
+              </a>
+            </li>
+          {% endif %}
+
+          <li class="site-nav__item site-nav__item--compressed">
+            <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+              <span id="icon-cart__id" class="icon icon-cart" aria-hidden="true"></span>
+              <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+            </a>
+          </li>
+
+        </ul>
+        <!-- //site-nav -->	
+      </nav>
+    </div>
+    </div>
+  </div>
+</header>
+  
+
+{% schema %}
+
+{
+  "name": {
+    "da": "Overskrift",
+    "de": "Header",
+    "en": "Header",
+    "es": "Encabezado",
+    "fi": "Ylätunniste",
+    "fr": "En-tête",
+    "hi": "हैडर",
+    "it": "header",
+    "ja": "ヘッダー",
+    "ko": "머리글",
+    "nb": "Header",
+    "nl": "Koptekst",
+    "pt-BR": "Cabeçalho",
+    "pt-PT": "Cabeçalho",
+    "sv": "Rubrik",
+    "th": "ส่วนหัว",
+    "zh-CN": "标头",
+    "zh-TW": "標頭"
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": {
+        "da": "Gennemsigtigt sidehoved",
+        "de": "Transparenter Header",
+        "en": "Transparent header",
+        "es": "Encabezado transparente",
+        "fi": "Läpinäkyvä ylätunniste",
+        "fr": "En-tête transparent",
+        "hi": "पारदर्शी हैडर",
+        "it": "Header trasparente",
+        "ja": "透過ヘッダー",
+        "ko": "투명 머리글",
+        "nb": "Gjennomsiktig overskrift",
+        "nl": "Transparante koptekst",
+        "pt-BR": "Cabeçalho transparente",
+        "pt-PT": "Cabeçalho transparente",
+        "sv": "Genomskinlig rubrik",
+        "th": "ส่วนหัวโปร่งใส",
+        "zh-CN": "透明标题",
+        "zh-TW": "透明標頭"
+      }
+    }, {
+      "type": "checkbox",
+      "id": "transparent_header_enable",
+      "label": {
+        "da": "Aktivér gennemsigtigt sidehoved på startsiden",
+        "de": "Transparenten Header auf der Homepage aktivieren",
+        "en": "Enable transparent header on the homepage",
+        "es": "Habilitar encabezado transparente en la página de inicio",
+        "fi": "Ota läpinäkyvä ylätunniste käyttöön kotisivulla",
+        "fr": "Activer l'en-tête transparent de la page d'accueil",
+        "hi": "होमपेज पर पारदर्शी हैडर सक्षम करें",
+        "it": "Abilita header trasparente nella home page",
+        "ja": "ホームページの透過ヘッダーを有効にする",
+        "ko": "홈 페이지에서 투명 머리글을 사용합니다.",
+        "nb": "Aktiver gjennomsiktig overskrift på hjemmesiden",
+        "nl": "Transparante koptekst inschakelen op de startpagina",
+        "pt-BR": "Habilitar cabeçalho transparente na página inicial.",
+        "pt-PT": "Ativar cabeçalho transparente na página inicial",
+        "sv": "Klicka på aktivera transparent rubrik på startsidan.",
+        "th": "เปิดใช้งานส่วนหัวแบบโปร่งใสในหน้าแรก",
+        "zh-CN": "在主页上启用透明标题",
+        "zh-TW": "啟用首頁上的透明標頭"
+      },
+      "info": {
+        "da": "Gælder, når det øverste afsnit er et diasshow.",
+        "de": "Anwendbar, wenn der obere Abschnitt eine Slideshow ist.",
+        "en": "Applicable when the top section is a slideshow.",
+        "es": "Aplica cuando la sección superior es una presentación de diapositivas.",
+        "fi": "Sovelletaan, kun yläosa on diaesitys.",
+        "fr": "Applicable lorsque la partie supérieure est un diaporama.",
+        "hi": "टॉप सेक्शन के स्लाइडशो होने पर लागू होने योग्य.",
+        "it": "Disponibile quando la sezione superiore è una presentazione.",
+        "ja": "上部のセクションがスライドショーの場合に適用されます。",
+        "ko": "상단 섹션이 슬라이드 쇼인 경우 적용 가능합니다.",
+        "nb": "Gjelder når toppseksjonen er en lysbildefremvisning.",
+        "nl": "Van toepassing wanneer het bovenste gedeelte een diavoorstelling is.",
+        "pt-BR": "Aplicável quando a seção superior é uma apresentação de slides.",
+        "pt-PT": "Aplicável quando a secção superior é uma apresentação de diapositivos.",
+        "sv": "Tillämplig när det övre avsnittet är ett bildspel.",
+        "th": "สามารถใช้งานได้เมื่อส่วนบนเป็นสไลด์โชว์",
+        "zh-CN": "在顶部部分是幻灯片时适用。",
+        "zh-TW": "可於頂端區段為輪播投影片時套用。"
+      },
+      "default": true
+    }, {
+      "type": "link_list",
+      "id": "main_menu_link_list",
+      "label": {
+        "da": "Menu",
+        "de": "Menü",
+        "en": "Menu",
+        "es": "Menú",
+        "fi": "Valikko",
+        "fr": "Menu",
+        "hi": "मेनू",
+        "it": "Menu",
+        "ja": "メニュー",
+        "ko": "메뉴",
+        "nb": "Meny",
+        "nl": "Menu",
+        "pt-BR": "Menu",
+        "pt-PT": "Menu",
+        "sv": "Meny",
+        "th": "เมนู",
+        "zh-CN": "菜单",
+        "zh-TW": "選單"
+      },
+      "default": "main-menu",
+      "info": {
+        "da": "Menuen komprimeres til en menuknap, hvis linkene er for lange. [Få mere at vide](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "de": "Wenn Links zu lang sind, wird das Menü eingeklappt und als Menü-Schaltfläche angezeigt. [Mehr Informationen](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "en": "The menu will collapse into a menu button if links are too long. [Learn more](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "es": "El menú colapsará en un botón de menú si los enlaces son demasiado largos. [Más información](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "fi": "Valikko muuttuu valikkopainikkeeksi, jos linkit ovat liian pitkiä. [Lisätietoja](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "fr": "Le menu sera réduit à un bouton de menu si les liens sont trop longs. [En savoir plus](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "hi": "यदि लिंक बहुत लंबे हैं, तो मेनू एक मेनू बटन में संक्षिप्त हो जाएगा. [अधिक जानें](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "it": "Il menu si ridurrà a un pulsante menu se i link sono troppo lunghi. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "ja": "リンクが長すぎる場合、メニューがメニューボタンに折り畳まれます。[詳細情報](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "ko": "링크가 너무 길면 메뉴가 메뉴 버튼으로 축소됩니다. [자세히 알아보기](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "nb": "Menyen slås sammen til en menyknapp hvis koblingene er for lange. [Finn ut mer](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "nl": "Het menu zal samenvouwen tot een menuknop als de links te lang zijn. [Meer informatie](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "pt-BR": "O menu ficará oculto em um botão de menu se os links forem longos demais. [Saiba mais](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "pt-PT": "O menu será fechado num botão de menu se as ligações forem demasiado compridas. [Saiba mais](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "sv": "Menyn kommer att kollapsa till en menyknapp om länkarna är för långa. [Läs mer](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "th": "เมนูนี้จะย่อลงเป็นปุ่มเมนูในกรณีที่ลิงก์ยาวเกินไป [เรียนรู้เพิ่มเติม](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "zh-CN": "如果链接过长，菜单将折叠成菜单按钮。[了解详细信息](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)",
+        "zh-TW": "如果連結太長，選單會收合為選單按鈕。[深入瞭解](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)"
+      }
+    }, {
+      "type": "link_list",
+      "id": "drawer_bottom_link_list",
+      "label": {
+        "da": "Sekundær sidebjælkemenu",
+        "de": "Zusätzliches Menü",
+        "en": "Secondary sidebar menu",
+        "es": "Menú adicional",
+        "fi": "Sivupalkkivalikko",
+        "fr": "Menu supplémentaire",
+        "hi": "माध्यमिक साइडबार मेनू",
+        "it": "Menu aggiuntivo",
+        "ja": "追加メニュー",
+        "ko": "보조 사이드바 메뉴",
+        "nb": "Sekundær meny i sidefeltet",
+        "nl": "Secundair zijbalkmenu",
+        "pt-BR": "Menu adicional",
+        "pt-PT": "Menu lateral secundário",
+        "sv": "Sekundär sidofältsmeny",
+        "th": "เมนูแถบด้านข้างรอง",
+        "zh-CN": "辅助侧边栏菜单",
+        "zh-TW": "次要側邊欄選單"
+      },
+      "default": "footer"
+    }, {
+      "type": "checkbox",
+      "id": "drawer_search_enable",
+      "label": {
+        "da": "Aktivér søgning",
+        "de": "Suche aktivieren",
+        "en": "Enable search",
+        "es": "Habilitar búsqueda",
+        "fi": "Ota hakutoiminto käyttöön",
+        "fr": "Activer la recherche",
+        "hi": "खोज सक्षम करें",
+        "it": "Abilita ricerca",
+        "ja": "検索を有効にする",
+        "ko": "검색 활성화",
+        "nb": "Aktiver søk",
+        "nl": "Zoeken inschakelen",
+        "pt-BR": "Habilitar pesquisa",
+        "pt-PT": "Ativar pesquisa",
+        "sv": "Aktivera sökning",
+        "th": "เปิดใช้การค้นหา",
+        "zh-CN": "启用搜索",
+        "zh-TW": "啟用搜索"
+      }
+    }, {
+      "type": "header",
+      "content": {
+        "da": "Meddelelseslinje",
+        "de": "Ankündigungsleiste",
+        "en": "Announcement bar",
+        "es": "Barra de anuncios",
+        "fi": "Ilmoituspalkki",
+        "fr": "Barre d'annonces",
+        "hi": "घोषणा बार",
+        "it": "Barra degli annunci",
+        "ja": "告知バー",
+        "ko": "공지 표시줄",
+        "nb": "Kunngjøringslinje",
+        "nl": "Aankondigingsbalk",
+        "pt-BR": "Barra de avisos",
+        "pt-PT": "Barra de comunicado",
+        "sv": "Meddelandefält",
+        "th": "แถบประกาศ",
+        "zh-CN": "公告栏",
+        "zh-TW": "公告列"
+      }
+    }, {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": {
+        "da": "Vis meddelelse",
+        "de": "Ankündigung anzeigen",
+        "en": "Show announcement",
+        "es": "Mostrar anuncio",
+        "fi": "Näytä ilmoitus",
+        "fr": "Afficher l'annonce",
+        "hi": "घोषणा डिखाएं",
+        "it": "Mostra annuncio",
+        "ja": "告知を表示する",
+        "ko": "공지 표시",
+        "nb": "Vis kunngjøring",
+        "nl": "Aankondiging weergeven",
+        "pt-BR": "Exibir anúncio",
+        "pt-PT": "Mostrar comunicado",
+        "sv": "Visa tillkännagivande",
+        "th": "แสดงประกาศ",
+        "zh-CN": "显示公告",
+        "zh-TW": "顯示公告"
+      },
+      "default": false
+    }, {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": {
+        "da": "Kun startside",
+        "de": "Nur Startseite",
+        "en": "Home page only",
+        "es": "Solo página de inicio",
+        "fi": "Vain etusivu",
+        "fr": "Page d'accueil uniquement",
+        "hi": "केवल होमपेज",
+        "it": "Solo home page",
+        "ja": "ホームページのみ",
+        "ko": "홈페이지만",
+        "nb": "Kun på startsiden",
+        "nl": "Alleen homepage",
+        "pt-BR": "Apenas na página inicial",
+        "pt-PT": "Apenas a página inicial",
+        "sv": "Endast hemsida",
+        "th": "หน้าแรกเท่านั้น",
+        "zh-CN": "仅主页",
+        "zh-TW": "僅限首頁"
+      },
+      "default": true
+    }, {
+      "type": "text",
+      "id": "text",
+      "label": {
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "hi": "टेक्स्ट",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "default": {
+        "da": "Meddel noget her",
+        "de": "Hier Ankündigung platzieren",
+        "en": "Announce something here",
+        "es": "Anuncia algo aquí",
+        "fi": "Ilmoita jotakin tässä",
+        "fr": "Annoncer quelque chose ici",
+        "hi": "यहां कुछ घोषित करें",
+        "it": "Annuncia qualcosa qui",
+        "ja": "ここで告知してください",
+        "ko": "여기에 공지하십시오",
+        "nb": "Kunngjør noe her",
+        "nl": "Kondig hier iets aan",
+        "pt-BR": "Anuncie algo aqui",
+        "pt-PT": "Anunciar algo aqui",
+        "sv": "Meddela något här",
+        "th": "ประกาศข้อความที่นี่",
+        "zh-CN": "在此处进行公告",
+        "zh-TW": "在此公告資訊"
+      }
+    }, {
+      "type": "url",
+      "id": "link",
+      "label": {
+        "da": "Link",
+        "de": "Link",
+        "en": "Link",
+        "es": "Enlace",
+        "fi": "Linkki",
+        "fr": "Lien",
+        "hi": "लिंक",
+        "it": "Link",
+        "ja": "リンク",
+        "ko": "링크",
+        "nb": "Kobling",
+        "nl": "Link",
+        "pt-BR": "Link",
+        "pt-PT": "Ligação",
+        "sv": "Länk",
+        "th": "ลิงก์",
+        "zh-CN": "链接",
+        "zh-TW": "連結"
+      }
+    }, {
+      "type": "color",
+      "id": "color_bg",
+      "label": {
+        "da": "Bjælke",
+        "de": "Leiste",
+        "en": "Bar",
+        "es": "Barra",
+        "fi": "Palkki",
+        "fr": "Barre",
+        "hi": "बार",
+        "it": "Barra",
+        "ja": "バー",
+        "ko": "바",
+        "nb": "Felt",
+        "nl": "Balk",
+        "pt-BR": "Barra",
+        "pt-PT": "Barra",
+        "sv": "Fält",
+        "th": "แถบ",
+        "zh-CN": "栏",
+        "zh-TW": "橫條"
+      },
+      "default": "#1c1d1d"
+    }, {
+      "type": "color",
+      "id": "color_text",
+      "label": {
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "hi": "टेक्स्ट",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "default": "#fff"
+    }
+  ]
+}
+
+{% endschema %}

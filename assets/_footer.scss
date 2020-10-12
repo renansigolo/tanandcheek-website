@@ -1,0 +1,50 @@
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+footer {
+  background-color: $light-gray;
+  padding-top: 50px;
+  * {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .social-icons {
+    display: flex;
+    li {
+      margin-right: 15px;
+      span {
+        font-size: 2.6rem;
+        color: $dark;
+        &:hover {
+          color: #555;
+        }
+      }
+    }
+  }
+  .footer-logo {
+    width: 169px;
+    margin-bottom: 10px;
+  }
+  .email-link {
+    margin-bottom: 1rem;
+  }
+  .site-footer__linklist {
+    margin-bottom: 1rem;
+  }
+}
+.copyright__container {
+  * {
+    color: $light;
+    font-size: 1.2rem;
+  }
+  a {
+    &:hover {
+      color: #ccc;
+    }
+  }
+  background-color: $dark;
+  .site-footer__copyright-content {
+    padding-top: 1.5rem;
+  }
+}
