@@ -4,9 +4,9 @@
   "description": "Shopify Theme",
   "main": "index.js",
   "scripts": {
-    "deploy": "theme deploy",
+    "deploy": "theme deploy --allow-live",
     "watch": "node-sass scss/custom.scss assets/custom.css --watch --output-style compressed",
-    "start": "theme watch",
+    "start": "theme watch --allow-live",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

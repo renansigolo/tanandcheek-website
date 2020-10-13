@@ -44,7 +44,7 @@
           {% assign collection = collections[block.settings.collection] %}
           {% assign collection_index = collection_index | plus: 1 %}
           {% assign collection_handle = collection.handle %}
-          {% render 'collection-grid-collage' %}
+          {% include 'collection-grid-collage' %}
       {% endfor %}
 
       {% if isEmpty %}

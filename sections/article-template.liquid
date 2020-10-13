@@ -24,11 +24,11 @@
         </div>
 
         <ul class="tags tags--article inline-list">
-          {% render 'tags-article' %}
+          {% include 'tags-article' %}
         </ul>
 
         {% if section.settings.social_sharing_blog %}
-          {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+          {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
         {% endif %}
 
         {% if blog.comments_enabled? %}
@@ -62,7 +62,7 @@
                   {% endcomment %}
                   {% if comment and comment.created_at %}
                     <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
-                      {% render 'comment' %}
+                      {% include 'comment' %}
                     </li>
                   {% endif %}
 
@@ -71,7 +71,7 @@
                   {% endcomment %}
                   {% for comment in article.comments %}
                     <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
-                      {% render 'comment' %}
+                      {% include 'comment' %}
                     </li>
 
                     {% unless forloop.last %}
@@ -81,7 +81,7 @@
                 </ul>
 
                 {% if paginate.pages > 1 %}
-                  {% render 'pagination' %}
+                  {% include 'pagination' %}
                 {% endif %}
 
               {% endif %}

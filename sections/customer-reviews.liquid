@@ -1,39 +1,41 @@
 {%- if section.blocks.size > 0 -%}
-<h5>Customer Review</h5>
-<div class="cards-grid">
-    <div class="grid-{{ section.settings.grid_size }}">
-      {%- for block in section.blocks -%}
-        <div class="card" {{ block.shopify_attributes }}>
-          <div class="card__content">
-            {%- if block.settings.title != blank -%}
-              <h6 class="card__title">{{ block.settings.title }}</h6>
-            {%- endif -%}
+<div class="container">
+  <h5>Customer Review</h5>
+  <div class="cards-grid">
+      <div class="grid-{{ section.settings.grid_size }}">
+        {%- for block in section.blocks -%}
+          <div class="card" {{ block.shopify_attributes }}>
+            <div class="card__content">
+              {%- if block.settings.title != blank -%}
+                <h6 class="card__title">{{ block.settings.title }}</h6>
+              {%- endif -%}
 
-            {%- if block.settings.description != blank -%}
-              <p class="card__description">{{ block.settings.description }}</p>
-            {%- endif -%}
-          </div>
+              {%- if block.settings.description != blank -%}
+                <p class="card__description">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
 
-          {% if block.settings.ratings != 0 or block.settings.link != blank %}
-            <div class="card__footer">
-            {%- if block.settings.ratings >= 0 -%}
-              <div>
-              {% for i in (1..block.settings.ratings) %}
-                {% render 'icon-star-solid' %}
-              {% endfor %}
+            {% if block.settings.ratings != 0 or block.settings.link != blank %}
+              <div class="card__footer">
+              {%- if block.settings.ratings >= 0 -%}
+                <div>
+                {% for i in (1..block.settings.ratings) %}
+                  {% include 'icon-star-solid' %}
+                {% endfor %}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}">
+                  {% include 'icon-arrow-right-solid' %}
+                </a>
+              {%- endif -%}
               </div>
             {%- endif -%}
-
-            {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}">
-                {% render 'icon-arrow-right-solid' %}
-              </a>
-            {%- endif -%}
-            </div>
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
-    </div>
+          </div>
+        {%- endfor -%}
+      </div>
+  </div>
 </div>
 {%- endif -%}
 

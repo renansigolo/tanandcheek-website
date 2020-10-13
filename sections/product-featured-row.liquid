@@ -1,10 +1,5 @@
-<!-- <style>
-.text-alignment {
-  text-align: {{ section.settings.text_alignment }}
-}
-</style> -->
-
-{%- for block in section.blocks -%}
+<div class="section-product-featured">
+  {%- for block in section.blocks -%}
 {% capture image_layout %}
   <div class="feature-row__item">
     {% if block.settings.image != blank %}
@@ -53,6 +48,7 @@
   </div>
 </div>
 {%- endfor -%}
+</div>
 
 {% schema %}
 {

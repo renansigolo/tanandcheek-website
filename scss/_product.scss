@@ -23,3 +23,16 @@ button#AddToCart--product-template {
   background-color: $orange;
   border-color: $orange;
 }
+
+.grid-product {
+  &__meta {
+    padding: 13px 15%;
+    text-align: left;
+  }
+  &__title {
+    color: $dark;
+  }
+  &__price {
+    color: $dark-gray;
+  }
+}

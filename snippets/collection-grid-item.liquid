@@ -52,7 +52,7 @@
           {% unless collection_image == blank %}
             style="background-image: url('{{ collection_image | img_url: '300x300' }});"
           {% endunless %}
-          data-bgset="{% render 'bgset', image: collection_image %}"
+          data-bgset="{% include 'bgset', image: collection_image %}"
           data-sizes="auto"
           data-parent-fit="cover">
         </div>
@@ -69,7 +69,7 @@
           {% unless collection_image == blank %}
             style="background-image: url('{{ collection_image | img_url: '300x' }});"
           {% endunless %}
-          data-bgset="{% render 'bgset', image: collection_image %}"
+          data-bgset="{% include 'bgset', image: collection_image %}"
           data-sizes="auto"
           data-parent-fit="cover">
         </div>

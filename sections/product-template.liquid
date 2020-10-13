@@ -29,7 +29,7 @@
             {% endcomment %}
             <div class="product-single__photo--flex-wrapper">
               <div class="product-single__photo--flex">
-                {% render 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
                 <div id="{{ wrapper_id }}" class="product-single__photo--container">
                   <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
                     {% assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
@@ -70,7 +70,7 @@
 
                 <div class="product-single__photo--flex-wrapper">
                   <div class="product-single__photo--flex">
-                    {% render 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                    {% include 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
                     <div id="{{ wrapper_id }}" class="product-single__photo--container">
                       <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
                         {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
@@ -119,7 +119,7 @@
             {% endcomment %}
             <div class="product-single__photo--flex-wrapper">
               <div class="product-single__photo--flex">
-                {% render 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
                 <div id="{{ wrapper_id }}" class="product-single__photo--container product-single__photo--container-thumb">
                   <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
                     {% assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
@@ -160,7 +160,7 @@
 
                 <div class="product-single__photo--flex-wrapper">
                   <div class="product-single__photo--flex">
-                    {% render 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                    {% include 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
                     <div id="{{ wrapper_id }}" class="product-single__photo--container product-single__photo--container-thumb hide">
                       <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
                         {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
@@ -218,7 +218,7 @@
             {% comment %}
               Optionally show the 'compare at' or original price of the product.
             {% endcomment %}
-            {% render 'product-price', variant: current_variant %}
+            {% include 'product-price', variant: current_variant %}
 
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
               <div class="product-single__policies rte">
@@ -330,7 +330,7 @@
           </div>
 
           {% if section.settings.social_sharing_products %}
-            {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
           {% endif %}
         </div>
       </div>

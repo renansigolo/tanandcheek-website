@@ -10,7 +10,7 @@
     "color_product_background": "#fff4f6",
     "color_sale_tag": "#e80970",
     "color_input": "#f6f6f6",
-    "color_newsletter": "#bde9f2",
+    "color_newsletter": "#f26522",
     "color_drawer_background": "#000000",
     "color_drawer_text": "#ffffff",
     "color_drawer_border": "#ffffff",
@@ -30,9 +30,9 @@
     "cart_notes_enable": true,
     "share_image": "",
     "social_facebook_link": "#",
-    "social_twitter_link": "#",
-    "social_pinterest_link": "#",
-    "social_instagram_link": "#",
+    "social_twitter_link": "https:\/\/twitter.com\/tanandcheek",
+    "social_pinterest_link": "https:\/\/pinterest.com.au\/tanandcheek",
+    "social_instagram_link": "https:\/\/instagram.com\/tanandcheek\/",
     "social_snapchat_link": "",
     "social_google_plus_link": "",
     "social_tumblr_link": "",
@@ -66,20 +66,12 @@
     "product_vendor_enable": false,
     "social_sharing_style": "clean",
     "sections": {
-      "featured-products": {
-        "type": "featured-products",
-        "settings": {
-          "title": "Featured collection",
-          "home_featured_products": "frontpage",
-          "collection_products_grid": "grid"
-        }
-      },
       "newsletter": {
         "type": "newsletter",
         "settings": {
           "image": "",
-          "heading": "Subscribe to our newsletter",
-          "subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          "heading": "Stay connected",
+          "subheading": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br>sed diam nonumy eirmod tempor invidunt ut labore et <br>dolore magna aliquyam erat, sed diam voluptua. At vero <br>eos et accusam et justo.<\/p>"
         }
       },
       "header": {
@@ -100,7 +92,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_link_list": "footer",
+          "footer_link_list": "footer-full-menu",
           "footer_email": "info@tanandcheek.com"
         }
       },
@@ -117,10 +109,10 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "zoom_enable": false,
+          "zoom_enable": true,
           "social_sharing_products": false,
-          "product_vendor_enable": false,
-          "image_layout": "stacked",
+          "product_vendor_enable": true,
+          "image_layout": "thumbnails",
           "quantity_enabled": false,
           "product_selector": "radio",
           "enable_payment_button": true,
@@ -189,7 +181,8 @@
           "1584672083121",
           "1584672091156"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1584938948381": {
         "type": "staff-picks",
@@ -204,28 +197,28 @@
           "1602041729069-0": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-lock-card",
+              "icon_name": "icon-envelope-open-solid",
               "icon_color": "#aaaaaa",
-              "title": "Secure transactons",
-              "text": "Transactions are handled with bank-grade security"
+              "title": "100% Money Back Guarantee",
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
             }
           },
           "1602041729069-1": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-basket-like",
+              "icon_name": "icon-envelope-open-solid",
               "icon_color": "#aaaaaa",
-              "title": "Simple checkout",
-              "text": "Our secure checkout is quick and easy to use."
+              "title": "Free Express Shipping",
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
             }
           },
           "1602042296031": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-award",
+              "icon_name": "icon-envelope-open-solid",
               "icon_color": "#aaaaaa",
-              "title": "Title",
-              "text": "Share details about your shipping policies, item returns, or customer service."
+              "title": "Peace of Mind Guarantee",
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
             }
           }
         },
@@ -261,7 +254,51 @@
       },
       "product-featured-row": {
         "type": "product-featured-row",
-        "settings": {}
+        "blocks": {
+          "1602470937605": {
+            "type": "inner_section",
+            "settings": {
+              "image": "",
+              "layout": "right",
+              "text_alignment": "left",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1602470965701": {
+            "type": "inner_section",
+            "settings": {
+              "image": "",
+              "layout": "left",
+              "text_alignment": "right",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1602470968503": {
+            "type": "inner_section",
+            "settings": {
+              "image": "",
+              "layout": "right",
+              "text_alignment": "left",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1602470937605",
+          "1602470965701",
+          "1602470968503"
+        ],
+        "settings": {
+        }
       },
       "instagram-list": {
         "type": "instagram-list",
@@ -269,28 +306,28 @@
           "1602219033385": {
             "type": "insta_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/young-woman-poses-in-front-of-a-large-window.jpg",
               "link": ""
             }
           },
           "1602219035817": {
             "type": "insta_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/woman-watches-waves.jpg",
               "link": ""
             }
           },
           "1602219036670": {
             "type": "insta_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/woman-in-polka-dot-dress.jpg",
               "link": ""
             }
           },
           "1602219037568": {
             "type": "insta_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/young-woman-posing-at-carnival.jpg",
               "link": ""
             }
           }
@@ -315,7 +352,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           },
           "1602219044814": {
@@ -324,7 +361,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           },
           "1602219045961": {
@@ -333,7 +370,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           },
           "1602219212285": {
@@ -342,7 +379,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           },
           "1602219214782": {
@@ -351,7 +388,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           },
           "1602219216704": {
@@ -360,7 +397,7 @@
               "title": "Customer Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
-              "link": ""
+              "link": "#"
             }
           }
         },
@@ -380,7 +417,7 @@
         "type": "product-recommendations",
         "settings": {
           "show_product_recommendations": true,
-          "heading": "You may also like"
+          "heading": "You Might Like"
         }
       },
       "icons-row": {
@@ -423,13 +460,88 @@
           "bg_color": "",
           "text_color": "#545454"
         }
+      },
+      "1602469387647": {
+        "type": "instagram-list",
+        "blocks": {
+          "1602469387647-0": {
+            "type": "insta_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/young-woman-poses-in-front-of-a-large-window.jpg",
+              "link": ""
+            }
+          },
+          "1602469387647-1": {
+            "type": "insta_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/woman-in-polka-dot-dress.jpg",
+              "link": ""
+            }
+          },
+          "1602469387647-2": {
+            "type": "insta_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/woman-watches-waves.jpg",
+              "link": ""
+            }
+          },
+          "1602469387647-3": {
+            "type": "insta_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/young-woman-posing-at-carnival.jpg",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1602469387647-0",
+          "1602469387647-1",
+          "1602469387647-2",
+          "1602469387647-3"
+        ],
+        "settings": {
+          "title": "#tanandcheek",
+          "image_size": "300px"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "blocks": {
+          "1602474075617": {
+            "type": "collection",
+            "settings": {
+              "collection": "new-arrivals"
+            }
+          },
+          "1602474084017": {
+            "type": "collection",
+            "settings": {
+              "collection": "tops"
+            }
+          },
+          "1602474091542": {
+            "type": "collection",
+            "settings": {
+              "collection": "bottoms"
+            }
+          }
+        },
+        "block_order": [
+          "1602474075617",
+          "1602474084017",
+          "1602474091542"
+        ],
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical"
+        }
       }
     },
     "content_for_index": [
       "1584604707985",
       "1584672063606",
       "1584938948381",
-      "featured-products",
+      "1602469387647",
       "newsletter",
       "1602041729069"
     ]
@@ -491,18 +603,21 @@
           "blocks": {
             "slideshow-0": {
               "type": "slide",
-              "settings": {}
+              "settings": {
+              }
             },
             "slideshow-1": {
               "type": "slide",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
             "slideshow-0",
             "slideshow-1"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-products": {
           "type": "featured-products",
@@ -512,22 +627,26 @@
         },
         "featured-content": {
           "type": "featured-content",
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-collections": {
           "type": "featured-collections",
           "blocks": {
             "featured-collections-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -535,11 +654,13 @@
             "featured-collections-1",
             "featured-collections-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "newsletter": {
           "type": "newsletter",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
@@ -645,7 +766,8 @@
         },
         "newsletter": {
           "type": "newsletter",
-          "settings": {}
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
@@ -693,7 +815,8 @@
           "block_order": [
             "1496078102297-0"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "1496177901425": {
           "type": "advanced-content",
@@ -710,7 +833,8 @@
           "block_order": [
             "1496177901425-0"
           ],
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [

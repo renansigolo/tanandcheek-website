@@ -11,6 +11,9 @@ footer {
   }
   .social-icons {
     display: flex;
+    @include mobile {
+      justify-content: center;
+    }
     li {
       margin-right: 15px;
       span {

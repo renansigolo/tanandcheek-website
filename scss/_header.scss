@@ -63,13 +63,13 @@ header {
   align-items: center;
   opacity: 1;
   .site-nav__item {
-    padding-right: 30px;
+    padding-right: 32px;
     &:last-child {
       padding-right: 0;
     }
     a {
       padding: 0;
-      color: white;
+      color: $dark-gray;
       text-transform: capitalize;
       font-size: 2rem;
       @media screen and (max-width: 1200px) {

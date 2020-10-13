@@ -75,7 +75,7 @@
     {% assign grid_item_width = "one-half medium--one-half large--one-half" %}
   {% endif %}
   {% comment %} Set item with to half if it isn't in a 3 row. {% endcomment %}
-  {% render 'collection-grid-item' %}
+  {% include 'collection-grid-item' %}
 {% endif %}
 
 {% comment %}
@@ -96,5 +96,5 @@
   {% endif %}
 
   {% comment %}Product Grid Item{% endcomment %}
-  {% render 'collection-grid-item' %}
+  {% include 'collection-grid-item' %}
 {% endif %}

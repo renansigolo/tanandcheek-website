@@ -48,7 +48,7 @@
         {% if product.featured_image.src == blank %}
           <img class="grid-product__image" src="{{ product.featured_image.src | img_url: '1024x' }}" alt="{{ product.featured_image.alt | escape }}">
         {% else %}
-          {% render 'image-style' with image: product.featured_image, small_style: true, width: width, height: height, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
+          {% include 'image-style' with image: product.featured_image, small_style: true, width: width, height: height, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
           <div id="{{ img_wrapper_id }}" class="product--wrapper">
             <div style="padding-top:{{ 1 | divided_by: product.featured_image.aspect_ratio | times: 100 }}%;">
               <img class="product--image lazyload {{ img_id_class }}"
@@ -80,7 +80,7 @@
     <a href="{{ product.url | within: collection }}" class="grid-product__meta">
       <span class="grid-product__title">{{ product.title }}</span>
       <span class="grid-product__price-wrap">
-        <span class="long-dash">—</span>
+        <br />
         <span class="grid-product__price">
           {% if on_sale %}
             <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>

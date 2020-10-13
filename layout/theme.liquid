@@ -31,7 +31,7 @@
     {% endif %}
 
     <!-- Helpers ================================================== -->
-    {% render 'social-meta-tags' %}
+    {% include 'social-meta-tags' %}
     <link rel="canonical" href="{{ canonical_url }}" />
     <meta
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
@@ -136,7 +136,7 @@
       <main class="main-content" role="main">
         {% unless request.page_type == "index" %}
         <!-- <div> -->
-        <div class="wrapper">
+        <div>
           {% endunless %}
           {{ content_for_layout }}
           {% unless request.page_type == "index" %}
@@ -159,7 +159,7 @@
 
     {% comment %} Ajaxify your cart with this plugin. Documentation: -
     http://shopify.com/timber#ajax-cart {% endcomment %} {% if
-    settings.cart_type == 'drawer' %} {% render 'ajax-cart-template' %} {% endif
+    settings.cart_type == 'drawer' %} {% include 'ajax-cart-template' %} {% endif
     %} {% if request.page_type == 'product' or request.page_type == 'index' %}
     <script>
       // Override default values of shop.strings for each template.
@@ -174,7 +174,7 @@
     {% endif %}
 
     <div class="mfp-hide" id="SearchModal">
-      {% render 'search-bar', search_btn_style: 'btn', search_bar_location:
+      {% include 'search-bar', search_btn_style: 'btn', search_bar_location:
       'search-bar--modal' %}
     </div>
     <ul hidden>

@@ -1,7 +1,7 @@
 {%- if section.settings.show_product_recommendations -%}
   {%- if recommendations.performed -%}
     {%- if recommendations.products_count > 0 -%}
-      <div class="product-recommendations">
+      <div class="product-recommendations container">
         <div class="section-header text-left">
           {%- if section.settings.heading != blank -%}
             <h2 class="h1 section-header__title">{{ section.settings.heading | escape }}</h2>
@@ -10,7 +10,7 @@
         <div class="grid-uniform">
           {% assign grid_item_width = 'small--one-half medium--one-half large--one-quarter' %}
           {%- for product in recommendations.products -%}
-            {% render 'product-grid-item' %}
+            {% include 'product-grid-item' %}
           {%- endfor -%}
         </div>
       </div>

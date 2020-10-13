@@ -62,7 +62,7 @@
 
           {% if article.tags.size > 0 %}
             <ul class="tags tags--article inline-list">
-              {% render 'tags-article' %}
+              {% include 'tags-article' %}
             </ul>
           {% endif %}
         </div>
@@ -73,7 +73,7 @@
     {% endfor %}
 
     {% if paginate.pages > 1 %}
-      {% render 'pagination' %}
+      {% include 'pagination' %}
     {% endif %}
 
   </div>

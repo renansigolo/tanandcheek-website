@@ -1,7 +1,7 @@
   <div class="drawer__inner drawer-left__inner">
 
     {% if section.settings.drawer_search_enable %}
-      {% render 'search-bar', search_btn_style: 'btn--secondary', search_bar_location: 'search-bar--drawer' %}
+      {% include 'search-bar', search_btn_style: 'btn--secondary', search_bar_location: 'search-bar--drawer' %}
     {% endif %}
 
     <ul class="mobile-nav">

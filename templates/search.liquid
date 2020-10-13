@@ -28,7 +28,7 @@
         <hr class="hr--small">
       </header>
 
-      {% render 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
+      {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
 
       {% if search.performed %}
 
@@ -39,7 +39,7 @@
 
             {% if item.object_type == 'product' %}
               {% assign product = item %}
-              {% render 'product-grid-item' %}
+              {% include 'product-grid-item' %}
             {% else %}
               <div class="grid__item grid-search large--one-third medium--one-half">
                 <div class="grid-search__page">
@@ -57,7 +57,7 @@
         </div>
 
         {% if paginate.pages > 1 %}
-          {% render 'pagination' %}
+          {% include 'pagination' %}
         {% endif %}
 
       {% endif %}

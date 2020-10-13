@@ -52,7 +52,7 @@
               {% endif %}
 
               {% unless section.settings.post_limit == 1 and section.settings.blog_show_image %}
-                {% render 'featured-blog', article: article %}
+                {% include 'featured-blog', article: article %}
               {% endunless %}
 
             </div>
@@ -61,7 +61,7 @@
           {% if section.settings.post_limit == 1 and section.settings.blog_show_image %}
             <div class="grid__item {{ width }}">
               <div class="featured-blog__post">
-                 {% render 'featured-blog', article: article %}
+                 {% include 'featured-blog', article: article %}
               </div>
             </div>
           {% endif %}
@@ -70,11 +70,11 @@
       </div>
 
     {% else %}
-      {% render 'onboarding-featured-blog' %}
+      {% include 'onboarding-featured-blog' %}
     {% endunless %}
 
     {% if blog == empty %}
-      {% render 'onboarding-featured-blog' %}
+      {% include 'onboarding-featured-blog' %}
     {% endif %}
 
     {% if section.settings.show_view_all %}

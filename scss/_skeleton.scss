@@ -42,7 +42,7 @@
 }
 
 /* For devices larger than 400px */
-@media (min-width: 500px) {
+@media (min-width: 550px) {
   .container {
     width: 95%;
     padding: 0;
@@ -50,7 +50,7 @@
 }
 
 /* For devices larger than 550px */
-@media (min-width: 980px) {
+@media (min-width: 769px) {
   .container {
     width: 95%;
   }
@@ -175,10 +175,10 @@
 }
 
 /* Base Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
-  html is set to 62.5% so that all the REM measurements throughout Skeleton
-  are based on 10px sizing. So basically 1.5rem = 15px :) */
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%;
 }
@@ -192,7 +192,7 @@ body {
 }
 
 /* Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1,
 h2,
 h3,
@@ -261,16 +261,16 @@ p {
 }
 
 /* Links
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1eaedb;
+  color: #f26522;
 }
 a:hover {
   color: #0fa0ce;
 }
 
 /* Buttons
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
 button,
 input[type='submit'],
@@ -314,8 +314,8 @@ input[type='submit'].button-primary,
 input[type='reset'].button-primary,
 input[type='button'].button-primary {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
+  background-color: #f26522;
+  border-color: #f26522;
 }
 .button.button-primary:hover,
 button.button-primary:hover,
@@ -328,12 +328,12 @@ input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
   color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb;
+  background-color: #f26522;
+  border-color: #f26522;
 }
 
 /* Forms
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type='email'],
 input[type='number'],
 input[type='search'],
@@ -378,7 +378,7 @@ input[type='url']:focus,
 input[type='password']:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #f26522;
   outline: 0;
 }
 label,
@@ -402,7 +402,7 @@ label > .label-body {
 }
 
 /* Lists
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
   list-style: circle inside;
 }
@@ -426,7 +426,7 @@ li {
 }
 
 /* Code
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
@@ -443,7 +443,7 @@ pre > code {
 }
 
 /* Tables
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 th,
 td {
   padding: 12px 15px;
@@ -460,7 +460,7 @@ td:last-child {
 }
 
 /* Spacing
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
   margin-bottom: 1rem;
@@ -480,11 +480,11 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 /* Utilities
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
   width: 100%;
   box-sizing: border-box;
@@ -501,7 +501,7 @@ form {
 }
 
 /* Misc
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
@@ -510,7 +510,7 @@ hr {
 }
 
 /* Clearing
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 /* Self Clearing Goodness */
 .container:after,
@@ -522,13 +522,13 @@ hr {
 }
 
 /* Media Queries
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*
-  Note: The best way to structure the use of media queries is to create the queries
-  near the relevant code. For example, if you wanted to change the styles for buttons
-  on small devices, paste the mobile query code up in the buttons section and style it
-  there.
-  */
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
 
 /* Larger than mobile */
 @media (min-width: 400px) {

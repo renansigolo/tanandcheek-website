@@ -58,7 +58,7 @@
     <div class="map-section__background-wrapper">
       {% if bg_image.src != blank %}
         <div class="map-section__image lazyload js"
-             data-bgset="{% render 'bgset', image: bg_image %}"
+             data-bgset="{% include 'bgset', image: bg_image %}"
              data-sizes="auto"
              data-parent-fit="cover"
              style="background-image: url('{{ bg_image | img_url: '300x300' }});">

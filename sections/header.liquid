@@ -1,5 +1,5 @@
 <div id="NavDrawer" class="drawer drawer--left">
-  {% render 'drawer-menu' %}
+  {% include 'drawer-menu' %}
 </div>
 {% if section.settings.show_announcement %}
   {% if section.settings.home_page_only == false or request.page_type == 'index' %}

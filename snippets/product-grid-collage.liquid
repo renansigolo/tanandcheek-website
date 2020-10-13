@@ -129,7 +129,7 @@
   {% endif %}
 
   {% comment %}Product Grid Item{% endcomment %}
-  {% render 'product-grid-item' %}
+  {% include 'product-grid-item' %}
 
   {% comment %}
     Close out wrapper div for one-third reverse items
@@ -162,7 +162,7 @@
   {%- assign image_size = '990x' -%}
   {%- assign width = 990 -%}
   {%- assign height = 630 -%}
-  {% render 'product-grid-item' %}
+  {% include 'product-grid-item' %}
   {% break %}
 {% else %}
   {% comment %} Set item with to half if it isn't in a 3 row. {% endcomment %}
@@ -170,7 +170,7 @@
   {%- assign image_size = '480x' -%}
   {%- assign width = 360 -%}
   {%- assign height = 270 -%}
-  {% render 'product-grid-item' %}
+  {% include 'product-grid-item' %}
 
   {% comment %}add grid row separator between the last two rows{% endcomment %}
   {% if remaining_length__product == 2 %}

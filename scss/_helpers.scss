@@ -30,6 +30,14 @@
 }
 
 /* General Classes */
+.max-w-500 {
+  max-width: 500px;
+}
+
+// .my-64 {
+//  margin: 64px 0;
+// }
+
 .icon {
   min-width: 16px;
   width: 16px;
@@ -44,4 +52,22 @@
   align-self: flex-start;
   font-size: 1.2rem;
   max-width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.header-absolute {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  color: $light;
+  h1 {
+    color: $light;
+  }
 }

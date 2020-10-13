@@ -31,7 +31,7 @@
               {% capture img_id_class %}ProductImage-{{ image.id }}{% endcapture %}
               {% capture img_wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
               {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-              {% render 'image-style' with image: image, small_style: false, width: 700, height: 800, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
+              {% include 'image-style' with image: image, small_style: false, width: 700, height: 800, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
 
               <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper product-single__photo-wrapper--featured-product supports-js{% unless featured_image == image %} hide{% endunless%}" data-image-id="{{ image.id }}">
                 <div style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
@@ -62,7 +62,7 @@
           {% comment %}
             Optionally show the 'compare at' or original price of the product.
           {% endcomment %}
-          {% render 'product-price', variant: current_variant %}
+          {% include 'product-price', variant: current_variant %}
 
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
             <div class="product-single__policies rte">
@@ -169,7 +169,7 @@
         </a>
 
         {% if section.settings.show_share_buttons %}
-          {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+          {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
         {% endif %}
       </div>
     </div>
