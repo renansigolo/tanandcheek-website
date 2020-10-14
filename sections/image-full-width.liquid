@@ -1,37 +1,41 @@
 <div {{ block.shopify_attributes }}>
-  {%- if block.settings.image != blank -%}
-    {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }}
+  {%- if section.settings.image != blank -%}
+    <!-- {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }} -->
+    <img src="{{ section.settings.image | img_url: '1600x330' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
   {%- else -%}
-    <img src="https://placeholder.pics/svg/1600x330" alt="Image Placeholder">
+    <img src="https://placeholder.pics/svg/1600x330" alt="Image Placeholder" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
   {%- endif -%}
 </div>
 
+
+
 {% schema %}
+
 {
   "name": "Image Full Width",
-  "blocks": [
+  "settings": [
     {
-      "type": "image_full_width",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
+      "type":      "range",
+      "id":        "image_height",
+      "min":       10,
+      "max":       100,
+      "step":      10,
+      "unit":      "vh",
+      "label":     "Image Height",
+      "default":   40
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     }
   ],
   "presets": [
     {
       "name": "Image Full Width",
-      "category": "Image",
-      "blocks": [
-        {
-          "type": "image_full_width"
-        }
-      ]
+      "category": "Advanced layout"
     }
   ]
 }
+
 {% endschema %}
