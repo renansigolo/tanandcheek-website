@@ -1,14 +1,38 @@
 /* Product Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-button#AddToCart--product-template {
-  .btn {
-    height: 44px
-  }
-}
-
 #ProductSection--product-template {
   margin-top: 115px
+}
+.product-single__add-to-cart {
+  .btn {
+    min-height: 44px !important;
+    max-height: 60px !important;
+    &--secondary-accent {
+      box-shadow: $card-1;
+      border: 1px solid $dark-gray;
+    }
+  }
+
+}
+.product-single__title {
+  margin-bottom: 32px;
+}
+
+.product-single__price,
+.product-single__policies {
+  color: $text-gray;
+  font-weight: 500;
+}
+
+.product-single__policies {
+  margin: 8px 0;
+}
+
+.hr--small {
+  margin: 0 auto 32px 0;
+  width: 180px;
+  border-color: $orange;
 }
 
 .single-option-radio label {
@@ -34,5 +58,45 @@ button#AddToCart--product-template {
   }
   &__price {
     color: $dark-gray;
+  }
+}
+
+.product-single__description {
+  button {
+    color: $dark-gray;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    border-bottom: 1px solid $dark-gray;
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0 0 16px 0;
+  }
+}
+
+.accordion {
+  cursor: pointer;
+  padding: 8px 0;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 1s;
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  align-items: baseline;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+
+  p {
+    padding: 16px 8px 0 8px;
   }
 }
