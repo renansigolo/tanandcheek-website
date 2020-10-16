@@ -1,0 +1,68 @@
+{%- assign collection = collections[section.settings.collection] -%}
+{%- assign products = collection.products -%}
+
+<style>
+  .collection-row {
+    background-color: {{ section.settings.bg_color }};
+  }
+</style>
+
+<div id="collection-row" class="collection-row" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      <h2 class="collection-row__title">{{ collection.title | escape }}</h2>
+    </div>
+
+    <div class="row">      
+      {%- for product in products -%}
+        <div class="three columns">
+          <div class="product">
+            <a href="{{ product.url }}">
+              <div class="product__details">
+                <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image | img_alt }}">
+                <p class="product__title">{{ product.title }}</h6>
+                <p class="product__price">{{ product.price | money }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Limit the display of products to 4 -->
+        {% if forloop.index == 4 %}
+        {% break %}
+        {% endif %}
+
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+  "name": "Collection Row",
+  "class": "shopify-section--full-width",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f9fafc"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Make sure that there are at least 4 items in collection, of which all are available to buy (ie, have stock)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Row",
+      "category": "Advanced layout"
+    }
+  ]
+}
+
+{% endschema %}
