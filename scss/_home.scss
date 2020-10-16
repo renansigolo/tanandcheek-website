@@ -44,11 +44,12 @@
   .row {
     margin: 100px 0;
     display: flex;
-    @media screen and (max-width: $desktop) {
-      display: block;
-    }
     min-height: 700px;
     align-items: center;
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+    
     .columns {
       align-self: stretch;
       flex: 1;
@@ -58,7 +59,7 @@
         }
       }
       &:nth-child(2) {
-        @include desktop {
+        @include tablet {
           display: flex;
           flex-direction: column;
           margin-left: 10px;
@@ -70,23 +71,24 @@
       }
 
       .feat__card {
-        @media screen and (max-width: $desktop) {
+        flex: 1;
+        @media screen and (max-width: $tablet) {
           margin-top: 8px;
         }
-        flex: 1;
+        
         a {
           color: #fff;
           position: relative;
           img {
             height: 100%;
             vertical-align: bottom;
-            @media screen and (max-width: $desktop) {
-              height: 350px;
-            }
             width: 100%;
             object-fit: cover;
             object-position: center;
-            border-radius: 6px;
+            border-radius: 8px;
+            @media screen and (max-width: $tablet) {
+              height: 350px;
+            }
           }
           .feat__details {
             position: absolute;
@@ -95,7 +97,7 @@
             padding: 0 16px 16px 16px;
             text-align: right;
             max-width: 500px;
-            @include desktop {
+            @include tablet {
               padding: 40px;
             }
             h3 {

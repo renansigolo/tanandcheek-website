@@ -1,26 +1,28 @@
 {%- if section.blocks.size > 0 -%}
-<div class="cards-grid">
-  <div class="grid-{{ section.settings.grid_size }}">
-    {%- for block in section.blocks -%}
-      <div class="card" {{ block.shopify_attributes }}>
-        <div class="card__content">
-          {%- if block.settings.title != blank -%}
-            <h4 class="card__title">{{ block.settings.title }}</h4>
-          {%- endif -%}
-
-          {%- if block.settings.description != blank -%}
-            <p class="card__description">{{ block.settings.description }}</p>
+<div class="container">
+  <div class="cards-grid">
+    <div class="grid-{{ section.settings.grid_size }}">
+      {%- for block in section.blocks -%}
+        <div class="card" {{ block.shopify_attributes }}>
+          <div class="card__content">
+            {%- if block.settings.title != blank -%}
+              <h4 class="card__title">{{ block.settings.title }}</h4>
+            {%- endif -%}
+  
+            {%- if block.settings.description != blank -%}
+              <p class="card__description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+  
+          {%- if block.settings.link != blank -%}
+            <div class="card__footer">
+              <div></div>
+              <a href="{{ block.settings.link }}" class="btn">Track an order</a>
+            </div>
           {%- endif -%}
         </div>
-
-        {%- if block.settings.link != blank -%}
-          <div class="card__footer">
-            <div></div>
-            <a href="{{ block.settings.link }}" class="btn">Track an order</a>
-          </div>
-        {%- endif -%}
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
+    </div>
   </div>
 </div>
 {%- endif -%}

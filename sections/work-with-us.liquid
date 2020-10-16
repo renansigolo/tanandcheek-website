@@ -1,0 +1,98 @@
+<div class="work-with-us" {{ block.shopify_attributes }}>
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        {% unless section.settings.title == blank %}
+          <h3>{{ section.settings.title | escape }}</h3>
+        {% endunless %}
+        
+        {% unless section.settings.description == blank %}
+          <p>{{ section.settings.description | escape }}</p>
+        {% endunless %}
+
+        {% unless section.settings.btn_link == blank %}
+          <a href="{{ section.settings.btn_link }}" class="btn">
+            {{ section.settings.btn_text }}
+          </a>
+        {% endunless %}
+      </div>
+      <div class="three columns">
+        {% unless section.settings.image_square_1 == blank %}
+          <div class="image-wrapper">
+            {{ section.settings.image_square_1 | img_url: '512x512' | img_tag: section.settings.image_square_1.alt }}
+            <p>Become a Stockist</p>
+          </div>
+        {% endunless %}
+      </div>
+      <div class="three columns">
+        {% unless section.settings.image_square_2 == blank %}
+        <div class="image-wrapper">
+          {{ section.settings.image_square_2 | img_url: '512x512' | img_tag: section.settings.image_square_2.alt }}
+          <p>Become a Brand Ambassador</p>
+        </div>
+        {% endunless %}
+      </div>
+    </div>
+    <div class="row">
+      {%- unless section.settings.image_full_width == blank -%}
+        <img src="{{ section.settings.image_full_width | img_url: '1600x330' }}" style="object-fit: cover; width: 100%; height: 330px;">
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+
+{
+  "name": "Work with us",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Work With Us"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_square_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_square_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_full_width",
+      "label": "Full Width Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Work with us",
+      "category": "Advanced layout"
+    }
+  ]
+}
+
+{% endschema %}
