@@ -150,8 +150,8 @@ there.
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   place-items: center;
 
   @include desktop {

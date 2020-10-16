@@ -1,0 +1,107 @@
+<div id="shop-the-look" class="shop-the-look" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      <div class="one column">
+        <h2 class="shop-the-look__title">{{ section.settings.title }}</h2>
+      </div>
+      <div class="five columns">
+        {{ section.settings.image | img_url: '750x915' | img_tag: section.settings.image.alt }}    
+      </div>
+      <div class="six columns">
+        <h3>{{ section.settings.section_title }}</h3>
+        <p>{{ section.settings.section_description }}</p>
+        {% for block in section.blocks %}
+          <div class="card">
+            <img src="https://placeholder.pics/svg/224x176" alt="">
+
+            <div class="card__content">
+              <div class="inner-content">
+                <h4>Title</h4>
+                <span>Price</span>
+              </div>
+  
+              <p>Lorem ipsum dolor sit amet, consetetur  sadipscing elitr sed diam nonumy eirmod tempor invidunt.</p>
+            </div>
+            
+          </div>
+        {% endfor %}
+
+        <a href="#" class="btn">Add to cart</a>
+        <!-- {%- assign current_variant = product.selected_or_first_available_variant -%} -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+  "name": "Shop the look",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop the look"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Summertime Madness"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_product",
+      "name": "Featured Product",
+        "settings": [
+        {
+          "type":  "product",
+          "id":    "product",
+          "label": "Featured Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the look",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "featured_product"
+        },
+        {
+          "type": "featured_product"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

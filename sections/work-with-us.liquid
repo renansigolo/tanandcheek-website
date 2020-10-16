@@ -16,22 +16,19 @@
           </a>
         {% endunless %}
       </div>
+
+      {%- for block in section.blocks -%}
       <div class="three columns">
-        {% unless section.settings.image_square_1 == blank %}
+        {% unless block.settings.image_square == blank %}
           <div class="image-wrapper">
-            {{ section.settings.image_square_1 | img_url: '512x512' | img_tag: section.settings.image_square_1.alt }}
-            <p>Become a Stockist</p>
+            <a href="mailto:info@tanandcheek.com?Subject={{ block.settings.text }}">
+            {{ block.settings.image_square | img_url: '512x512' | img_tag: block.settings.image_square.alt }}
+            <p>{{ block.settings.text }}</p>
+          </a>
           </div>
         {% endunless %}
       </div>
-      <div class="three columns">
-        {% unless section.settings.image_square_2 == blank %}
-        <div class="image-wrapper">
-          {{ section.settings.image_square_2 | img_url: '512x512' | img_tag: section.settings.image_square_2.alt }}
-          <p>Become a Brand Ambassador</p>
-        </div>
-        {% endunless %}
-      </div>
+      {%- endfor -%}
     </div>
     <div class="row">
       {%- unless section.settings.image_full_width == blank -%}
@@ -47,6 +44,7 @@
 
 {
   "name": "Work with us",
+  "max_blocks": 2,
   "settings": [
     {
       "type": "text",
@@ -73,24 +71,40 @@
     },
     {
       "type": "image_picker",
-      "id": "image_square_1",
-      "label": "Image 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_square_2",
-      "label": "Image 2"
-    },
-    {
-      "type": "image_picker",
       "id": "image_full_width",
       "label": "Full Width Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image Block",
+      "type": "image_block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_square",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
     }
   ],
   "presets": [
     {
       "name": "Work with us",
-      "category": "Advanced layout"
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "image_block"
+        },
+        {
+          "type": "image_block"
+        }
+      ]
     }
   ]
 }

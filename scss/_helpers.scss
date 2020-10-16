@@ -1,9 +1,5 @@
 /* Helper Classes
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.shopify-section {
-  margin-top: 0 !important;
-}
-
 .todo {
   min-height: 10vh;
   text-align: center;
@@ -16,9 +12,13 @@
   text-transform: uppercase;
 }
 
-/* Overwrites default .wrapper theme class */
+/* Overwrites default theme classes */
 .wrapper {
   max-width: 1640px !important;
+}
+
+.shopify-section {
+  margin-top: 0 !important;
 }
 
 .drawer__close {
@@ -36,10 +36,6 @@
 .max-w-500 {
   max-width: 500px;
 }
-
-// .my-64 {
-//  margin: 64px 0;
-// }
 
 .icon {
   min-width: 16px;

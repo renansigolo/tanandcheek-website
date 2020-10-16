@@ -1,8 +1,31 @@
 /* Global Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+/* Highlighted Links */
+.highlighted-links {
+  margin-bottom: 32px;
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8px 0;
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    a {
+      font-weight: 600;
+      padding: 8px 0;
+    }
+  }
+}
+
 /* Cards Section */
 .cards-grid {
+  margin: 32px 0;
+  
   .card {
     display: flex;
     flex-direction: column;
@@ -187,6 +210,7 @@
 .work-with-us {
   h3 {
     margin-bottom: 8px;
+    font-weight: 600;
   }
 
   .six {
@@ -218,25 +242,6 @@
   }
 }
 
-/* Highlighted Links */
-.highlighted-links {
-  .flex {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 8px 0;
-    @include desktop {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    a {
-      font-weight: 600;
-      padding: 8px 0;
-    }
-  }
-}
-
 /* Collection Row */
 .collection-row {
   padding: 32px 0;
@@ -262,5 +267,68 @@
     &__price {
       color: $text-gray;
     }
+  }
+}
+
+/* Shop the look */
+.shop-the-look {
+  margin: 64px 0;
+  &__title {
+    @include desktop {
+      text-orientation: sideways;
+      writing-mode: vertical-lr;
+    }
+  }
+
+  .card {
+    background-color: $light-gray;
+    border-radius: 8px;
+    box-shadow: $card-2;
+    height: 180px;
+    margin: 8px 0;
+    display: flex;
+    // overflow: auto;
+
+    img {
+      height: auto;
+      max-height: inherit;
+      border-radius: 8px;
+      max-width: 40%;
+      object-fit: cover;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: 8px;
+
+      .inner-content {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        h4 {
+          font-weight: inherit;
+          margin-right: 16px;
+        }
+
+        span {
+          color: $text-gray;
+        }
+      }
+    }
+  }
+}
+
+.two-columns-section {
+  margin: 32px auto;
+  .title {
+   margin-bottom: 8px;
+  }
+  .content {
+    column-count: 2;
+    margin-bottom: 32px;
   }
 }

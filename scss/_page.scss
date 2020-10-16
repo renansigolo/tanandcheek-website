@@ -2,9 +2,13 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .page {
+  h1 {
+    margin-bottom: 16px;
+  }
+
   &__header {
     min-height: 40vh;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,9 +21,8 @@
 
   &__content {
     margin-bottom: 32px;
+    @include desktop {
+      max-width: 70%;
+    }
   }
-}
-
-#CollectionSection {
-  
 }
