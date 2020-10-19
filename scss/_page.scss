@@ -27,7 +27,18 @@
   }
 }
 
-.contact-form {
+.contact-form-section {
   background-color: $bg-light-gray;
   padding: 32px 0;
+  margin: 64px auto;
+
+  h4 {
+    color: $orange;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
 }
