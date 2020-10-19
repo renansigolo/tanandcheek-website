@@ -23,20 +23,45 @@
 }
 
 /* Cards Section */
-.cards-grid {
+.cards {
+  padding: 64px 0;
   margin: 32px 0;
-  
+
+  .heading {
+    font-weight: 600;
+  }
+}
+
+.cards-grid {
+  margin: 32px 0;  
   .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding: 32px;
     background-color: $light-gray;
     border-radius: 8px;
     box-shadow: $card-2;
+    min-width: 100%;
+    min-height: 200px;
+    height: 100%;
 
-    // &__content {
-    // }
+    &__background {
+      position: relative;
+      font-size: 25rem;
+      color: #f2642230;
+      font-family: Montserrat;
+      font-weight: 600;
+      top: 58px;
+      left: -16px;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // margin-top: -32px;
+      min-height: 100%;
+    }
     &__title {
       font-weight: 700;
     }
@@ -51,8 +76,7 @@
     }
     &__footer {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-end;
 
       .icon-star-solid {
         color: $dark;

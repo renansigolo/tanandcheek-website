@@ -1,37 +1,73 @@
 {%- if section.blocks.size > 0 -%}
+<style>
+  .cards {
+    background-color: {{ section.settings.bg_color }};
+  }
+</style>
 <div class="container">
+  {% unless section.settings.cards_heading == blank %}  
+    <h5 class="heading">{{ section.settings.cards_heading | escape }}</h5>
+  {% endunless %}
   <div class="cards-grid">
     <div class="grid-{{ section.settings.grid_size }}">
       {%- for block in section.blocks -%}
         <div class="card" {{ block.shopify_attributes }}>
-          <div class="card__content">
-            {%- if block.settings.title != blank -%}
+          {%- if section.settings.show_bg_numbers -%}
+            <span class="card__background">{{ forloop.index }}</span>
+          {%- endif -%}
+          <div class="card__content" {% if section.settings.show_bg_numbers %}style="margin: -32px 0 0 32px;"{% endif %}>
+            <div>
+              {%- if block.settings.title != blank -%}
               <h4 class="card__title">{{ block.settings.title }}</h4>
             {%- endif -%}
-  
+
             {%- if block.settings.description != blank -%}
               <p class="card__description">{{ block.settings.description }}</p>
             {%- endif -%}
-          </div>
-  
-          {%- if block.settings.link != blank -%}
-            <div class="card__footer">
-              <div></div>
-              <a href="{{ block.settings.link }}" class="btn">Track an order</a>
             </div>
-          {%- endif -%}
+            
+            {%- if block.settings.link != blank -%}
+              <div class="card__footer">
+                <a href="{{ block.settings.link }}" class="btn">{{ block.settings.btn_card_text }}</a>
+              </div>
+            {%- endif -%}
+          </div>
+            
         </div>
       {%- endfor -%}
     </div>
   </div>
+  {%- unless section.settings.btn_url == blank -%}
+  <div class="row u-pull-right">
+    <a href="{{ section.settings.btn_url}}" class="btn">{{ section.settings.btn_text}}</a>
+  </div>
+  {%- endunless -%}
 </div>
 {%- endif -%}
 
 {% schema %}
 {
   "name": "Cards",
+  "class": "cards",
   "max_blocks": 8,
   "settings": [
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#f9fafc"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bg_numbers",
+      "default": false,
+      "label": "Show Background Numbers"
+    },
+    {
+      "type": "text",
+      "id": "cards_heading",
+      "label": "Heading"
+    },
     {
       "type":      "range",
       "id":        "grid_size",
@@ -40,6 +76,17 @@
       "step":      1,
       "label":     "Cards per row",
       "default":   2
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "info": "Optional",
+      "label": "CTA Button"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "CTA Button Link"
     }
   ],
   "blocks": [
@@ -58,6 +105,12 @@
           "id": "description",
           "label": "Card Description",
           "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut. Nullam et sem efficitur nisi eleifend rutrum sit amet sed diam. Nullam dictum justo ut felis fermentum, et rhoncus massa venenatis. Ut diam enim, iaculis id arcu pretium, vehicula pharetra quam. Curabitur non egestas odio."
+        },
+        {
+          "type": "text",
+          "id": "btn_card_text",
+          "label": "Card Button",
+          "info": "Optional"
         },
         {
           "type": "url",
