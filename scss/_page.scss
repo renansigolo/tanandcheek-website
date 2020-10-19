@@ -20,9 +20,10 @@
   }
 
   &__content {
+    color: $darker-gray;
     margin-bottom: 32px;
     @include desktop {
-      max-width: 70%;
+      max-width: 50%;
     }
   }
 }
@@ -41,4 +42,10 @@
   textarea {
     min-height: 120px;
   }
+}
+
+.hr-page {
+    border-bottom: 3px solid $darker-gray;
+    width: 40%;
+    padding-top: 16px;
 }
