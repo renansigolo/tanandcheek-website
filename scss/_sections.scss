@@ -403,3 +403,51 @@
     }
   }
 }
+
+/* General FAQ */
+.general-faq {
+  &__sidebar {
+    border-bottom: 1px solid $dark-gray;
+    margin-bottom: 64px;
+
+    h3 {
+      font-weight: 600;
+    }
+  }
+
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: $dark;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid $dark-gray;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      .icon {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  .question {
+    border-bottom: 2px solid $orange;
+    padding: 8px 0;
+    margin-top: 40px;
+
+    &__title {
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    a {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
