@@ -160,6 +160,7 @@
   background-color: unset;
 
   form {
+    background-color: $light;
     max-width: unset;
   }
 
@@ -322,6 +323,7 @@
   }
 }
 
+/* General Text Section */
 .text-section {
   margin: 32px auto;
   .title {
@@ -334,5 +336,21 @@
   .col-3 {
     column-count: 3;
     margin-bottom: 32px;
+  }
+}
+
+/* Featured Banner */
+.featured-banner {
+  .section {
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+  }
+
+  .content {
+    padding: 8px;
+    h3 {
+      font-weight: 700;
+    }
   }
 }

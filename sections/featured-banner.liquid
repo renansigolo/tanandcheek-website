@@ -1,0 +1,56 @@
+<div class="featured-banner">
+  <div class="container">
+    <div class="section" style="background-image: url({{ section.settings.bg_image | img_url: '1920x1080' }})">
+      <div class="grid-2">
+        <div></div>
+        <div class="content">
+          <h3>{{ section.settings.title }}</h3>
+          <p>{{ section.settings.description }}</p>
+          <a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.btn_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type":      "text",
+      "id":        "title",
+      "label":     "Title",
+      "default":   "Feature Headline"
+    },
+    {
+      "type":      "textarea",
+      "id":        "description",
+      "label":     "Description",
+      "default":   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et  dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
+    },
+    {
+      "type":      "text",
+      "id":        "btn_text",
+      "label":     "Banner button text",
+      "default":   "Start Shopping"
+    },
+    {
+      "type":      "url",
+      "id":        "btn_url",
+      "label":     "Banner button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Banner",
+      "category": "Advanced layout"
+    }
+  ]
+}
+{% endschema %}
