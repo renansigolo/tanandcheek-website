@@ -1,0 +1,119 @@
+<div class="sale-promotion" {{ block.shopify_attributes }}>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="six columns">
+        {% unless section.settings.title == blank %}
+          <h3>{{ section.settings.title | escape }}</h3>
+        {% endunless %}
+        
+        {% unless section.settings.description == blank %}
+          <p>{{ section.settings.description | escape }}</p>
+        {% endunless %}
+
+        {% unless section.settings.btn_link == blank %}
+          <a href="{{ section.settings.btn_link }}" class="btn">
+            {{ section.settings.btn_text }}
+          </a>
+        {% endunless %}
+      </div>
+
+      {%- for block in section.blocks -%}
+      <div class="three columns">
+        {% unless block.settings.image_square == blank %}
+          <div class="image-wrapper">
+            <a href="mailto:info@tanandcheek.com?Subject={{ block.settings.text }}">
+            {{ block.settings.image_square | img_url: '512x512' | img_tag: block.settings.image_square.alt }}
+            <p>{{ block.settings.text }}</p>
+          </a>
+          </div>
+        {% endunless %}
+      </div>
+      {%- endfor -%}
+    </div>
+    <div class="row">
+      {%- unless section.settings.image_full_width == blank -%}
+        <img src="{{ section.settings.image_full_width | img_url: '1600x330' }}" style="object-fit: cover; width: 100%; height: 330px;">
+      {%- endunless -%}
+    </div>
+  </div> -->
+  <!-- <div class="container"> -->
+    <div class="grid container">
+      <div class="div1">
+        <div class="div1__content">
+          {% unless section.settings.title == blank %}
+            <h2>{{ section.settings.title | escape }}</h2>
+          {% endunless %}
+
+          {% unless section.settings.description == blank %}
+            <p>{{ section.settings.description | escape }}</p>
+          {% endunless %}
+
+          {% unless section.settings.btn_link == blank %}
+            <a href="{{ section.settings.btn_link }}" class="btn">
+              {{ section.settings.btn_text }}
+            </a>
+          {% endunless %}
+        </div>
+      </div>
+      <div class="div2">
+        {%- unless section.settings.image_small == blank -%}
+          <img src="{{ section.settings.image_small | img_url: '675x530' }}">
+        {%- endunless -%}
+      </div>
+      <div class="div3">
+        {%- unless section.settings.image_big == blank -%}
+          <img src="{{ section.settings.image_big | img_url: '950x930' }}">
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+{% schema %}
+
+{
+  "name": "Sale Promotion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Sale Promotion"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_small",
+      "label": "Small Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_big",
+      "label": "Big Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sale Promotion",
+      "category": "Advanced layout"
+    }
+  ]
+}
+
+{% endschema %}

@@ -25,6 +25,11 @@
   margin-left: 0 !important;
 }
 
+.collection-collage__item-wrapper .collection-grid__item-overlay,
+.collection-collage__item-wrapper .collection-grid__item-overlay::after {
+  border-radius: 8px;
+}
+
 .drawer__close {
   button {
     border: none;
@@ -72,5 +77,15 @@
   color: $light-gray;
   h1 {
     color: $light-gray;
+  }
+}
+
+.header-relative {
+  position: relative;
+  top: 20%;
+  left: 5%;
+  color: $dark;
+  h1 {
+    color: $dark-gray;
   }
 }

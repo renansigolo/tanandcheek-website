@@ -118,7 +118,7 @@
           {% comment %}
             Add default products to help with onboarding for collections/all only
           {% endcomment %}
-          {% render 'onboarding-featured-products' -%}
+          {% include 'onboarding-featured-products' -%}
         {%- else -%}
           {% comment %}
             If collection exists but is empty, display message
@@ -130,34 +130,26 @@
       {%- endfor -%}
 
     </div>
-  
-  <!-- GRID Display -->
   {%- elsif section.settings.collection_products_grid == 'grid' -%}
-    <div class="container">
-      <div class="grid-4">
-        <!-- {%- assign grid_item_width = 'medium--one-half large--one-third' -%} -->
-        {%- for product in collection.products -%}
-          {%- include 'product-grid-item-custom' -%}
-          <!-- Limit the display of products to 4 -->
-          {% if forloop.index == 8 %}
-          {% break %}
-          {% endif %}
+    <div class="grid-uniform">
+      {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
+      {%- for product in collection.products -%}
+        {%- include 'product-grid-item' -%}
+      {%- else -%}
+        {%- if collection.handle == 'all' -%}
+          {% comment %}
+            Add default products to help with onboarding for collections/all only
+          {% endcomment %}
+          {%- include 'onboarding-featured-products' -%}
         {%- else -%}
-          {%- if collection.handle == 'all' -%}
-            {% comment %}
-              Add default products to help with onboarding for collections/all only
-            {% endcomment %}
-            {%- include 'onboarding-featured-products' -%}
-          {%- else -%}
-            {% comment %}
-              If collection exists but is empty, display message
-            {% endcomment %}
-            <div class="grid__item text-center">
-              <p>{{ 'collections.general.no_matches' | t }}</p>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
+          {% comment %}
+            If collection exists but is empty, display message
+          {% endcomment %}
+          <div class="grid__item text-center">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
     </div>
   {%- endif -%}
 
@@ -173,6 +165,7 @@
 {% schema %}
 {
   "name": {
+    "cs": "Stránky s kolekcemi",
     "da": "Kollektionssider",
     "de": "Kategorieseiten",
     "en": "Collection pages",
@@ -185,10 +178,13 @@
     "ko": "컬렉션 페이지",
     "nb": "Samlingssider",
     "nl": "Collectiepagina's",
+    "pl": "Strony kolekcji",
     "pt-BR": "Páginas de coleções",
     "pt-PT": "Páginas de coleções",
     "sv": "Produktseriesidor",
     "th": "หน้าคอลเลกชัน",
+    "tr": "Koleksiyon sayfaları",
+    "vi": "Trang bộ sưu tập",
     "zh-CN": "产品系列页面",
     "zh-TW": "商品系列頁面"
   },
@@ -197,6 +193,7 @@
       "type": "checkbox",
       "id": "show_collection_image",
       "label": {
+        "cs": "Zobrazit obrázek kolekce",
         "da": "Vis kollektionsbillede",
         "de": "Kategorie-Foto anzeigen",
         "en": "Show collection image",
@@ -209,10 +206,13 @@
         "ko": "컬렉션 이미지 표시",
         "nb": "Vis samlingsbilde",
         "nl": "Collectieafbeelding weergeven",
+        "pl": "Pokaż obraz kolekcji",
         "pt-BR": "Exibir imagem da coleção",
         "pt-PT": "Mostrar imagem da coleção",
         "sv": "Visa produktseriebilder",
         "th": "แสดงรูปภาพคอลเลกชัน",
+        "tr": "Koleksiyon görselini göster",
+        "vi": "Hiển thị hình ảnh bộ sưu tập",
         "zh-CN": "显示产品系列图片",
         "zh-TW": "顯示商品系列圖片"
       },
@@ -222,6 +222,7 @@
       "type": "checkbox",
       "id": "collection_sort_enable",
       "label": {
+        "cs": "Povolit řazení kolekcí",
         "da": "Aktivér sortering af kollektioner",
         "de": "Kategoriesortierung aktivieren",
         "en": "Enable collection sorting",
@@ -234,10 +235,13 @@
         "ko": "컬렉션 정렬 사용",
         "nb": "Aktiver sortering av samlinger",
         "nl": "Sorteren op collectie inschakelen",
+        "pl": "Włącz sortowanie kolekcji",
         "pt-BR": "Habilitar a organização de coleções",
         "pt-PT": "Ativar ordenação de coleção",
         "sv": "Aktivera produktseriesortering",
         "th": "เปิดใช้การเรียงลำดับคอลเลกชัน",
+        "tr": "Koleksiyon sıralamayı etkinleştir",
+        "vi": "Bật phân loại bộ sưu tập",
         "zh-CN": "启用产品系列排序",
         "zh-TW": "啟用商品系列排序功能"
       }
@@ -246,6 +250,7 @@
       "type": "checkbox",
       "id": "collection_tags_enable",
       "label": {
+        "cs": "Povolit filtrování podle štítku",
         "da": "Aktivér tagfiltrering",
         "de": "Tag-Filtern erlauben",
         "en": "Enable tag filtering",
@@ -258,10 +263,13 @@
         "ko": "태그 필터링 사용",
         "nb": "Aktiver taggfiltrering",
         "nl": "Filteren op tags inschakelen",
+        "pl": "Włącz filtrowanie tagów",
         "pt-BR": "Habilitar filtragem de tag",
         "pt-PT": "Ativar filtragem por etiqueta",
         "sv": "Aktivera taggfiltrering",
         "th": "เปิดใช้การกรองแท็ก",
+        "tr": "Etiket filtrelemeyi etkinleştir",
+        "vi": "Bật lọc thẻ",
         "zh-CN": "启用标签筛选",
         "zh-TW": "啟用標籤篩選功能"
       }
@@ -269,6 +277,7 @@
     {
       "type": "header",
       "content": {
+        "cs": "Produkty",
         "da": "Produkter",
         "de": "Produkte",
         "en": "Products",
@@ -281,10 +290,13 @@
         "ko": "제품",
         "nb": "Produkter",
         "nl": "Producten",
+        "pl": "Produkty",
         "pt-BR": "Produtos",
         "pt-PT": "Produtos",
         "sv": "Produkter",
         "th": "สินค้า",
+        "tr": "Ürünler",
+        "vi": "Sản phẩm",
         "zh-CN": "产品",
         "zh-TW": "產品"
       }
@@ -293,6 +305,7 @@
       "type": "select",
       "id": "collection_products_grid",
       "label": {
+        "cs": "Styl mřížky",
         "da": "Gittertypografi",
         "de": "Rasterstil",
         "en": "Grid style",
@@ -305,10 +318,13 @@
         "ko": "그리드 스타일",
         "nb": "Rutenettstil",
         "nl": "Rasterstijl",
+        "pl": "Styl siatki",
         "pt-BR": "Estilo da grade",
         "pt-PT": "Estilo da grelha",
         "sv": "Rutnätsstil",
         "th": "สไตล์กริด",
+        "tr": "Izgara stili",
+        "vi": "Kiểu lưới",
         "zh-CN": "网格样式",
         "zh-TW": "網格樣式"
       },
@@ -316,6 +332,7 @@
         {
           "value": "collage",
           "label": {
+            "cs": "Koláž",
             "da": "Collage",
             "de": "Collage",
             "en": "Collage",
@@ -328,10 +345,13 @@
             "ko": "콜라주",
             "nb": "Fotomontasje",
             "nl": "Collage",
+            "pl": "Kolaż",
             "pt-BR": "Colagem",
             "pt-PT": "Colagem",
             "sv": "Kollage",
             "th": "ภาพตัดแปะ",
+            "tr": "Kolaj",
+            "vi": "Ghép",
             "zh-CN": "拼贴画",
             "zh-TW": "拼貼"
           }
@@ -339,6 +359,7 @@
         {
           "value": "grid",
           "label": {
+            "cs": "Mřížka",
             "da": "Gitter",
             "de": "Raster",
             "en": "Grid",
@@ -351,10 +372,13 @@
             "ko": "그리드",
             "nb": "Rutenett",
             "nl": "Raster",
+            "pl": "Siatka",
             "pt-BR": "Grade",
             "pt-PT": "Grelha",
             "sv": "Rutnät",
             "th": "กริด",
+            "tr": "Izgara",
+            "vi": "Lưới",
             "zh-CN": "网格",
             "zh-TW": "網格"
           }
@@ -365,8 +389,9 @@
       "type": "checkbox",
       "id": "product_vendor_enable",
       "label": {
+        "cs": "Zobrazit dodavatele produktu",
         "da": "Vis produktleverandør",
-        "de": "Produktverkäufer anzeigen",
+        "de": "Produktanbieter anzeigen",
         "en": "Show product vendor",
         "es": "Mostrar proveedor del producto",
         "fi": "Näytä tuotteen myyjä",
@@ -377,10 +402,13 @@
         "ko": "제품 공급 업체 표시",
         "nb": "Vis produktleverandør",
         "nl": "Productleverancier weergeven",
+        "pl": "Pokaż dostawcę produktu",
         "pt-BR": "Exiba o fornecedor do produto",
         "pt-PT": "Mostrar o fornecedor do produto",
         "sv": "Visa produktsäljare",
         "th": "แสดงผู้ขายสินค้า",
+        "tr": "Ürün satıcısını göster",
+        "vi": "Hiển thị nhà cung cấp sản phẩm",
         "zh-CN": "显示产品厂商",
         "zh-TW": "顯示產品廠商"
       }
