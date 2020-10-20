@@ -1,17 +1,19 @@
 {%- if section.blocks.size > 0 -%}
 <div class="container">
-  <h5>Customer Review</h5>
+  <h5>{{ section.settings.title }}</h5>
   <div class="cards-grid">
       <div class="grid-{{ section.settings.grid_size }}">
         {%- for block in section.blocks -%}
-          <div class="card" {{ block.shopify_attributes }}>
+          <div class="card" style="justify-content: center;" {{ block.shopify_attributes }}>
             <div class="card__content">
-              {%- if block.settings.title != blank -%}
+              <div>
+                {%- if block.settings.title != blank -%}
                 <h6 class="card__title">{{ block.settings.title }}</h6>
               {%- endif -%}
               {%- if block.settings.subtitle != blank -%}
                 <h6 class="card__subtitle">{{ block.settings.subtitle }}</h6>
               {%- endif -%}
+              </div>
 
               {%- if block.settings.description != blank -%}
                 <p class="card__description">{{ block.settings.description }}</p>
@@ -19,7 +21,7 @@
             </div>
 
             {% if block.settings.ratings != 0 or block.settings.link != blank %}
-              <div class="card__footer">
+              <div class="card__footer" style="justify-content: space-between; padding-bottom: 8xp;">
               {%- if block.settings.ratings >= 0 -%}
                 <div>
                 {% for i in (1..block.settings.ratings) %}
@@ -48,6 +50,12 @@
   "class": "customer-reviews-section",
   "max_blocks": 9,
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Customer Reviews"
+    },
     {
       "type":      "range",
       "id":        "grid_size",

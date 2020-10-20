@@ -130,26 +130,34 @@
       {%- endfor -%}
 
     </div>
+  
+  <!-- GRID Display -->
   {%- elsif section.settings.collection_products_grid == 'grid' -%}
-    <div class="grid-uniform">
-      {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
-      {%- for product in collection.products -%}
-        {%- include 'product-grid-item' -%}
-      {%- else -%}
-        {%- if collection.handle == 'all' -%}
-          {% comment %}
-            Add default products to help with onboarding for collections/all only
-          {% endcomment %}
-          {%- include 'onboarding-featured-products' -%}
+    <div class="container">
+      <div class="grid-4">
+        <!-- {%- assign grid_item_width = 'medium--one-half large--one-third' -%} -->
+        {%- for product in collection.products -%}
+          {%- include 'product-grid-item-custom' -%}
+          <!-- Limit the display of products to 4 -->
+          {% if forloop.index == 8 %}
+          {% break %}
+          {% endif %}
         {%- else -%}
-          {% comment %}
-            If collection exists but is empty, display message
-          {% endcomment %}
-          <div class="grid__item text-center">
-            <p>{{ 'collections.general.no_matches' | t }}</p>
-          </div>
-        {%- endif -%}
-      {%- endfor -%}
+          {%- if collection.handle == 'all' -%}
+            {% comment %}
+              Add default products to help with onboarding for collections/all only
+            {% endcomment %}
+            {%- include 'onboarding-featured-products' -%}
+          {%- else -%}
+            {% comment %}
+              If collection exists but is empty, display message
+            {% endcomment %}
+            <div class="grid__item text-center">
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
   {%- endif -%}
 
