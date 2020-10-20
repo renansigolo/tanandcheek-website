@@ -2,28 +2,32 @@
   <div class="container">
     <div class="row">
       <div class="one column">
-        <h2 class="shop-the-look__title">{{ section.settings.title }}</h2>
+        <!-- <h2 class="shop-the-look__title">{{ section.settings.title }}</h2> -->
+        <h2 class="shop-the-look__title">SHOP <span>the look</span></h2>
       </div>
       <div class="five columns">
         {{ section.settings.image | img_url: '750x915' | img_tag: section.settings.image.alt }}    
       </div>
       <div class="six columns">
-        <h3>{{ section.settings.section_title }}</h3>
+        <h3>Summertime <span>Madness</span></h3>
+        <!-- <h3>{{ section.settings.section_title }}</h3> -->
         <p>{{ section.settings.section_description }}</p>
         {% for block in section.blocks %}
-          <div class="card">
-            <img src="https://placeholder.pics/svg/224x176" alt="">
-
+        {%- assign product = all_products[block.settings.product] -%}
+        <a href="{{ product.url }}">
+          <div class="card">            
+            <img src="{{ product.featured_image | img_url }}" alt="">
             <div class="card__content">
               <div class="inner-content">
-                <h4>Title</h4>
-                <span>Price</span>
+                <h4>{{ product.title }}</h4>
+                <span>{{ product.price | money }}</span>
               </div>
   
-              <p>Lorem ipsum dolor sit amet, consetetur  sadipscing elitr sed diam nonumy eirmod tempor invidunt.</p>
+              <p>{{ product.description }}</p>
             </div>
             
           </div>
+        </a>
         {% endfor %}
 
         <a href="#" class="btn">Add to cart</a>
@@ -44,7 +48,7 @@
       "type": "text",
       "id": "title",
       "label": "Title",
-      "default": "Shop the look"
+      "default": "Shop the look (not active)"
     },
     {
       "type": "image_picker",
@@ -55,7 +59,7 @@
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
-      "default": "Summertime Madness"
+      "default": "Summertime Madness (not active)"
     },
     {
       "type": "textarea",
