@@ -329,14 +329,22 @@
             </div>
   
             <div class="product-single__description rte" itemprop="description">
-                <button class="accordion">Description</button>
+                <button class="accordion">
+                  Description
+                  {% include 'icon-plus-solid' %}
+                  {% include 'icon-minus-solid' %}
+                </button>
                 <div class="panel">
                   <p>{{ product.description }}</p>
                 </div>
 
                 {%- for block in section.blocks -%}
                 {%- if block.settings.title != blank -%}
-                <button class="accordion">{{ block.settings.title }}</button>
+                <button class="accordion">
+                  {{ block.settings.title }}
+                  {% include 'icon-plus-solid' %}
+                  {% include 'icon-minus-solid' %}
+                </button>
                 {%- endif -%}
                 {%- if block.settings.description != blank -%}
                 <div class="panel">

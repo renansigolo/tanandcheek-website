@@ -91,6 +91,24 @@
   align-items: baseline;
 }
 
+// Toggle Button Appearance
+button.accordion.active {
+  .icon-plus-solid {
+    display: none;
+  }
+  .icon-minus-solid {
+    display: block;
+  }
+}
+button.accordion {
+  .icon-plus-solid {
+    display: block;
+  }
+  .icon-minus-solid {
+    display: none;
+  }
+}
+
 .panel {
   max-height: 0;
   overflow: hidden;
@@ -104,4 +122,8 @@
 // Buy Now Button
 .shopify-payment-button__button--unbranded {
   border-radius: 4px !important;
+}
+
+.return-link {
+  color: $dark;
 }
