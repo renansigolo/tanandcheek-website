@@ -1,11 +1,6 @@
 <!-- /templates/page.liquid -->
 <section class="page">
-  <div class="page__header container">
-    <h1>{{ page.title }}</h1>
-    <div class="page__content">
-      {{ page.content }}
-    </div>
-  </div>
+  {% include 'page-header' %}
 
   {% section 'product-featured-row' %} 
   

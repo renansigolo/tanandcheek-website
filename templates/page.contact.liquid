@@ -1,12 +1,7 @@
 <!-- /templates/page.contact.liquid -->
 
 <section class="page">
-  <div class="page__header container">
-    <h1>{{ page.title }}</h1>
-    <div class="page__content">
-      {{ page.content }}
-    </div>
-  </div>
+    {% include 'page-header' %}
 
     {% section 'frequent-questions' %}
 

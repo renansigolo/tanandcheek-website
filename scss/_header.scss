@@ -5,7 +5,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 1;
-  background-color: #e6e6e621;
+  // background-color: #e6e6e621;
   &.scrolled {
     transition: 0.2s ease-in;
     background-color: $light;
@@ -70,7 +70,7 @@ header {
     }
     a {
       padding: 0;
-      color: $dark-gray;
+      color: $dark;
       text-transform: capitalize;
       font-size: 2rem;
       @media screen and (max-width: 1200px) {
