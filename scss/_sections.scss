@@ -188,11 +188,22 @@
     max-width: unset;
   }
 
+  
   &__card {
     border-radius: 8px;
     box-shadow: $card-2;
     @include desktop {
       max-height: 400px;
+    }
+    .seven {
+      line-height: 0em;
+
+      img {
+        border-radius: 8px 8px 0 0;
+        @include desktop {
+          border-radius: 8px 0 0 8px;
+        }
+      }
     }
   }
 
@@ -567,4 +578,10 @@
       }
   }
 }
- 
+
+/* Contact Form */
+.contact-form {
+  img {
+    border-radius: 8px;
+  }
+}

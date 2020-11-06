@@ -69,9 +69,9 @@
       "newsletter": {
         "type": "newsletter",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Stay_Connected_2.png",
           "heading": "Stay connected",
-          "subheading": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br>sed diam nonumy eirmod tempor invidunt ut labore et <br>dolore magna aliquyam erat, sed diam voluptua. At vero <br>eos et accusam et justo.<\/p>"
+          "subheading": "<p>Subscribe to be the first to hear about exclusive sales, discounts and new bikini releases.<\/p><p>We hate spam as much as you do, if you don&#x27;t like what we send you, opt out at anytime <\/p>"
         }
       },
       "header": {
@@ -79,12 +79,11 @@
         "settings": {
           "transparent_header_enable": true,
           "main_menu_link_list": "main-menu",
-          "drawer_bottom_link_list": "footer",
-          "drawer_search_enable": false,
+          "drawer_bottom_link_list": "",
+          "drawer_search_enable": true,
           "show_announcement": false,
           "home_page_only": true,
           "text": "Announce something here",
-          "link": "",
           "color_bg": "#000000",
           "color_text": "#ffffff"
         }
@@ -92,7 +91,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_link_list": "footer-full-menu",
+          "footer_link_list": "footer",
           "footer_email": "info@tanandcheek.com"
         }
       },
@@ -119,22 +118,22 @@
           "1602645567564": {
             "type": "description_content",
             "settings": {
-              "title": "Fabric and Care",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo nulla, pulvinar a varius a, hendrerit ac lectus. Maecenas aliquam turpis quis dui luctus, vel placerat nisl pulvinar."
+              "title": "Fabric + Care",
+              "description": "Tan + Cheek bikinis are made from high quality synthetic materials to provide that sexy second skin fit. Tan + Cheek recommends hand washing your bikini in cold water + drying on a flat surface, to keep the colour and sexy shape."
             }
           },
           "1602645817090": {
             "type": "description_content",
             "settings": {
-              "title": "Shipping and Handling",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo nulla, pulvinar a varius a, hendrerit ac lectus. Maecenas aliquam turpis quis dui luctus, vel placerat nisl pulvinar."
+              "title": "Free Worldwide Shipping",
+              "description": "Tan + Cheek wants all our customers to get their new bikini as fast as possible. To make this happen we provide free worldwide express shipping on all bikinis, no minimum spend here. We have partnered with local + global shipping providers, including DHL, FEDEX, USPS, AusPost + many more, to make sure you receive your new Tan + Cheek bikini as quickly as possible."
             }
           },
           "1602645827040": {
             "type": "description_content",
             "settings": {
-              "title": "Return Policy",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo nulla, pulvinar a varius a, hendrerit ac lectus. Maecenas aliquam turpis quis dui luctus, vel placerat nisl pulvinar."
+              "title": "Free 100 Day Worldwide Returns",
+              "description": "Tan + Cheek knows returning online orders can be difficult + expensive. We want our customers to have a simple and free way to return any unloved bikinis. To make this possible we provide 100 days from the date of order for you to decide if you love your new bikini. If you don't love your bikini then use our Returns page to complete the returns process and send back the bikini for free and receieve a full refund."
             }
           }
         },
@@ -147,11 +146,11 @@
         "settings": {
           "zoom_enable": true,
           "social_sharing_products": false,
-          "product_vendor_enable": true,
+          "product_vendor_enable": false,
           "image_layout": "thumbnails",
           "quantity_enabled": false,
           "product_selector": "radio",
-          "enable_payment_button": false,
+          "enable_payment_button": true,
           "add_to_cart_button_size": "small"
         }
       },
@@ -163,65 +162,21 @@
             "settings": {
               "sub-heading": "Born in Australia"
             }
-          },
-          "1584604734944": {
-            "type": "text",
-            "settings": {
-              "sub-heading": "Designed in ColOmbia"
-            }
-          },
-          "1584604748575": {
-            "type": "text",
-            "settings": {
-              "sub-heading": "Made in Bali"
-            }
           }
         },
         "block_order": [
-          "1584604712879",
-          "1584604734944",
-          "1584604748575"
+          "1584604712879"
         ],
         "settings": {
-          "title": "A Nice Heading",
-          "link": "#",
-          "linktext": "Button",
-          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/tan-cheek__hero.mp4?v=1584612222",
-          "banner": ""
-        }
-      },
-      "1584672063606": {
-        "type": "featured-collections__homepage",
-        "blocks": {
-          "1584672073401": {
-            "type": "collection",
-            "settings": {
-              "collection": "one-piece"
-            }
-          },
-          "1584672083121": {
-            "type": "collection",
-            "settings": {
-              "collection": "tops"
-            }
-          },
-          "1584672091156": {
-            "type": "collection",
-            "settings": {
-              "collection": "bottoms"
-            }
-          }
-        },
-        "block_order": [
-          "1584672073401",
-          "1584672083121",
-          "1584672091156"
-        ],
-        "settings": {
+          "title": "Luxe Minimalist Bikini Heaven",
+          "link": "shopify:\/\/collections",
+          "linktext": "Shop Now",
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/Home_Page_Lounge_v1_1080p.mp4?v=1603863314"
         }
       },
       "1584938948381": {
         "type": "staff-picks",
+        "disabled": true,
         "settings": {
           "collection": "staff-picks-summer-2020",
           "button-text": "Shop Now"
@@ -233,28 +188,28 @@
           "1602041729069-0": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
-              "icon_color": "#aaaaaa",
-              "title": "100% Money Back Guarantee",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+              "icon_name": "icon-shipment-world",
+              "icon_color": "#000000",
+              "title": "Free Worldwide Express Shipping",
+              "text": "Complimentary worldwide express shipping on all purchases"
             }
           },
           "1602041729069-1": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
-              "icon_color": "#aaaaaa",
-              "title": "Free Express Shipping",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+              "icon_name": "icon-shipment-world",
+              "icon_color": "#000000",
+              "title": "Free 100 Day Worldwide Returns",
+              "text": "Complimentary 100 day \nworldwide return shipping on all purchases"
             }
           },
           "1602042296031": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
-              "icon_color": "#aaaaaa",
-              "title": "Peace of Mind Guarantee",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+              "icon_name": "icon-rating",
+              "icon_color": "#000000",
+              "title": "100% Satisfaction Guarantee",
+              "text": "Don't love your bikini? Return it for free + receive a full refund, no questions asked"
             }
           }
         },
@@ -294,44 +249,17 @@
           "1602470937605": {
             "type": "inner_section",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/About_Us_Page_-_Born_in_Australia_2_png.png",
               "layout": "right",
               "text_alignment": "left",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "1602470965701": {
-            "type": "inner_section",
-            "settings": {
-              "image": "",
-              "layout": "left",
-              "text_alignment": "right",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "1602470968503": {
-            "type": "inner_section",
-            "settings": {
-              "image": "",
-              "layout": "right",
-              "text_alignment": "left",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-              "button_label": "",
-              "button_link": ""
+              "title": "Born in Australia",
+              "text": "<p>Yep that&#x27;s right, where from the land downunder, sun, sand and fun on some of the best beaches in the world. Tan + Cheek is the creation of Rowena + James, passionate minimalist bikini lovers, beach goers and all round have a go Aussie&#x27;s from Sydney, Australia.<\/p><p><\/p><p>Tan + Cheek is born from the desire of wanting to provide high quality minimalist bikinis. We&#x27;re 100% committed to that purpose which is backed by Free 100 Day Worldwide Returns. You can return your bikini for any reason + we will provide a full refund. You focus on being bikini gorgeous, we&#x27;ve got everything else covered babe.<\/p>",
+              "button_label": ""
             }
           }
         },
         "block_order": [
-          "1602470937605",
-          "1602470965701",
-          "1602470968503"
+          "1602470937605"
         ],
         "settings": {
         }
@@ -342,29 +270,25 @@
           "1602219033385": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-poses-in-front-of-a-large-window.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Bikini_Styles_1_png.png"
             }
           },
           "1602219035817": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/woman-watches-waves.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Bikini_-_Miami_1_png.png"
             }
           },
           "1602219036670": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/woman-in-polka-dot-dress.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Bikini_-_Copacabana_5_png.png"
             }
           },
           "1602219037568": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-posing-at-carnival.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Bikini_-_Aruba_2_png.png"
             }
           }
         },
@@ -375,7 +299,7 @@
           "1602219037568"
         ],
         "settings": {
-          "title": "#tanandcheek",
+          "title": "Tag @tanandcheek on Instagram to be featured",
           "image_size": "300px"
         }
       },
@@ -386,6 +310,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -395,6 +320,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -404,6 +330,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -413,6 +340,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -422,6 +350,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -431,6 +360,7 @@
             "type": "card_list",
             "settings": {
               "title": "Customer Name",
+              "subtitle": "Product Name",
               "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed rhoncus ante. Suspendisse posuere laoreet nunc, a finibus tellus dictum ut.",
               "ratings": 5,
               "link": "#"
@@ -446,6 +376,7 @@
           "1602219216704"
         ],
         "settings": {
+          "title": "Customer Reviews",
           "grid_size": 3
         }
       },
@@ -453,7 +384,8 @@
         "type": "product-recommendations",
         "settings": {
           "show_product_recommendations": true,
-          "heading": "You Might Like"
+          "bg_color": "#f9fafc",
+          "heading": "You Will Love"
         }
       },
       "icons-row": {
@@ -462,28 +394,28 @@
           "1602219259760": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
+              "icon_name": "icon-shipment-world",
               "icon_color": "#000000",
-              "title": "Title",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna."
+              "title": "Free Worldwide Express Shipping",
+              "text": "Complimentary worldwide express shipping on all purchases"
             }
           },
           "1602219262305": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
+              "icon_name": "icon-shipment-world",
               "icon_color": "#000000",
-              "title": "Title",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna."
+              "title": "Free 100 Day Worldwide Returns",
+              "text": "Complimentary 100 day \nworldwide return shipping on all purchases"
             }
           },
           "1602219263909": {
             "type": "text-item",
             "settings": {
-              "icon_name": "icon-envelope-open-solid",
+              "icon_name": "icon-rating",
               "icon_color": "#000000",
-              "title": "Title",
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna."
+              "title": "100% Satisfaction Guarantee",
+              "text": "Don't love your bikini? Return it for free + receive a full refund, no questions asked"
             }
           }
         },
@@ -503,29 +435,25 @@
           "1602469387647-0": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-poses-in-front-of-a-large-window.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Home_Page_-_Instagram_1_png.png"
             }
           },
           "1602469387647-1": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/woman-in-polka-dot-dress.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Home_Page_-_Instagram_2_png.png"
             }
           },
           "1602469387647-2": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/woman-watches-waves.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Home_Page_-_Instagram_3_png.png"
             }
           },
           "1602469387647-3": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-posing-at-carnival.jpg",
-              "link": ""
+              "image": "shopify:\/\/shop_images\/Home_Page_-_Instagram_5_png.png"
             }
           }
         },
@@ -536,7 +464,7 @@
           "1602469387647-3"
         ],
         "settings": {
-          "title": "#tanandcheek",
+          "title": "Tag @tanandcheek on Instagram to be featured",
           "image_size": "300px"
         }
       },
@@ -551,15 +479,441 @@
         "type": "image-full-width",
         "settings": {
           "image_height": 50,
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-14_at_2.59.42_pm.png"
+          "image": "shopify:\/\/shop_images\/Collections_One_Piece_Page_-_Full_Banner_png.png"
+        }
+      },
+      "work-with-us": {
+        "type": "work-with-us",
+        "blocks": {
+          "1602822596233": {
+            "type": "image_block",
+            "settings": {
+              "image_square": "shopify:\/\/shop_images\/About_Us_Page_-_Work_With_Us_1_png.png",
+              "text": "Become a Brand Ambassador"
+            }
+          },
+          "1602822614455": {
+            "type": "image_block",
+            "settings": {
+              "image_square": "shopify:\/\/shop_images\/About_Us_Page_-_Work_With_Us_2_png.png",
+              "text": "Become a Stockist"
+            }
+          }
+        },
+        "block_order": [
+          "1602822596233",
+          "1602822614455"
+        ],
+        "settings": {
+          "title": "Work With Us",
+          "description": "Tan + Cheek loves luxe minimalist bikinis, if you do too + want to work with us, be it a collaborator, influencer, media or stockist then contact us to discuss further.",
+          "btn_text": "",
+          "image_full_width": "shopify:\/\/shop_images\/About_Us_Page_-_Work_with_Us_Banner_png.png"
+        }
+      },
+      "1602809347883": {
+        "type": "highlighted_links",
+        "blocks": {
+          "1602809347883-0": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Free Worldwide Express Shipping",
+              "link": "#"
+            }
+          },
+          "1602809347883-1": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Free 100 Day Worldwide Returns",
+              "link": "#"
+            }
+          },
+          "1602809347883-2": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Buy Now. Pay Later. with  Afterpay | Zip | Sezzle",
+              "link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1602809347883-0",
+          "1602809347883-1",
+          "1602809347883-2"
+        ],
+        "settings": {
+          "text_color": "#f26522",
+          "bg_color": "#f0f0f0"
+        }
+      },
+      "1602815575114": {
+        "type": "shop-the-look",
+        "disabled": true,
+        "blocks": {
+          "1602816563102": {
+            "type": "featured_product",
+            "settings": {
+              "product": "bottoms-3"
+            }
+          },
+          "1602816567643": {
+            "type": "featured_product",
+            "settings": {
+              "product": "bottoms-8"
+            }
+          }
+        },
+        "block_order": [
+          "1602816563102",
+          "1602816567643"
+        ],
+        "settings": {
+          "title": "Shop the look",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-16_at_2.32.17_pm.png",
+          "section_title": "Summertime Madness",
+          "section_description": "This section is to be hidden until we have completed the photoshoot and can include images on shop the look.",
+          "btn_text": "To be updated",
+          "btn_url": "#"
+        }
+      },
+      "1602819775183": {
+        "type": "featured-collections-grid",
+        "blocks": {
+          "1602819783067": {
+            "type": "collection",
+            "settings": {
+              "collection": "one-piece"
+            }
+          },
+          "1602819797214": {
+            "type": "collection",
+            "settings": {
+              "collection": "tops"
+            }
+          },
+          "1602819803021": {
+            "type": "collection",
+            "settings": {
+              "collection": "bottoms"
+            }
+          }
+        },
+        "block_order": [
+          "1602819783067",
+          "1602819797214",
+          "1602819803021"
+        ],
+        "settings": {
+        }
+      },
+      "1602819844529": {
+        "type": "featured-collection-row",
+        "disabled": true,
+        "settings": {
+          "bg_color": "#f9fafc",
+          "collection": "new-arrivals"
+        }
+      },
+      "highlighted_links": {
+        "type": "highlighted_links",
+        "blocks": {
+          "1602823008070": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Free Worldwide Express Shipping",
+              "link": "#"
+            }
+          },
+          "1602823009331": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Free 100 Day Worldwide Returns",
+              "link": "#"
+            }
+          },
+          "1602823010073": {
+            "type": "highlighted_link",
+            "settings": {
+              "text": "Buy Now. Pay Later. with  Afterpay | Zip | Sezzle",
+              "link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1602823008070",
+          "1602823009331",
+          "1602823010073"
+        ],
+        "settings": {
+          "text_color": "#f26522",
+          "bg_color": "#f0f0f0"
+        }
+      },
+      "cards": {
+        "type": "cards",
+        "blocks": {
+          "1602822959006": {
+            "type": "card_block",
+            "settings": {
+              "title": "One",
+              "description": "All bikinis come with a 100 day from purchase \"love it or return it\" promise. All returns receive a full refund, no questions asked, we also offer the options of exchange or store credit.",
+              "btn_card_text": ""
+            }
+          },
+          "1602822963358": {
+            "type": "card_block",
+            "settings": {
+              "title": "Two",
+              "description": "Click on the \"Lodge a Return\" button + process the return through our returns portal. Select the return reason e.g. wrong size, type of return e.g. refund + print the shipping label.",
+              "btn_card_text": ""
+            }
+          },
+          "1602822964134": {
+            "type": "card_block",
+            "settings": {
+              "title": "Three",
+              "description": "Pack the bikini securely, print + attach the shipping label + contact the shipping provider to arrange a collection time. Hand over the package to the shipping provider + await confirmation of receipt + refund.",
+              "btn_card_text": ""
+            }
+          },
+          "1602822965016": {
+            "type": "card_block",
+            "settings": {
+              "title": "Four",
+              "description": "Package arrives at Tan + Cheek HQ, Sydney, Australia. where a full refund will be issued, no questions asked. If you selected \"Exchange\" or \"Store Credit\", we will process the request + complete the return.",
+              "btn_card_text": ""
+            }
+          }
+        },
+        "block_order": [
+          "1602822959006",
+          "1602822963358",
+          "1602822964134",
+          "1602822965016"
+        ],
+        "settings": {
+          "bg_color": "#f9fafc",
+          "show_bg_numbers": false,
+          "cards_heading": "Returns Process",
+          "grid_size": 2,
+          "btn_text": "Lodge a return",
+          "btn_url": "#"
+        }
+      },
+      "featured-collections-grid": {
+        "type": "featured-collections-grid",
+        "blocks": {
+          "1602823180989": {
+            "type": "collection",
+            "settings": {
+              "collection": "one-piece"
+            }
+          },
+          "1602823189343": {
+            "type": "collection",
+            "settings": {
+              "collection": "tops"
+            }
+          },
+          "1602823194790": {
+            "type": "collection",
+            "settings": {
+              "collection": "bottoms"
+            }
+          }
+        },
+        "block_order": [
+          "1602823180989",
+          "1602823189343",
+          "1602823194790"
+        ],
+        "settings": {
+        }
+      },
+      "text-section": {
+        "type": "text-section",
+        "blocks": {
+          "1602826249380": {
+            "type": "text_block",
+            "settings": {
+              "title": "Returns Policy",
+              "text": "<p>Remove this section please.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1602826249380"
+        ],
+        "settings": {
+          "columns": 1
+        }
+      },
+      "featured-content": {
+        "type": "featured-content",
+        "settings": {
+          "home_page_full_width": true,
+          "section_title": "Cancelling or Changing Your Order",
+          "text": "<p>If you need to cancel or change your order, no problem babe! Contact us on cancellations@tanandcheek.com within 24 hours of making your order and if your order hasn’t shipped yet, we will change or refund your order in full. If your order has already shipped, just follow the returns process once your package arrives and we’ll refund your order, no questions asked.<\/p>",
+          "text_size": "medium"
+        }
+      },
+      "featured-banner": {
+        "type": "featured-banner",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Feature_Banner_png.png",
+          "title": "Love the Look",
+          "description": "Thin straps criss crossing the body, creating sexy shapes that lead the eyes to all the right places...Aruba the one piece that does all the talking, letting you look bikini gorgeous",
+          "btn_text": "Start Shopping",
+          "btn_url": "#"
+        }
+      },
+      "frequent-questions": {
+        "type": "frequent-questions",
+        "blocks": {
+          "1603074760916": {
+            "type": "section_block",
+            "settings": {
+              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_1_png.png",
+              "text": "General FAQ's",
+              "btn_link": "shopify:\/\/pages\/faqs"
+            }
+          },
+          "1603074838590": {
+            "type": "section_block",
+            "settings": {
+              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_2_png.png",
+              "text": "100% Satisfaction Guarantee",
+              "btn_link": "shopify:\/\/pages\/faqs"
+            }
+          },
+          "1603074860084": {
+            "type": "section_block",
+            "settings": {
+              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_3_png.png",
+              "text": "Sizing Chart",
+              "btn_link": "shopify:\/\/pages\/sizing-guide"
+            }
+          },
+          "1603074877160": {
+            "type": "section_block",
+            "settings": {
+              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_4_png_1.png",
+              "text": "Shipping",
+              "btn_link": "shopify:\/\/pages\/shipping-and-handling"
+            }
+          },
+          "1603074889269": {
+            "type": "section_block",
+            "settings": {
+              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_5_png.png",
+              "text": "Returns",
+              "btn_link": "shopify:\/\/pages\/returns"
+            }
+          }
+        },
+        "block_order": [
+          "1603074760916",
+          "1603074838590",
+          "1603074860084",
+          "1603074877160",
+          "1603074889269"
+        ],
+        "settings": {
+          "title": "Frequently Asked Questions",
+          "subtitle": ""
+        }
+      },
+      "general-faq": {
+        "type": "general-faq",
+        "blocks": {
+          "1603078629468": {
+            "type": "link_block",
+            "settings": {
+              "link_text": "Shipping",
+              "link_url": "shopify:\/\/pages\/shipping-and-handling"
+            }
+          },
+          "1603078643158": {
+            "type": "link_block",
+            "settings": {
+              "link_text": "Returns",
+              "link_url": "shopify:\/\/pages\/returns"
+            }
+          },
+          "1603078773105": {
+            "type": "link_block",
+            "settings": {
+              "link_text": "Size Guide",
+              "link_url": "shopify:\/\/pages\/sizing-guide"
+            }
+          },
+          "1603079309362": {
+            "type": "question_block",
+            "settings": {
+              "question_title": "100% Satisfaction Guarantee",
+              "question_description": "Tan + Cheek wants all of our customers to be in love with their new bikini, you should be finding excuses to wear it, not complaining about not loving the bikini. We believe in our purpose so much that we offer a 100% satisfaction guarantee on all bikinis, if you are not in love with your new bikini, all you have to do is return it for free within 100 days from your order, using the Returns page, and we will give you a full refund.",
+              "question_url": "shopify:\/\/pages\/returns"
+            }
+          },
+          "1603079859325": {
+            "type": "question_block",
+            "settings": {
+              "question_title": "Free Worldwide Express Shipping",
+              "question_description": "Tan + Cheek wants all our customers to get their new bikini as fast as possible. To make this happen we provide free worldwide express shipping on all bikinis, no minimum spend here. We have partnered with local + global shipping providers, including DHL, FEDEX, USPS, AusPost + many more, to make sure you receive your new Tan + Cheek bikini as quickly as possible.",
+              "question_url": "shopify:\/\/pages\/shipping-and-handling"
+            }
+          },
+          "1603079983529": {
+            "type": "question_block",
+            "settings": {
+              "question_title": "Free 100 Day Worldwide Returns",
+              "question_description": "Tan + Cheek knows returning online orders can be difficult + expensive. We want our customers to have a simple and free way to return any unloved bikinis. To make this possible we provide 100 days from the date of order for you to decide if you love your new bikini. If you don't love your bikini then use our Returns page to complete the returns process and send back the bikini for free and receieve a full refund.",
+              "question_url": "shopify:\/\/pages\/returns"
+            }
+          },
+          "1603081158997": {
+            "type": "question_block",
+            "settings": {
+              "question_title": "Quality + Care",
+              "question_description": "Tan + Cheek bikinis are made from high quality synthetic materials to provide that sexy second skin fit. Tan + Cheek recommends hand washing your bikini in cold water + drying on a flat surface, to keep the colour and sexy shape.",
+              "question_url": "shopify:\/\/pages\/sizing-guide"
+            }
+          }
+        },
+        "block_order": [
+          "1603078629468",
+          "1603078643158",
+          "1603078773105",
+          "1603079309362",
+          "1603079859325",
+          "1603079983529",
+          "1603081158997"
+        ],
+        "settings": {
+          "title": "General FAQ'S",
+          "description": "<p>Tan + Cheek bikinis are sexy, fun and all about having a great time. You won&#x27;t find the secrets to how we get our bikinis looking so instafabulous in this section. You will be able to get answers to the questions we get asked regularly<\/p>"
+        }
+      },
+      "sale-promotion": {
+        "type": "sale-promotion",
+        "settings": {
+          "title": "St Tropez Sexy Thing",
+          "description": "St Tropez one piece bikini bring out all your curves, amazing deep cleavage, thong popping ass, this one piece will make you one sexy thing. You focus on looking bikini gorgeous, we've got everything else covered babe",
+          "btn_text": "Buy Now",
+          "btn_link": "shopify:\/\/products\/st-tropez",
+          "image_small": "shopify:\/\/shop_images\/Collections_One_Piece_Page_-_Promotion_Item_1_png.png",
+          "image_big": "shopify:\/\/shop_images\/Collections_One_Piece_Page_-_Promotion_Item_2_png.png"
         }
       }
     },
     "content_for_index": [
       "1584604707985",
-      "1584672063606",
+      "1602809347883",
+      "1602819775183",
       "1584938948381",
       "1602469387647",
+      "1602815575114",
+      "1602819844529",
       "newsletter",
       "1602041729069"
     ]

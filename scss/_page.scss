@@ -7,12 +7,12 @@
   }
 
   &__header {
-    min-height: 40vh;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin: 10vh auto 2vh auto;
 
     @include desktop {
       align-items: start;
