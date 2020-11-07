@@ -5,7 +5,8 @@
 
   <div class="grid__item large--five-sixths push--large--one-twelfth">
 
-    <header class="section-header text-center">
+    <!-- /snippets/page-header.liquid -->
+    <div class="page__header container" style="margin-bottom: 64px;">
       <h1>
         {% if current_tags %}
           {{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}
@@ -13,12 +14,11 @@
           {{ blog.title }}
         {% endif %}
         <a href="{{ shop.url }}{{ blog.url }}.atom" class="icon-fallback-text rss-link">
-          <span class="icon icon-rss" aria-hidden="true"></span>
           <span class="fallback-text">RSS</span>
         </a>
+        <div class="hr-page"></div>
       </h1>
-      <hr class="hr--small">
-    </header>
+    </div>
 
     {% for article in blog.articles %}
 

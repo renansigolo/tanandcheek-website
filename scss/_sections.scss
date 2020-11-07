@@ -584,4 +584,16 @@
   img {
     border-radius: 8px;
   }
+
+  .btn {
+    color: $light;
+    background-color: $orange;
+    border: none;
+    
+    &:hover {
+      transition: background-color 0.15s ease-out;
+      background-color: #f58d5c;
+      color: var(--shopify-editor-setting-color_button_text);
+    }
+  }
 }

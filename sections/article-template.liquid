@@ -8,15 +8,13 @@
 <div class="grid">
   <article class="grid__item large--five-sixths push--large--one-twelfth article" itemscope itemtype="http://schema.org/Article">
 
-    <header class="section-header text-center">
+    <div class="page__header container" style="margin-bottom: 64px;">
       <h1>{{ article.title }}</h1>
-      <hr class="hr--small">
-      <p>
         <span class="date"><time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ article.published_at | date: format: 'date' }}</time></span>
-      </p>
-    </header>
+      <div class="hr-page"></div>
+    </div>
 
-    <div class="grid">
+    <div class="grid container">
       <div class="grid__item large--four-fifths push--large--one-tenth">
 
         <div class="rte rte--indented-images" itemprop="articleBody">
