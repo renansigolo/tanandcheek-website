@@ -1,7 +1,7 @@
 <div class="frequent-questions" {{ block.shopify_attributes }}>
   <div class="container">
     <div class="row">
-      <div class="twelve columns">
+      <div class="twelve columns frequent-questions__header">
         {% unless section.settings.title == blank %}
           <h3>{{ section.settings.title | escape }}</h3>
         {% endunless %}
@@ -13,7 +13,7 @@
     </div>
 
     <div class="row">
-      <div class="frequent-grid-3">
+      <div class="grid-3">
         {%- for block in section.blocks -%}
         <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
           {% unless block.settings.bg_image == blank %}

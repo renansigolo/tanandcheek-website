@@ -329,14 +329,18 @@
             </div>
   
             <div class="product-single__description rte" itemprop="description">
-                <button class="accordion">
+              <div>
+                <p class="description-title">Description</p>
+                <div class="description-content">{{ product.description }}</div>
+              </div>
+                <!-- <button>
                   Description
                   {% include 'icon-plus-solid' %}
                   {% include 'icon-minus-solid' %}
                 </button>
                 <div class="panel">
                   <p>{{ product.description }}</p>
-                </div>
+                </div> -->
 
                 {%- for block in section.blocks -%}
                 {%- if block.settings.title != blank -%}
@@ -348,6 +352,16 @@
                 {%- endif -%}
                 {%- if block.settings.description != blank -%}
                 <div class="panel">
+                  {%- unless block.settings.image == blank -%}
+                    <img src="{{ block.settings.image | img_url: '940x830' }}" style="object-fit: contain; width: 100%; height: auto;">
+                  {% endunless %}
+
+                  {% unless block.settings.btn_url == blank %}
+                    <a href="{{ block.settings.btn_url }}">
+                      {{ block.settings.btn_text }}
+                    </a>
+                  {% endunless %}
+
                   <p>{{ block.settings.description }}</p>
                 </div>
                 {%- endif -%}
@@ -810,6 +824,21 @@
           "type": "text",
           "id": "title",
           "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Url"
         },
         {
           "type": "textarea",

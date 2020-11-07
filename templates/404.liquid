@@ -1,7 +1,8 @@
 <!-- /templates/404.liquid -->
-
-<header class="section-header section-header--404 text-center">
+<div class="page__header section-header--404 container">
   <h1>{{ 'general.404.title' | t }}</h1>
-  <hr class="hr--small">
-  <p>{{ 'general.404.subtext_html' | t: link: routes.root_url }}</p>
-</header>
+  <div class="page__content">
+    <p>{{ 'general.404.subtext_html' | t: link: routes.root_url }}</p>
+    <div class="hr-page"></div>
+  </div>
+</div>

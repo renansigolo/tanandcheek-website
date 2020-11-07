@@ -51,6 +51,7 @@
         </div>
       </div>
     {%- endif -%}
+    <div class="hr-page"></div>
 
     <div class="grid--full collection-sorting{% if section.settings.collection_sort_enable %} collection-sorting--enabled{% endif %}">
       {%- if section.settings.collection_sort_enable -%}
@@ -131,7 +132,7 @@
 
     </div>
   {%- elsif section.settings.collection_products_grid == 'grid' -%}
-    <div class="grid-uniform">
+    <div class="grid-uniform" style="margin-top: 64px;">
       {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
       {%- for product in collection.products -%}
         {%- include 'product-grid-item' -%}

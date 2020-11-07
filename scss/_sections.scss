@@ -172,6 +172,10 @@
       display: flex;
       justify-content: space-between;
     }
+
+    &__item {
+      filter: brightness(0.98);
+    }
     .logo,
     .placeholder-svg {
       border-radius: 8px;
@@ -423,6 +427,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 8px;
+    filter: brightness(0.9);
   }
 
   .content {
@@ -435,24 +440,11 @@
 
 /* Frequent Question */
 .frequent-questions {
-  h3 {
-    font-weight: 700;
-  }
-
-  .frequent-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
-    place-items: center;
-  }
-
-  .grid-2 {
-      display: grid;
-      grid-template-columns: 4fr 4fr;
-      grid-column-gap: 8px;
-      grid-row-gap: 8px;
+  &__header {
+    margin-bottom: 24px;
+    h3 {
+      font-weight: 700;
+    }
   }
 
   .card {
@@ -467,6 +459,7 @@
     align-items: flex-end;
 
     margin-bottom: 16px;
+    filter: brightness(0.9);
 
     &__content {
       padding: 8px;

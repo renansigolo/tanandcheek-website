@@ -35,6 +35,10 @@
   border-color: $orange;
 }
 
+.product--image {
+  border-radius: 8px;
+}
+
 .single-option-radio label {
   border-radius: 25px;
   border: 1px solid $dark-gray;
@@ -62,6 +66,25 @@
 }
 
 .product-single__description {
+  .description-title {
+    color: #ccc;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccc;
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0 0 16px 0;
+    width: 100%;
+    font-family: "ITC Avant Garde Gothic",sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .description-content {
+    padding: 16px 8px 0 8px
+  }
+
   button {
     color: $dark-gray;
     text-transform: capitalize;
@@ -113,7 +136,6 @@ button.accordion {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
-
   p {
     padding: 16px 8px 0 8px;
   }

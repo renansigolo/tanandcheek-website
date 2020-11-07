@@ -11,6 +11,7 @@ header {
     background-color: $light;
     box-shadow: $card-1;
     z-index: 999999999;
+    top: 0;
 
     .site-nav {
       a {
@@ -116,4 +117,8 @@ header {
     width: 100%;
     align-self: center;
   }
+}
+
+.collection-hero__image-wrapper {
+  filter: brightness(0.9);
 }
