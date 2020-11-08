@@ -1,5 +1,5 @@
 <!-- /templates/collection.liquid -->
-{%- if section.settings.show_collection_image and collection.image -%}
+{%- if section.settings.show_collection_image -%}
   <div class="collection-hero">
     <noscript>
       <div class="collection-hero__image-no-js" style="background-image:url({{ collection.image | img_url: '2048x2048' }});"></div>
@@ -36,6 +36,8 @@
         alt="{{ collection.image.alt | escape }}">
     </div>
   </div>
+  {%- else -%}
+  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
 {%- endif -%}
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">

@@ -447,6 +447,16 @@
     }
   }
 
+  .card-wrapper {
+    width: 100%;
+
+    &:hover {
+      .card {
+        @extend %scale-card;
+      }
+    }
+  }
+
   .card {
     min-width: 100%;
     min-height: 180px;
@@ -460,7 +470,7 @@
 
     margin-bottom: 16px;
     filter: brightness(0.9);
-
+    box-shadow: $card-1;
     &__content {
       padding: 8px;
       display: inline-flex;
@@ -479,7 +489,11 @@
 .general-faq {
   &__sidebar {
     border-bottom: 1px solid $dark-gray;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
+
+    @include desktop {
+      margin-bottom: 40vh;
+    }
 
     h3 {
       font-weight: 600;
@@ -589,4 +603,8 @@
       color: var(--shopify-editor-setting-color_button_text);
     }
   }
+}
+
+#shopify-section-featured-content {
+  margin-bottom: 32px;
 }

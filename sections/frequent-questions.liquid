@@ -15,18 +15,18 @@
     <div class="row">
       <div class="grid-3">
         {%- for block in section.blocks -%}
+        {% unless block.settings.bg_image == blank %}
+        <a href="#{{ block.settings.text }}" class="card-wrapper">
         <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-          {% unless block.settings.bg_image == blank %}
-          <a href="#{{ block.settings.text }}">
             <div class="card__content">
                 {% unless block.settings.btn_link == blank %}
                   <span>{{ block.settings.text }}</span>
                   {% include 'icon-arrow-circle-right' %}
                 {% endunless %}
               </div>
-            </a>
-          {% endunless %}
-        </div>
+            </div>
+          </a>
+        {% endunless %}
         
         <!-- Limit the display of products to 4 -->
         {% if forloop.index == 3 %}
@@ -41,18 +41,18 @@
         {%- for block in section.blocks -%}
 
         {% if forloop.index > 3 %}
+        {% unless block.settings.bg_image == blank %}
+        <a href="#{{ block.settings.text }}" class="card-wrapper">
         <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-          {% unless block.settings.bg_image == blank %}
-          <a href="#{{ block.settings.text }}">
             <div class="card__content">
                 {% unless block.settings.btn_link == blank %}
                   <span>{{ block.settings.text }}</span>
                   {% include 'icon-arrow-circle-right' %}
                 {% endunless %}
               </div>
-            </a>
+            </div>
+          </a>
           {% endunless %}
-        </div>
         {% endif %}
 
         {%- endfor -%}

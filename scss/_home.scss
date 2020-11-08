@@ -79,6 +79,12 @@
         a {
           color: #fff;
           position: relative;
+
+          &:hover {
+            img {
+              @extend %scale-card;
+            }
+          }
           img {
             height: 100%;
             vertical-align: bottom;

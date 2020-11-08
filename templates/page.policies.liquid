@@ -1,0 +1,21 @@
+<!-- /templates/page.privacy.liquid -->
+<section class="page">
+  {% include 'page-header' %}
+  
+  {% section 'highlighted_links' %}
+
+  <div class="container">
+    {% assign page_url =  page.url | replace_first: 'pages', 'policies'  %}
+    {% for policy in shop.policies %}
+      {% if policy.url == page_url %}
+        {{ policy.body }}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% section 'text-section' %}
+
+  {% section 'newsletter' %}
+  
+  {% section 'icons-row' %}
+</section>

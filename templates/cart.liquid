@@ -9,10 +9,9 @@
 <div class="grid">
   <div class="grid__item large--five-sixths push--large--one-twelfth">
     {% if cart.item_count > 0 %}
-      <header class="section-header text-center">
-        <h1 class="text-center">{{ 'cart.general.title' | t }}</h1>
-        <hr class="hr--small">
-      </header>
+      <div class="section-header" style="margin-top: 128px;">
+        <h1>{{ 'cart.general.title' | t }}</h1>
+      </div>
 
       <form action="{{ routes.cart_url }}" method="post" novalidate class="cart">
 
@@ -218,13 +217,15 @@
       {% comment %}
         The cart is empty
       {% endcomment %}
-      <header class="section-header text-center">
-        <h1 class="text-center">{{ 'cart.general.title' | t }}</h1>
-        <hr class="hr--small">
-        <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
-        <p class="cart--continue-browsing">{{ 'cart.general.continue_browsing_html' | t: link: routes.all_products_collection_url }}</p>
-        <p class="cookie-message">{{ 'cart.general.cookies_required' | t }}</p>
-      </header>
+      <div class="page__header container">
+        <h1>{{ 'cart.general.title' | t }}</h1>
+        <div class="page__content">
+          <div class="hr-page"></div>
+          <p class="cart--empty-message" style="margin-top: 64px;">{{ 'cart.general.empty' | t }}</p>
+          <p class="cart--continue-browsing">{{ 'cart.general.continue_browsing_html' | t: link: routes.all_products_collection_url }}</p>
+          <p class="cookie-message">{{ 'cart.general.cookies_required' | t }}</p>
+        </div>
+      </div>
 
     {% endif %}
   </div>

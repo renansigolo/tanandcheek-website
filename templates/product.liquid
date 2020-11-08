@@ -6,8 +6,7 @@
 {% section 'product-template' %}
 
 {% if collection %}
-  <hr class="hr--clear">
-  <div class="text-center">
+  <div class="text-center" style="margin: 64px auto;">
     <a href="{{ collection.url }}" class="return-link">&larr; {{ 'products.general.collection_return' | t: collection: collection.title }}</a>
   </div>
 {% endif %}

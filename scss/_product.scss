@@ -27,6 +27,14 @@
 
 .product-single__policies {
   margin: 8px 0;
+  .text-link {
+    border-bottom: none;
+    
+    &:hover {
+      border-bottom: none;
+      font-weight: bold;
+    }
+  }
 }
 
 .hr--small {
