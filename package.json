@@ -5,15 +5,13 @@
   "main": "index.js",
   "scripts": {
     "deploy": "theme deploy --allow-live",
-    "watch": "node-sass scss/custom.scss assets/custom.css --watch --output-style compressed",
+    "watch": "sass --watch --style=compressed scss/custom.scss:assets/custom.css",
     "start": "theme watch --allow-live",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "node-sass": "^4.14.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "normalize.css": "^8.0.1"
   }
