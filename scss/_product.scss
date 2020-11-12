@@ -162,9 +162,15 @@ button.accordion {
   border-radius: 0;
   color: #fff;
   background-color: #e80970;
-  top: 0;
   left: unset;
-  right: 25%;
+  position: relative;
+  top: 20px;
+  right: 35vw;
+
+  @include desktop {
+    top: 0;
+    right: 8vw;
+  }
 }
 
 #shopify-section-product-recommendations .grid-product__on-sale {

@@ -100,6 +100,7 @@
     {%- endif -%}
   </div>
 
+<div class="container">
   {%- if section.settings.collection_products_grid == 'collage' -%}
     <div class="grid grid-collage">
       {% comment %}
@@ -159,6 +160,7 @@
   {%- if paginate.pages > 1 -%}
     {%- include 'pagination' -%}
   {%- endif -%}
+</div>
 
   {%- endpaginate -%}
 </div>
