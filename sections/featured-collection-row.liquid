@@ -20,7 +20,7 @@
             <a href="{{ product.url }}">
               <div class="product__details">
                 <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image | img_alt }}">
-                <p class="product__title">{{ product.title }}</h6>
+                <h6 class="product__title">{{ product.title }}</h6>
                 <p class="product__price">{{ product.price | money }}</p>
               </div>
             </a>

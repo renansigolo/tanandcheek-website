@@ -157,3 +157,16 @@ button.accordion {
 .return-link {
   color: $dark;
 }
+
+.grid-product__on-sale {
+  border-radius: 0;
+  color: #fff;
+  background-color: #e80970;
+  top: 0;
+  left: unset;
+  right: 25%;
+}
+
+#shopify-section-product-recommendations .grid-product__on-sale {
+  right: 5%;
+}

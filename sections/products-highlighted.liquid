@@ -1,0 +1,61 @@
+{%- assign collection = collections[section.settings.collection] -%}
+{%- assign products = collection.products -%}
+
+<style>
+  .row-background {
+    background-color: {{ section.settings.bg_color }};
+  }
+</style>
+
+<div id="product-highlight" class="row-background" data-section-id="{{ section.id }}">
+  <div class="container">      
+    <!-- Limit the display of products to 4 -->
+    <div class="products">
+      {%- for product in products -%}
+            {% if forloop.index < 7 %}
+            <div class="product-{{ forloop.index }} bg-image" style="background-image: url({{ product.featured_image | img_url: 'master' }});">
+              <a href="{{ product.url }}">
+              <div class="product__details">
+                  <h6 class="product__title">{{ product.title }}</h6>
+                  <p class="product__price">{{ product.price | money }}</p>
+                </div>
+              </a>
+              </div>
+            {% endif %}
+
+            {% if forloop.index == 6 %}
+            {% break %}
+            {% endif %}
+          {%- endfor -%}
+        </div>
+    </div>
+  </div>
+
+{% schema %}
+
+{
+  "name": "Products Highlighted",
+  "class": "shopify-section--full-width",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f9fafc"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Make sure that there are at least 6 items in collection, of which all are available to buy (ie, have stock)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Highlighted",
+      "category": "Advanced layout"
+    }
+  ]
+}
+
+{% endschema %}
