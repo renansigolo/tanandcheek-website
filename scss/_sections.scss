@@ -469,7 +469,8 @@
     align-items: flex-end;
 
     margin-bottom: 16px;
-    filter: brightness(0.9);
+    background-color: #00000005;
+    // filter: brightness(0.9);
     box-shadow: $card-1;
     &__content {
       padding: 8px;
