@@ -72,7 +72,10 @@
     color: $dark-gray;
   }
 }
-
+.product-single__photo,
+.product-single__thumb {
+  border-radius: $radius;
+}
 .product-single__description {
   .description-title {
     color: #ccc;
@@ -103,6 +106,12 @@
     font-size: 2rem;
     font-weight: 500;
     padding: 0 0 16px 0;
+  }
+}
+
+.vtl-pb-main-widget__product-checkbox {
+  input {
+    display: none !important;
   }
 }
 

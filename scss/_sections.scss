@@ -589,6 +589,9 @@
 
 /* Contact Form */
 .contact-form {
+  .form-success {
+    border-radius: $radius;
+  }
   img {
     border-radius: 8px;
   }

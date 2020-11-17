@@ -83,70 +83,70 @@
               <ul class="no-bullets social-icons">
                 {% if settings.social_facebook_link != blank %}
                   <li>
-                    <a href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+                    <a href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}" target="_blank">
                       <span class="icon icon-facebook" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_twitter_link != blank %}
                   <li>
-                    <a href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+                    <a href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}" target="_blank">
                       <span class="icon icon-twitter" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_pinterest_link != blank %}
                   <li>
-                    <a href="{{ settings.social_pinterest_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
+                    <a href="{{ settings.social_pinterest_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}" target="_blank">
                       <span class="icon icon-pinterest" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_instagram_link != blank %}
                   <li>
-                    <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+                    <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}" target="_blank">
                       <span class="icon icon-instagram" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_snapchat_link != blank %}
                   <li>
-                    <a href="{{ settings.social_snapchat_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
+                    <a href="{{ settings.social_snapchat_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}" target="_blank">
                       <span class="icon icon-snapchat" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_google_plus_link != blank %}
                   <li>
-                    <a href="{{ settings.social_google_plus_link | escape }}" rel="publisher" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Google Plus' }}">
+                    <a href="{{ settings.social_google_plus_link | escape }}" rel="publisher" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Google Plus' }}" target="_blank">
                       <span class="icon icon-google_plus" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_tumblr_link != blank %}
                   <li>
-                    <a href="{{ settings.social_tumblr_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
+                    <a href="{{ settings.social_tumblr_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}" target="_blank">
                       <span class="icon icon-tumblr" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_youtube_link != blank %}
                   <li>
-                    <a href="{{ settings.social_youtube_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
+                    <a href="{{ settings.social_youtube_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}" target="_blank">
                       <span class="icon icon-youtube" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_vimeo_link != blank %}
                   <li>
-                    <a href="{{ settings.social_vimeo_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
+                    <a href="{{ settings.social_vimeo_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}" target="_blank">
                       <span class="icon icon-vimeo" aria-hidden="true"></span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_fancy_link != blank %}
                   <li>
-                    <a href="{{ settings.social_fancy_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}">
+                    <a href="{{ settings.social_fancy_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}" target="_blank">
                       <span class="icon icon-fancy" aria-hidden="true"></span>
                     </a>
                   </li>
@@ -188,7 +188,8 @@
 <div class="copyright__container">
   <div class="container ">
     <div class="row">       
-      <p class="site-footer__copyright-content">&copy; Copyright {{ shop.name | link_to: routes.root_url }} {{ 'now' | date: '%Y' }}. All Rights Reserved. </p>
+      <p class="site-footer__copyright-content">&copy; Copyright {{ shop.name | link_to: routes.root_url }} {{ 'now' | date: '%Y' }}. All Rights Reserved.</p>
+      <!-- <p class="site-footer__copyright-content">&copy; Copyright {{ shop.name | link_to: routes.root_url }} {{ 'now' | date: '%Y' }}. All Rights Reserved. ABN 66 638 754 819 - </p> -->
     </div>
   </div>
 </div>
