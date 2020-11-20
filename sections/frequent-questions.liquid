@@ -16,16 +16,18 @@
       <div class="grid-3">
         {%- for block in section.blocks -%}
           {% unless block.settings.bg_image == blank %}
-            <a class="card-wrapper" href="#{{ block.settings.text }}">
-              <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-                <div class="card__content">
+            <div class="card bg-image" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
+              <a href="{{ block.settings.btn_link }}">
+                <div class="card__container">
                   {% unless block.settings.btn_link == blank %}
-                    <span>{{ block.settings.text }}</span>
-                    {% include 'icon-arrow-circle-right' %}
+                    <div class="card__footer">
+                      <h6 class="title">{{ block.settings.text }}</h6>
+                      {% include 'icon-arrow-circle-right' %}
+                    </div>
                   {% endunless %}
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           {% endunless %}
 
           <!-- Limit the display of products to 4 -->
@@ -42,16 +44,18 @@
 
           {% if forloop.index > 3 %}
             {% unless block.settings.bg_image == blank %}
-              <a class="card-wrapper" href="#{{ block.settings.text }}">
-                <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-                  <div class="card__content">
+              <div class="card bg-image" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
+                <a href="{{ block.settings.btn_link }}">
+                  <div class="card__container">
                     {% unless block.settings.btn_link == blank %}
-                      <span>{{ block.settings.text }}</span>
-                      {% include 'icon-arrow-circle-right' %}
+                      <div class="card__footer">
+                        <h6 class="title">{{ block.settings.text }}</h6>
+                        {% include 'icon-arrow-circle-right' %}
+                      </div>
                     {% endunless %}
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
             {% endunless %}
           {% endif %}
 

@@ -2,43 +2,41 @@
 <html class="no-js" lang="{{ shop.locale }}">
   <head>
     <!-- Basic page needs ================================================== -->
-    <meta charset="utf-8" />
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
 
     {% if settings.favicon %}
-    <link
-      rel="shortcut icon"
-      href="{{ settings.favicon | img_url: '32x32' }}"
-      type="image/png"
-    />
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png"/>
     {% endif %}
 
     <!-- Title and description ================================================== -->
     <title>
       {{ page_title }}
-      {% if current_tags %} {% assign meta_tags = current_tags | join: ', ' %}
-      &ndash;
-      {{ 'general.meta.tags' | t: tags:meta_tags }}
-      {% endif %} {% if current_page != 1 %} &ndash;
-      {{ 'general.meta.page' | t: page:current_page }}
-      {% endif %} {% unless page_title contains shop.name %} &ndash;
-      {{ shop.name }}
+      {% if current_tags %}
+        {% assign meta_tags = current_tags | join: ', ' %}
+        &ndash;
+        {{ 'general.meta.tags' | t: tags:meta_tags }}
+      {% endif %}
+      {% if current_page != 1 %}
+        &ndash;
+        {{ 'general.meta.page' | t: page:current_page }}
+      {% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash;
+        {{ shop.name }}
       {% endunless %}
     </title>
 
     {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}" />
+      <meta name="description" content="{{ page_description | escape }}"/>
     {% endif %}
 
     <!-- Helpers ================================================== -->
     {% include 'social-meta-tags' %}
-    <link rel="canonical" href="{{ canonical_url }}" />
-    <meta
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-      name="viewport"
-    />
-    <meta name="theme-color" content="{{ settings.color_primary }}" />
-    
+    <link rel="canonical" href="{{ canonical_url }}"/>
+    <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+    <meta name="theme-color" content="{{ settings.color_primary }}"/>
+
     <!-- CSS ================================================== -->
     {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
     {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
@@ -71,7 +69,7 @@
     <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-    
+
     {% comment %} Custom JS {% endcomment %}
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
@@ -82,14 +80,14 @@
 
     {% comment %} 
       If you store has customer accounts disabled, you can remove the following JS file
-    {% endcomment %} 
+    {% endcomment %}
     {% if request.page_type contains 'customers/' %}
       {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
     {% endif %}
 
     {% comment %} 
       Redirect to the Custom Policies Pages
-    {% endcomment %} 
+    {% endcomment %}
     <script>
       function redirectPoliciesPage() {
         const urlPathname = window.location.pathname
@@ -110,55 +108,47 @@
     </script>
   </head>
 
-  {% comment %} Add the page template as a class for easy page or template
+    {% comment %} Add the page template as a class for easy page or template
   specific styling. {% endcomment %}
-  <body
-    id="{{ page_title | handle }}"
-    class="{% if customer %}customer-logged-in {% endif %}template-{{
-      request.page_type | handle
-    }}"
-  >
-    {% section 'header' %}
+    <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">
+      {% section 'header' %}
 
-    <div class="drawer drawer--right drawer--has-fixed-footer" id="CartDrawer">
-      <div class="drawer__fixed-header">
-        <div class="drawer__header">
-          <div class="drawer__title">{{ 'cart.general.title' | t }}</div>
-          <div class="drawer__close">
-            <button
-              class="icon-fallback-text drawer__close-button js-drawer-close"
-              type="button"
-            >
-              <span aria-hidden="true" class="icon icon-x"></span>
-              <span class="fallback-text">
-                {{ 'cart.general.close_cart' | t }}
-              </span>
-            </button>
+      <div class="drawer drawer--right drawer--has-fixed-footer" id="CartDrawer">
+        <div class="drawer__fixed-header">
+          <div class="drawer__header">
+            <div class="drawer__title">{{ 'cart.general.title' | t }}</div>
+            <div class="drawer__close">
+              <button class="icon-fallback-text drawer__close-button js-drawer-close" type="button">
+                <span aria-hidden="true" class="icon icon-x"></span>
+                <span class="fallback-text">
+                  {{ 'cart.general.close_cart' | t }}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="drawer__inner">
-        <div class="drawer__cart" id="CartContainer"></div>
-      </div>
-    </div>
-
-    <div class="page-container" id="PageContainer">
-      <main class="main-content" role="main">
-        {% unless request.page_type == "index" %}
-        <!-- <div> -->
-        <div>
-          {% endunless %}
-          {{ content_for_layout }}
-          {% unless request.page_type == "index" %}
+        <div class="drawer__inner">
+          <div class="drawer__cart" id="CartContainer"></div>
         </div>
-        {% endunless %}
-      </main>
+      </div>
 
-      {% section 'footer' %}
-    </div>
+      <div class="page-container" id="PageContainer">
+        <main class="main-content" role="main">
+          {% unless request.page_type == "index" %}
+            <!-- <div> -->
+            <div>
+            {% endunless %}
+            {{ content_for_layout }}
+            {% unless request.page_type == "index" %}
+            </div>
+          {% endunless %}
+        </main>
 
-    {% comment %} Template-specific js {% endcomment %}
-    <script>
+        {% section 'footer' %}
+      </div>
+
+      {% comment %} Template-specific js {% endcomment %}
+      <script>
       {% if resetPassword %}
         $(function() {
           timber.initCache();
@@ -167,11 +157,17 @@
       {% endif %}
     </script>
 
-    {% comment %} Ajaxify your cart with this plugin. Documentation: -
-    http://shopify.com/timber#ajax-cart {% endcomment %} {% if
-    settings.cart_type == 'drawer' %} {% include 'ajax-cart-template' %} {% endif
-    %} {% if request.page_type == 'product' or request.page_type == 'index' %}
-    <script>
+      {% comment %} Ajaxify your cart with this plugin. Documentation: -
+    http://shopify.com/timber#ajax-cart {% endcomment %}
+      {% if
+    settings.cart_type == 'drawer' %}
+        {% include 'ajax-cart-template' %}
+      {% endif
+    %}
+
+
+      {% if request.page_type == 'product' or request.page_type == 'index' %}
+        <script>
       // Override default values of shop.strings for each template.
       // Alternate product templates can change values of
       // add to cart button, sold out, and unavailable states here.
@@ -181,22 +177,24 @@
         unavailable: {{ 'products.product.unavailable' | t | json }}
       }
     </script>
-    {% endif %}
+      {% endif %}
 
-    <div class="mfp-hide" id="SearchModal">
-      {% include 'search-bar', search_btn_style: 'btn', search_bar_location:
+
+      <div class="mfp-hide" id="SearchModal">
+        {% include 'search-bar', search_btn_style: 'btn', search_bar_location:
       'search-bar--modal' %}
-    </div>
-    <ul hidden>
-      <li id="a11y-refresh-page-message">
-        {{ 'general.accessibility.refresh_page' | t }}
-      </li>
-      <li id="a11y-selection-message">
-        {{ 'general.accessibility.selection_help' | t }}
-      </li>
-      <li id="a11y-slideshow-info">
-        {{ 'home_page.slideshow.navigation_instructions' | t }}
-      </li>
-    </ul>
-  </body>
+      </div>
+      <ul hidden>
+        <li id="a11y-refresh-page-message">
+          {{ 'general.accessibility.refresh_page' | t }}
+        </li>
+        <li id="a11y-selection-message">
+          {{ 'general.accessibility.selection_help' | t }}
+        </li>
+        <li id="a11y-slideshow-info">
+          {{ 'home_page.slideshow.navigation_instructions' | t }}
+        </li>
+      </ul>
+    </body>
+  </head>
 </html>

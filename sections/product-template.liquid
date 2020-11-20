@@ -1,5 +1,4 @@
 <!-- /templates/product.liquid -->
-
 <div itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product-template" data-image-zoom-type="{{ section.settings.zoom_enable }}" data-enable-history-state="true" data-scroll-to-image="{% if section.settings.image_layout == "stacked" %}true{% else %}false{% endif %}">
 
     <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
@@ -324,20 +323,17 @@
                     </span>
                   </button>
                 </div>
+                {% comment %}
+                {% if current_variant.next_incoming_date %}
+                <br />
+                <p>Ships on {{ current_variant.next_incoming_date | date: "%A, %v" }}</p>
+                {% endif %}
+                {% endcomment %}
               {% endform %}
   
             </div>
   
             <div class="product-single__description rte" itemprop="description">
-              
-                <!-- <button>
-                  Description
-                  {% include 'icon-plus-solid' %}
-                  {% include 'icon-minus-solid' %}
-                </button>
-                <div class="panel">
-                  <p>{{ product.description }}</p>
-                </div> -->
                 {%- unless product.description == blank -%}
                 <div>
                   <p class="description-title">Description</p>

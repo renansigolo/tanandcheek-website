@@ -37,7 +37,6 @@
   .card {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     padding: 32px;
     background-color: $light-gray;
     border-radius: 8px;
@@ -264,9 +263,17 @@
     .image-wrapper {
       position: relative;
 
+      &:hover {
+        img {
+          box-shadow: $card-2;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
       img {
         border-radius: 8px;
         filter: brightness(0.9);
+        transition: all 0.4s ease-in-out;
       }
       p {
         color: $light;
@@ -436,54 +443,6 @@
   }
 }
 
-/* Frequent Question */
-.frequent-questions {
-  &__header {
-    margin-bottom: 24px;
-    h3 {
-      font-weight: 700;
-    }
-  }
-
-  .card-wrapper {
-    width: 100%;
-
-    &:hover {
-      .card {
-        @extend %scale-card;
-      }
-    }
-  }
-
-  .card {
-    min-width: 100%;
-    min-height: 180px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    margin-bottom: 16px;
-    background-color: #00000005;
-    // filter: brightness(0.9);
-    box-shadow: $card-1;
-    &__content {
-      padding: 8px;
-      display: inline-flex;
-      align-items: center;
-
-      span {
-        color: $light;
-        font-weight: 600;
-        margin-right: 8px;
-      }
-    }
-  }
-}
-
 /* General FAQ */
 .general-faq {
   &__sidebar {
@@ -612,7 +571,7 @@
   min-height: 80vh;
   padding: 80px 0;
 
-  .products {
+  .cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 1fr;
@@ -628,22 +587,22 @@
       grid-row-gap: 16px;
       place-items: unset;
 
-      .product-1 {
+      .card-1 {
         grid-area: 1 / 1 / 2 / 8;
       }
-      .product-2 {
+      .card-2 {
         grid-area: 1 / 8 / 2 / 13;
       }
-      .product-3 {
+      .card-3 {
         grid-area: 2 / 1 / 4 / 7;
       }
-      .product-4 {
+      .card-4 {
         grid-area: 2 / 7 / 4 / 10;
       }
-      .product-5 {
+      .card-5 {
         grid-area: 2 / 10 / 3 / 13;
       }
-      .product-6 {
+      .card-6 {
         grid-area: 3 / 10 / 4 / 13;
       }
     }
@@ -656,25 +615,25 @@
       min-width: 100%;
     }
 
-    .product {
-      &__details {
+    .card {
+      &__container {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        text-align: end;
 
         height: 300px;
         min-height: 100%;
 
         padding-right: 16px;
-        background-color: #00000020;
+        background-color: #00000005;
         border-radius: 4px;
         color: #fff;
-
         transition: all 0.2s ease-in;
 
         &:hover {
-          background-color: #00000005;
+          background-color: #00000020;
           transition: all 0.2s ease-in;
           box-shadow: $card-2;
         }
@@ -685,6 +644,77 @@
       }
       &__price {
         color: inherit;
+      }
+    }
+  }
+}
+
+/* Frequent Question */
+.frequent-questions {
+  .grid-2,
+  .grid-3 {
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+  }
+  &__header {
+    margin-bottom: 24px;
+    h3 {
+      font-weight: 700;
+    }
+  }
+
+  .bg-image {
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+    min-height: 200px;
+    min-width: 100%;
+  }
+
+  .card {
+    margin-bottom: 16px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: end;
+
+      height: 200px;
+      min-height: 100%;
+
+      padding-right: 16px;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+      border-radius: 4px;
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #00000010;
+        transition: all 0.2s ease-in-out;
+        box-shadow: $card-2;
+      }
+    }
+
+    &__footer {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .title {
+        color: inherit;
+        font-weight: 500;
+        margin-right: 8px;
+      }
+      .icon {
+        color: $orange;
       }
     }
   }
