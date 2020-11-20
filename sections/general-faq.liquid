@@ -6,39 +6,39 @@
           {% unless section.settings.title == blank %}
             <h3>{{ section.settings.title | escape }}</h3>
           {% endunless %}
-          
+
           {% unless section.settings.description == blank %}
             <p>{{ section.settings.description }}</p>
           {% endunless %}
         </div>
-        
+
         <div class="quick-links">
-        {%- for block in section.blocks -%}
-          {% unless block.settings.link_url == blank %}
-            <a href="{{ block.settings.link_url }}">
-              {{ block.settings.link_text }}
-              {% include 'icon-chevron-right-solid' %}
-            </a>
-          {% endunless %}
-        {%- endfor -%}
+          {%- for block in section.blocks -%}
+            {% unless block.settings.link_url == blank %}
+              <a href="{{ block.settings.link_url }}">
+                {{ block.settings.link_text }}
+                {% include 'icon-chevron-right-solid' %}
+              </a>
+            {% endunless %}
+          {%- endfor -%}
         </div>
       </div>
 
       <div class="eight columns">
-      {%- for block in section.blocks -%}
-      {% unless block.settings.question_title == blank %}
-        <div class="question">
-          <h6 class="question__title">{{ block.settings.question_title }}</h6>
-          <p>{{ block.settings.question_description }}</p>
+        {%- for block in section.blocks -%}
+          {% unless block.settings.question_title == blank %}
+            <div class="question">
+              <h6 class="question__title">{{ block.settings.question_title }}</h6>
+              <p>{{ block.settings.question_description }}</p>
 
-          {% unless block.settings.question_url == blank %}
-          <a href="{{ block.settings.question_url }}">
-            {% include 'icon-arrow-right-solid' %}
-          </a>
+              {% unless block.settings.question_url == blank %}
+                <a href="{{ block.settings.question_url }}">
+                  {% include 'icon-arrow-right-solid' %}
+                </a>
+              {% endunless %}
+            </div>
           {% endunless %}
-        </div>
-        {% endunless %}
-      {%- endfor -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
@@ -60,53 +60,53 @@
       "id": "description",
       "label": "Description",
       "default": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Link Block",
-      "type": "link_block",
-      "settings": [
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "Text"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Link"
-        }
-      ]
-    },
-    {
-      "name": "Question Block",
-      "type": "question_block",
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "question_title",
-          "label": "Question Title"
-        },
-        {
-          "type": "textarea",
-          "id": "question_description",
-          "label": "Question Description"
-        },
-        {
-          "type": "url",
-          "id": "question_url",
-          "label": "Question Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "General FAQ",
-      "category": "Advanced layout"
-    }
-  ]
-}
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Link Block",
+        "type": "link_block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link"
+          }
+        ]
+      },
+      {
+        "name": "Question Block",
+        "type": "question_block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "question_title",
+            "label": "Question Title"
+          },
+          {
+            "type": "textarea",
+            "id": "question_description",
+            "label": "Question Description"
+          },
+          {
+            "type": "url",
+            "id": "question_url",
+            "label": "Question Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "General FAQ",
+        "category": "Advanced layout"
+      }
+    ]
+  }
 
 {% endschema %}

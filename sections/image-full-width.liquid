@@ -3,7 +3,7 @@
     <!-- {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }} -->
     <img src="{{ section.settings.image | img_url: '1600x330' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
   {%- else -%}
-    <img src="https://placeholder.pics/svg/1600x330" alt="Image Placeholder" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
+    <img alt="Image Placeholder" src="https://placeholder.pics/svg/1600x330" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
   {%- endif -%}
 </div>
 

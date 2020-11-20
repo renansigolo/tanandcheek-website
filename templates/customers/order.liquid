@@ -8,7 +8,10 @@
 <div class="grid">
 
   <div class="grid__item medium-down--text-center">
-    <p><a href="{{ routes.account_url }}" class="return-link">&larr; {{ 'customer.account.return' | t }}</a></p>
+    <p>
+      <a href="{{ routes.account_url }}" class="return-link">&larr;
+        {{ 'customer.account.return' | t }}</a>
+    </p>
     <hr class="hr--small hr--clear">
   </div>
 
@@ -48,7 +51,9 @@
                     <ul class="order-discount order-discount--list order-discount--title" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount_allocation in line_item.line_level_discount_allocations -%}
                         <li class="order-discount__item">
-                          <span class="icon icon-saletag" aria-hidden="true"></span>{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})
+                          <span aria-hidden="true" class="icon icon-saletag"></span>
+                          {{ discount_allocation.discount_application.title }}
+                          (-{{ discount_allocation.amount | money }})
                         </li>
                       {%- endfor -%}
                     </ul>
@@ -66,7 +71,9 @@
                       {%- endif -%}
                       <div>
                         {{ line_item.fulfillment.tracking_company }}
-                        {%- if line_item.fulfillment.tracking_number -%} #{{ line_item.fulfillment.tracking_number }} {%- endif -%}
+                        {%- if line_item.fulfillment.tracking_number -%}
+                          #{{ line_item.fulfillment.tracking_number }}
+                        {%- endif -%}
                       </div>
                     </div>
                   </div>
@@ -88,7 +95,8 @@
 
                   <span class="product-unit-price">
                     {%- capture unit_price_separator -%}
-                      <span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+                      <span aria-hidden="true">/</span>
+                      <span class="visually-hidden">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
                     {%- endcapture -%}
                     {%- capture unit_price_base_unit -%}
                       {%- if line_item.unit_price_measurement.reference_value != 1 -%}
@@ -97,7 +105,8 @@
                       {{ line_item.unit_price_measurement.reference_unit }}
                     {%- endcapture -%}
 
-                    <span>{{ line_item.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                    <span>{{ line_item.unit_price | money }}</span>
+                    {{- unit_price_separator -}}{{- unit_price_base_unit -}}
                   </span>
                 {%- endif -%}
               </td>
@@ -117,23 +126,25 @@
         </tbody>
         <tfoot>
           <tr>
-            <th class="table--small-hide" scope="row" colspan="4">{{ 'customer.order.subtotal' | t }}</th>
+            <th class="table--small-hide" colspan="4" scope="row">{{ 'customer.order.subtotal' | t }}</th>
             <td class="text-right" data-label="{{ 'customer.order.subtotal' | t }}">{{ order.line_items_subtotal_price | money }}</td>
           </tr>
 
           {%- if order.cart_level_discount_applications != blank -%}
             <tr>
               {%- for discount_application in order.cart_level_discount_applications -%}
-                <th scope="row" colspan="4" class="small--hide">
+                <th class="small--hide" colspan="4" scope="row">
                   {{ 'customer.order.discount' | t }}
                   <span class="order-discount order-discount--title">
-                    <span class="icon icon-saletag" aria-hidden="true"></span>{{- discount_application.title -}}
+                    <span aria-hidden="true" class="icon icon-saletag"></span>
+                    {{- discount_application.title -}}
                   </span>
                 </th>
                 <td class="text-right" data-label="{{ 'customer.order.discount' | t }}">
                   <div class="order-discount-wrapper">
                     <span class="order-discount order-discount--title text-left medium--hide large--hide">
-                      <span class="icon icon-saletag" aria-hidden="true"></span>{{- discount_application.title -}}
+                      <span aria-hidden="true" class="icon icon-saletag"></span>
+                      {{- discount_application.title -}}
                     </span>
                     <span class="order-discount">-{{ discount_application.total_allocated_amount | money }}</span>
                   </div>
@@ -143,22 +154,26 @@
           {%- endif -%}
 
           {%- for shipping_method in order.shipping_methods -%}
-          <tr>
-            <th class="table--small-hide" scope="row" colspan="4">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</th>
-            <td class="text-right" data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})" >{{ shipping_method.price | money }}</td>
-          </tr>
+            <tr>
+              <th class="table--small-hide" colspan="4" scope="row">{{ 'customer.order.shipping' | t }}
+                ({{ shipping_method.title }})</th>
+              <td class="text-right" data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})">{{ shipping_method.price | money }}</td>
+            </tr>
           {%- endfor -%}
 
           {%- for tax_line in order.tax_lines -%}
             <tr>
-              <th class="table--small-hide" scope="row" colspan="4">{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</th>
+              <th class="table--small-hide" colspan="4" scope="row">{{ 'customer.order.tax' | t }}
+                ({{ tax_line.title }}
+                {{ tax_line.rate | times: 100 }}%)</th>
               <td class="text-right" data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)" class="text-right">{{ tax_line.price | money }}</td>
             </tr>
           {%- endfor -%}
 
           <tr>
-            <th class="table--small-hide" scope="row" colspan="4">{{ 'customer.order.total' | t }}</th>
-            <td class="text-right" data-label="{{ 'customer.order.total' | t }}">{{ order.total_price | money }} {{ order.currency }}</td>
+            <th class="table--small-hide" colspan="4" scope="row">{{ 'customer.order.total' | t }}</th>
+            <td class="text-right" data-label="{{ 'customer.order.total' | t }}">{{ order.total_price | money }}
+              {{ order.currency }}</td>
           </tr>
         </tfoot>
       </table>
@@ -172,7 +187,9 @@
 
     <h3>{{ 'customer.order.billing_address' | t }}</h3>
 
-    <p><strong>{{ 'customer.order.payment_status' | t }}:</strong> {{ order.financial_status_label }}</p>
+    <p>
+      <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+      {{ order.financial_status_label }}</p>
 
     {{ order.billing_address | format_address }}
 
@@ -180,7 +197,9 @@
 
     <h3>{{ 'customer.order.shipping_address' | t }}</h3>
 
-    <p><strong>{{ 'customer.order.fulfillment_status' | t }}:</strong> {{ order.fulfillment_status_label }}</p>
+    <p>
+      <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+      {{ order.fulfillment_status_label }}</p>
 
     {{ order.shipping_address | format_address }}
 

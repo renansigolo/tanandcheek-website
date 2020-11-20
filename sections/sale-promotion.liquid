@@ -1,35 +1,35 @@
 <div class="sale-promotion" {{ block.shopify_attributes }}>
-    <div class="grid container">
-      <div class="div1">
-        <div class="div1__content">
-          {% unless section.settings.title == blank %}
-            <h2>{{ section.settings.title | escape }}</h2>
-          {% endunless %}
+  <div class="grid container">
+    <div class="div1">
+      <div class="div1__content">
+        {% unless section.settings.title == blank %}
+          <h2>{{ section.settings.title | escape }}</h2>
+        {% endunless %}
 
-          {% unless section.settings.description == blank %}
-            <p>{{ section.settings.description | escape }}</p>
-          {% endunless %}
+        {% unless section.settings.description == blank %}
+          <p>{{ section.settings.description | escape }}</p>
+        {% endunless %}
 
-          {% unless section.settings.btn_link == blank %}
-            <a href="{{ section.settings.btn_link }}" class="btn">
-              {{ section.settings.btn_text }}
-            </a>
-          {% endunless %}
-        </div>
-      </div>
-      <div class="div2">
-        {%- unless section.settings.image_small == blank -%}
-          <img src="{{ section.settings.image_small | img_url: '675x530' }}">
-        {%- endunless -%}
-      </div>
-      <div class="div3">
-        {%- unless section.settings.image_big == blank -%}
-          <img src="{{ section.settings.image_big | img_url: '950x930' }}">
-        {%- endunless -%}
+        {% unless section.settings.btn_link == blank %}
+          <a href="{{ section.settings.btn_link }}" class="btn">
+            {{ section.settings.btn_text }}
+          </a>
+        {% endunless %}
       </div>
     </div>
+    <div class="div2">
+      {%- unless section.settings.image_small == blank -%}
+        <img src="{{ section.settings.image_small | img_url: '675x530' }}">
+      {%- endunless -%}
+    </div>
+    <div class="div3">
+      {%- unless section.settings.image_big == blank -%}
+        <img src="{{ section.settings.image_big | img_url: '950x930' }}">
+      {%- endunless -%}
+    </div>
   </div>
-  
+</div>
+
 {% schema %}
 
 {

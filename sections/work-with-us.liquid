@@ -5,7 +5,7 @@
         {% unless section.settings.title == blank %}
           <h3>{{ section.settings.title | escape }}</h3>
         {% endunless %}
-        
+
         {% unless section.settings.description == blank %}
           <p>{{ section.settings.description | escape }}</p>
         {% endunless %}
@@ -18,16 +18,16 @@
       </div>
 
       {%- for block in section.blocks -%}
-      <div class="three columns">
-        {% unless block.settings.image_square == blank %}
-          <div class="image-wrapper">
-            <a href="mailto:info@tanandcheek.com?Subject={{ block.settings.text }}">
-            {{ block.settings.image_square | img_url: '512x512' | img_tag: block.settings.image_square.alt }}
-            <p>{{ block.settings.text }}</p>
-          </a>
-          </div>
-        {% endunless %}
-      </div>
+        <div class="three columns">
+          {% unless block.settings.image_square == blank %}
+            <div class="image-wrapper">
+              <a href="mailto:info@tanandcheek.com?Subject={{ block.settings.text }}">
+                {{ block.settings.image_square | img_url: '512x512' | img_tag: block.settings.image_square.alt }}
+                <p>{{ block.settings.text }}</p>
+              </a>
+            </div>
+          {% endunless %}
+        </div>
       {%- endfor -%}
     </div>
     <div class="row">
@@ -37,7 +37,6 @@
     </div>
   </div>
 </div>
-
 
 
 {% schema %}

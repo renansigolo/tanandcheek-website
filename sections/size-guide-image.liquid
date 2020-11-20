@@ -1,14 +1,14 @@
 <div {{ block.shopify_attributes }}>
   {%- if section.settings.image_model != blank -%}
-  <img src="{{ section.settings.image_model | img_url: '940x800' }}" style="object-fit: contain; width: 100%; height: auto;">
-{%- else -%}
-  <img src="https://placeholder.pics/svg/940x800" alt="Image Placeholder" style="object-fit: contain; width: 100%; height: auto;">
-{%- endif -%}
+    <img src="{{ section.settings.image_model | img_url: '940x800' }}" style="object-fit: contain; width: 100%; height: auto;">
+  {%- else -%}
+    <img alt="Image Placeholder" src="https://placeholder.pics/svg/940x800" style="object-fit: contain; width: 100%; height: auto;">
+  {%- endif -%}
 
   {%- if section.settings.image != blank -%}
     <img src="{{ section.settings.image | img_url: '940x830' }}" style="object-fit: contain; width: 100%; height: auto;">
   {%- else -%}
-    <img src="https://placeholder.pics/svg/940x830" alt="Image Placeholder" style="object-fit: contain; width: 100%; height: auto;">
+    <img alt="Image Placeholder" src="https://placeholder.pics/svg/940x830" style="object-fit: contain; width: 100%; height: auto;">
   {%- endif -%}
 </div>
 

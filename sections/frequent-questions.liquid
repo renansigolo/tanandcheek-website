@@ -5,7 +5,7 @@
         {% unless section.settings.title == blank %}
           <h3>{{ section.settings.title | escape }}</h3>
         {% endunless %}
-        
+
         {% unless section.settings.subtitle == blank %}
           <p>{{ section.settings.subtitle | escape }}</p>
         {% endunless %}
@@ -15,23 +15,23 @@
     <div class="row">
       <div class="grid-3">
         {%- for block in section.blocks -%}
-        {% unless block.settings.bg_image == blank %}
-        <a href="#{{ block.settings.text }}" class="card-wrapper">
-        <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-            <div class="card__content">
-                {% unless block.settings.btn_link == blank %}
-                  <span>{{ block.settings.text }}</span>
-                  {% include 'icon-arrow-circle-right' %}
-                {% endunless %}
+          {% unless block.settings.bg_image == blank %}
+            <a class="card-wrapper" href="#{{ block.settings.text }}">
+              <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
+                <div class="card__content">
+                  {% unless block.settings.btn_link == blank %}
+                    <span>{{ block.settings.text }}</span>
+                    {% include 'icon-arrow-circle-right' %}
+                  {% endunless %}
+                </div>
               </div>
-            </div>
-          </a>
-        {% endunless %}
-        
-        <!-- Limit the display of products to 4 -->
-        {% if forloop.index == 3 %}
-        {% break %}
-        {% endif %}
+            </a>
+          {% endunless %}
+
+          <!-- Limit the display of products to 4 -->
+          {% if forloop.index == 3 %}
+            {% break %}
+          {% endif %}
 
         {%- endfor -%}
       </div>
@@ -40,27 +40,26 @@
       <div class="grid-2">
         {%- for block in section.blocks -%}
 
-        {% if forloop.index > 3 %}
-        {% unless block.settings.bg_image == blank %}
-        <a href="#{{ block.settings.text }}" class="card-wrapper">
-        <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
-            <div class="card__content">
-                {% unless block.settings.btn_link == blank %}
-                  <span>{{ block.settings.text }}</span>
-                  {% include 'icon-arrow-circle-right' %}
-                {% endunless %}
-              </div>
-            </div>
-          </a>
-          {% endunless %}
-        {% endif %}
+          {% if forloop.index > 3 %}
+            {% unless block.settings.bg_image == blank %}
+              <a class="card-wrapper" href="#{{ block.settings.text }}">
+                <div class="card" style="background-image: url({{ block.settings.bg_image | img_url: '512x512' }});">
+                  <div class="card__content">
+                    {% unless block.settings.btn_link == blank %}
+                      <span>{{ block.settings.text }}</span>
+                      {% include 'icon-arrow-circle-right' %}
+                    {% endunless %}
+                  </div>
+                </div>
+              </a>
+            {% endunless %}
+          {% endif %}
 
         {%- endfor -%}
       </div>
     </div>
   </div>
 </div>
-
 
 
 {% schema %}

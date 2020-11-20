@@ -23,12 +23,9 @@
   {% endif %}
 </style>
 
-<div id="MapSection--{{ section.id }}"
-     class="map-section
-          {% if display_map %}map-section--display-map{% endif %}
-          {% if onboarding == true %}map-section--onboarding{% endif %}"
-     data-section-id="{{ section.id }}"
-     data-section-type="map">
+<div id="MapSection--{{ section.id }}" class="map-section
+            {% if display_map %}map-section--display-map{% endif %}
+            {% if onboarding == true %}map-section--onboarding{% endif %}" data-section-id="{{ section.id }}" data-section-type="map">
   <div class="wrapper map-section__wrapper">
     <div class="map-section__content-wrapper flex--third">
       <div class="map-section__content">
@@ -39,12 +36,9 @@
           <div class="rte">{{ section.settings.address }}</div>
           {% if section.settings.map_address != blank and section.settings.button_text != blank %}
             <p>
-              <a href="https://maps.google.com?daddr={{ section.settings.map_address | escape }}"
-                 class="btn btn--secondary map_section__directions-btn"
-                 target="_blank"
-              >
+              <a class="btn btn--secondary map_section__directions-btn" href="https://maps.google.com?daddr={{ section.settings.map_address | escape }}" target="_blank">
                 {% if section.settings.show_pin %}
-                  <span class="icon icon-pin" aria-hidden="true"></span>
+                  <span aria-hidden="true" class="icon icon-pin"></span>
                 {% endif %}
                 {% if section.settings.button_text %}
                   <span>{{ section.settings.button_text | escape }}</span>
@@ -57,12 +51,7 @@
     </div>
     <div class="map-section__background-wrapper">
       {% if bg_image.src != blank %}
-        <div class="map-section__image lazyload js"
-             data-bgset="{% include 'bgset', image: bg_image %}"
-             data-sizes="auto"
-             data-parent-fit="cover"
-             style="background-image: url('{{ bg_image | img_url: '300x300' }});">
-        </div>
+        <div class="map-section__image lazyload js" data-bgset="{% include 'bgset', image: bg_image %}" data-sizes="auto" data-parent-fit="cover" style="background-image: url('{{ bg_image | img_url: '300x300' }});"></div>
         <noscript>
           <div class="map-section__image" style="background-image: url({{ bg_image | img_url: 'x800', crop: 'top' }});"></div>
         </noscript>
@@ -72,12 +61,7 @@
         </div>
       {% endif %}
       {% if display_map %}
-        <div class="map-section__container"
-             id="Map-{{ section.id }}"
-             data-map
-             data-address-setting="{{ section.settings.map_address | escape }}"
-             data-api-key="{{ section.settings.api_key }}">
-        </div>
+        <div class="map-section__container" id="Map-{{ section.id }}" data-map data-address-setting="{{ section.settings.map_address | escape }}" data-api-key="{{ section.settings.api_key }}"></div>
         <div class="map-section__overlay" data-map-overlay></div>
       {% endif %}
     </div>
@@ -85,8 +69,8 @@
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Kort",
@@ -132,8 +116,7 @@
         "zh-CN": "文本",
         "zh-TW": "文字"
       }
-    },
-    {
+    }, {
       "id": "heading",
       "type": "text",
       "label": {
@@ -176,8 +159,7 @@
         "zh-CN": "我们的商店",
         "zh-TW": "我們的商店"
       }
-    },
-    {
+    }, {
       "id": "address",
       "type": "richtext",
       "label": {
@@ -220,8 +202,7 @@
         "zh-CN": "<p>123 Fake St.<br>Toronto, Canada</p><p>周一至周五上午 10 点至晚上 9 点<br>周六上午 11 点至晚上 9 点<br>周日上午 11 点至下午 5 点</p>",
         "zh-TW": "<p>加拿大多倫多<br>假設範例街 123 號</p><p>星期一 - 星期五，上午 10 點 - 下午 9 點<br>星期六，上午 11 點 - 下午 9 點<br>星期日，上午 11 點 - 下午 5 點</p>"
       }
-    },
-    {
+    }, {
       "id": "map_address",
       "type": "text",
       "label": {
@@ -284,8 +265,7 @@
         "zh-CN": "80 Spadina Ave, Toronto",
         "zh-TW": "80 Spadina Ave, Toronto"
       }
-    },
-    {
+    }, {
       "id": "button_text",
       "type": "text",
       "label": {
@@ -328,8 +308,7 @@
         "zh-CN": "获取指示",
         "zh-TW": "取得路線"
       }
-    },
-    {
+    }, {
       "id": "show_pin",
       "type": "checkbox",
       "label": {
@@ -353,8 +332,7 @@
         "zh-TW": "顯示 PIN 碼"
       },
       "default": true
-    },
-    {
+    }, {
       "type": "header",
       "content": {
         "da": "Baggrund",
@@ -376,8 +354,7 @@
         "zh-CN": "背景",
         "zh-TW": "背景"
       }
-    },
-    {
+    }, {
       "id": "api_key",
       "type": "text",
       "label": {
@@ -420,8 +397,7 @@
         "zh-CN": "您需要 [注册 Google Maps API 密钥](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) 才能显示地图",
         "zh-TW": "您必須 [註冊 Google Maps API 金鑰](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) 才能顯示地圖"
       }
-    },
-    {
+    }, {
       "type": "image_picker",
       "id": "background_image",
       "label": {
@@ -464,8 +440,7 @@
         "zh-CN": "在地图未加载时显示",
         "zh-TW": "如果地圖並未載入則顯示此項目"
       }
-    },
-    {
+    }, {
       "type": "select",
       "id": "background_image_position",
       "label": {
@@ -512,8 +487,7 @@
             "zh-TW": "左上角"
           },
           "value": "top left"
-        },
-        {
+        }, {
           "label": {
             "da": "Øverst i midten",
             "de": "Oben zentriert",
@@ -535,8 +509,7 @@
             "zh-TW": "中央上方"
           },
           "value": "top center"
-        },
-        {
+        }, {
           "label": {
             "da": "Øverst til højre",
             "de": "Oben rechts",
@@ -558,8 +531,7 @@
             "zh-TW": "右上角"
           },
           "value": "top right"
-        },
-        {
+        }, {
           "label": {
             "da": "Midt på til venstre",
             "de": "Mittig links",
@@ -581,8 +553,7 @@
             "zh-TW": "中央左方"
           },
           "value": "center left"
-        },
-        {
+        }, {
           "label": {
             "da": "Midt på centreret",
             "de": "Mittig zentriert",
@@ -604,8 +575,7 @@
             "zh-TW": "正中央"
           },
           "value": "center center"
-        },
-        {
+        }, {
           "label": {
             "da": "Midt på til højre",
             "de": "Mittig rechts",
@@ -627,8 +597,7 @@
             "zh-TW": "中央右方"
           },
           "value": "center right"
-        },
-        {
+        }, {
           "label": {
             "da": "Nederst til venstre",
             "de": "Unten links",
@@ -650,8 +619,7 @@
             "zh-TW": "左下角"
           },
           "value": "bottom left"
-        },
-        {
+        }, {
           "label": {
             "da": "Nederst i midten",
             "de": "Unten zentriert",
@@ -673,8 +641,7 @@
             "zh-TW": "中央下方"
           },
           "value": "bottom center"
-        },
-        {
+        }, {
           "label": {
             "da": "Nederst til højre",
             "de": "Unten rechts",
@@ -745,4 +712,5 @@
     }
   ]
 }
+
 {% endschema %}

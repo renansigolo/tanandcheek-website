@@ -74,12 +74,12 @@ header {
       color: $dark;
       text-transform: capitalize;
       font-size: 2rem;
+      transition: all 0.3s ease-in-out;
       @media screen and (max-width: 1200px) {
         font-size: 1.6rem;
       }
       &:hover {
         transform: scale(1.05);
-        text-shadow: 1px 1px 12px #00000080;
       }
     }
   }

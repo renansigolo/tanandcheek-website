@@ -57,7 +57,7 @@
         {% else %}
           {% for collection in list_collections %}
             {%- assign collection_handle = collection.handle -%}
-  
+
             {% if collection_handle == 'frontpage' %}
               {% continue %}
             {% else %}
@@ -75,7 +75,7 @@
         {% else %}
           {% for collection in list_collections reversed %}
             {%- assign collection_handle = collection.handle -%}
-  
+
             {% if collection_handle == 'frontpage' %}
               {% continue %}
             {% else %}
@@ -97,8 +97,8 @@
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "cs": "Stránka se seznamem kolekcí",
@@ -151,8 +151,7 @@
         "zh-CN": "默认情况下列出您的所有产品系列。若要自定义列表，请选择“已选择”并添加产品系列。",
         "zh-TW": "系統預設會將您所有的商品系列都列入清單。如果想自訂清單，請點選「已選取」並新增商品系列。"
       }
-    },
-    {
+    }, {
       "type": "radio",
       "id": "display_type",
       "label": {
@@ -207,8 +206,7 @@
             "zh-CN": "所有",
             "zh-TW": "全部"
           }
-        },
-        {
+        }, {
           "value": "selected",
           "label": {
             "cs": "Vybrané",
@@ -236,8 +234,7 @@
           }
         }
       ]
-    },
-    {
+    }, {
       "type": "select",
       "id": "sort",
       "label": {
@@ -316,8 +313,7 @@
             "zh-CN": "产品数量，从高到低",
             "zh-TW": "產品數量，從高到低"
           }
-        },
-        {
+        }, {
           "value": "products_low",
           "label": {
             "cs": "Od nejnižšího počtu produktů po nejvyšší",
@@ -343,8 +339,7 @@
             "zh-CN": "产品数量，从低到高",
             "zh-TW": "產品數量，從低到高"
           }
-        },
-        {
+        }, {
           "value": "alphabetical",
           "label": {
             "cs": "Abecedně: A–Z",
@@ -370,8 +365,7 @@
             "zh-CN": "按字母顺序排序，A-Z",
             "zh-TW": "依字母順序 A 到 Z"
           }
-        },
-        {
+        }, {
           "value": "alphabetical_reversed",
           "label": {
             "cs": "Abecedně: Z–A",
@@ -397,8 +391,7 @@
             "zh-CN": "按字母顺序排序，Z-A",
             "zh-TW": "依字母順序 Z 到 A"
           }
-        },
-        {
+        }, {
           "value": "date",
           "label": {
             "cs": "Od nejstaršího data po nejnovější",
@@ -424,8 +417,7 @@
             "zh-CN": "日期从旧到新",
             "zh-TW": "日期 (從舊到新)"
           }
-        },
-        {
+        }, {
           "value": "date_reversed",
           "label": {
             "cs": "Od nejnovějšího data po nejstarší",
@@ -515,4 +507,5 @@
     }
   ]
 }
+
 {% endschema %}

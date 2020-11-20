@@ -3,34 +3,38 @@
     <div class="row">
       <div class="one column">
         <!-- <h2 class="shop-the-look__title">{{ section.settings.title }}</h2> -->
-        <h2 class="shop-the-look__title">SHOP <span>the look</span></h2>
+        <h2 class="shop-the-look__title">SHOP
+          <span>the look</span>
+        </h2>
       </div>
       <div class="five columns">
-        {{ section.settings.image | img_url: '750x915' | img_tag: section.settings.image.alt }}    
+        {{ section.settings.image | img_url: '750x915' | img_tag: section.settings.image.alt }}
       </div>
       <div class="six columns">
-        <h3>Summertime <span>Madness</span></h3>
+        <h3>Summertime
+          <span>Madness</span>
+        </h3>
         <!-- <h3>{{ section.settings.section_title }}</h3> -->
         <p>{{ section.settings.section_description }}</p>
         {% for block in section.blocks %}
-        {%- assign product = all_products[block.settings.product] -%}
-        <a href="{{ product.url }}">
-          <div class="card">            
-            <img src="{{ product.featured_image | img_url }}" alt="">
-            <div class="card__content">
-              <div class="inner-content">
-                <h4>{{ product.title }}</h4>
-                <span>{{ product.price | money }}</span>
+          {%- assign product = all_products[block.settings.product] -%}
+          <a href="{{ product.url }}">
+            <div class="card">
+              <img src="{{ product.featured_image | img_url }}" alt="">
+              <div class="card__content">
+                <div class="inner-content">
+                  <h4>{{ product.title }}</h4>
+                  <span>{{ product.price | money }}</span>
+                </div>
+
+                <p>{{ product.description }}</p>
               </div>
-  
-              <p>{{ product.description }}</p>
+
             </div>
-            
-          </div>
-        </a>
+          </a>
         {% endfor %}
 
-        <a href="#" class="btn">Add to cart</a>
+        <a class="btn" href="#">Add to cart</a>
         <!-- {%- assign current_variant = product.selected_or_first_available_variant -%} -->
 
       </div>
@@ -49,31 +53,26 @@
       "id": "title",
       "label": "Title",
       "default": "Shop the look (not active)"
-    },
-    {
+    }, {
       "type": "image_picker",
       "id": "image",
       "label": "Section image"
-    },
-    {
+    }, {
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
       "default": "Summertime Madness (not active)"
-    },
-    {
+    }, {
       "type": "textarea",
       "id": "section_description",
       "label": "Section Description",
       "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
+    }, {
       "type": "text",
       "id": "btn_text",
       "label": "Button Text",
       "default": "Get In Touch"
-    },
-    {
+    }, {
       "type": "url",
       "id": "btn_url",
       "label": "Button Url"
@@ -83,10 +82,10 @@
     {
       "type": "featured_product",
       "name": "Featured Product",
-        "settings": [
+      "settings": [
         {
-          "type":  "product",
-          "id":    "product",
+          "type": "product",
+          "id": "product",
           "label": "Featured Product"
         }
       ]
@@ -99,8 +98,7 @@
       "blocks": [
         {
           "type": "featured_product"
-        },
-        {
+        }, {
           "type": "featured_product"
         }
       ]

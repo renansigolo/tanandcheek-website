@@ -8,14 +8,8 @@
           </noscript>
           <div class="feature-row__image-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100}}%;">
             {% assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-            <img class="feature-row__image lazyload"
-              src="{{ section.settings.image | img_url: '300x300' }}"
-              data-src="{{ img_url }}"
-              data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
-              data-aspectratio="{{ section.settings.image.aspect_ratio }}"
-              data-sizes="auto"
-              alt="{{ section.settings.image.alt | escape }}">
-        </div>
+            <img class="feature-row__image lazyload" src="{{ section.settings.image | img_url: '300x300' }}" data-src="{{ img_url }}" data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]" data-aspectratio="{{ section.settings.image.aspect_ratio }}" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
+          </div>
         {% else %}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
         {% endif %}
@@ -49,8 +43,8 @@
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Billede med tekst",
@@ -96,8 +90,7 @@
         "zh-CN": "图片",
         "zh-TW": "圖片"
       }
-    },
-    {
+    }, {
       "type": "select",
       "id": "layout",
       "label": {
@@ -144,8 +137,7 @@
             "zh-CN": "左侧",
             "zh-TW": "左方"
           }
-        },
-        {
+        }, {
           "value": "right",
           "label": {
             "da": "Højre",
@@ -169,8 +161,7 @@
           }
         }
       ]
-    },
-    {
+    }, {
       "type": "text",
       "id": "title",
       "label": {
@@ -213,8 +204,7 @@
         "zh-CN": "带文本的图片",
         "zh-TW": "附文字的圖片"
       }
-    },
-    {
+    }, {
       "type": "richtext",
       "id": "text",
       "label": {
@@ -257,8 +247,7 @@
         "zh-CN": "<p>将大文本与图片配对，以便将焦点置于您选择的产品、产品系列或博客文章。添加有关可用性和样式的详细信息，甚至是提供评论。</p>",
         "zh-TW": "<p>大型文字搭配圖片，以便強調特定產品、商品系列或部落格貼文。您可以加上各種有關可用性、樣式的資料，甚至可以提供使用心得。</p>"
       }
-    },
-    {
+    }, {
       "type": "text",
       "id": "button_label",
       "label": {
@@ -281,8 +270,7 @@
         "zh-CN": "按钮标签",
         "zh-TW": "按鈕標籤"
       }
-    },
-    {
+    }, {
       "type": "url",
       "id": "button_link",
       "label": {
@@ -352,4 +340,5 @@
     }
   ]
 }
+
 {% endschema %}
