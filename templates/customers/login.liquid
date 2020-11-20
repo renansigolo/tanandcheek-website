@@ -1,13 +1,12 @@
 <!-- /templates/customers/login.liquid -->
 
-<div class="grid">
+<div class="grid container">
 
-  <div class="grid__item large--one-third push--large--one-third text-center">
+  <div class="grid__item large--one-third push--large--one-third text-center" style="margin: 15vh auto 18vh">
 
-    <header class="section-header">
+    <div class="section-header">
       <h1>{{ 'customer.login.title' | t }}</h1>
-      <hr class="hr--small">
-    </header>
+    </div>
 
     {% comment %}
       If a user has successfully requested a new password, the form.posted_successfully? variable
@@ -48,9 +47,8 @@
     {% endcomment %}
     <div id="RecoverPasswordForm" style="display: none;">
 
-      <h2>{{ 'customer.recover_password.title' | t }}</h2>
+      <h3>{{ 'customer.recover_password.title' | t }}</h3>
       <p>{{ 'customer.recover_password.subtext' | t }}</p>
-      <hr class="hr--small">
 
       <div class="form-vertical">
         {% form 'recover_customer_password' %}

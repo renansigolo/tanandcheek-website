@@ -8,11 +8,10 @@
 
 {% paginate customer.orders by 20 %}
 
-  <header class="section-header text-center">
+  <div class="section-header text-center">
     <h1>{{ 'customer.account.title' | t }}</h1>
     {{ 'layout.customer.log_out'| t | customer_logout_link }}
-    <hr class="hr--small">
-  </header>
+  </div>
 
   <div class="grid">
 
