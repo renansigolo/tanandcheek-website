@@ -10,7 +10,9 @@
 
     <div class="page__header container" style="margin-bottom: 64px;">
       <h1>{{ article.title }}</h1>
-        <span class="date"><time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ article.published_at | date: format: 'date' }}</time></span>
+      <span class="date">
+        <time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ article.published_at | date: format: 'date' }}</time>
+      </span>
       <div class="hr-page"></div>
     </div>
 
@@ -96,16 +98,16 @@
 
                   <div class="grid grid--small">
                     <div class="grid__item large--one-half">
-                      <label for="CommentAuthor" class="hidden-label">{{ 'blogs.comments.name' | t }}</label>
+                      <label class="hidden-label" for="CommentAuthor">{{ 'blogs.comments.name' | t }}</label>
                       <input class="input-full{% if form.errors contains 'author' %} error{% endif %}" type="text" name="comment[author]" placeholder="{{ 'blogs.comments.name' | t }}" id="CommentAuthor" value="{{ form.author }}" autocapitalize="words">
                     </div>
                     <div class="grid__item large--one-half">
-                      <label for="CommentEmail" class="hidden-label">{{ 'blogs.comments.email' | t }}</label>
+                      <label class="hidden-label" for="CommentEmail">{{ 'blogs.comments.email' | t }}</label>
                       <input class="input-full{% if form.errors contains 'email' %} error{% endif %}" type="email" name="comment[email]" placeholder="{{ 'blogs.comments.email' | t }}" id="CommentEmail" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
                     </div>
                   </div>
 
-                  <label for="CommentBody" class="hidden-label">{{ 'blogs.comments.message' | t }}</label>
+                  <label class="hidden-label" for="CommentBody">{{ 'blogs.comments.message' | t }}</label>
                   <textarea class="input-full{% if form.errors contains 'body' %} error{% endif %}" name="comment[body]" id="CommentBody" placeholder="{{ 'blogs.comments.message' | t }}">{{ form.body }}</textarea>
 
                   <div class="text-center">
@@ -131,12 +133,13 @@
 
 <hr class="hr--medium hr--clear">
 <div class="text-center">
-  <a href="{{ blog.url }}" class="return-link">&larr; {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+  <a href="{{ blog.url }}" class="return-link">&larr;
+    {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Artikelsider",
@@ -186,4 +189,5 @@
     }
   ]
 }
+
 {% endschema %}

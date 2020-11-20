@@ -39,13 +39,7 @@
                     </noscript>
                     <div class="article__featured-image-wrapper" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100}}%;">
                       {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                      <img class="article__featured-image lazyload"
-                        src="{{ article.image | img_url: '300x300' }}"
-                        data-src="{{ img_url }}"
-                        data-widths="[310, 360, 480, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                        data-aspectratio="{{ article.image.aspect_ratio }}"
-                        data-sizes="auto"
-                        alt="{{ article.title | escape }}">
+                      <img class="article__featured-image lazyload" src="{{ article.image | img_url: '300x300' }}" data-src="{{ img_url }}" data-widths="[310, 360, 480, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ article.image.aspect_ratio }}" data-sizes="auto" alt="{{ article.title | escape }}">
                     </div>
                   </a>
                 {% endunless %}
@@ -61,7 +55,7 @@
           {% if section.settings.post_limit == 1 and section.settings.blog_show_image %}
             <div class="grid__item {{ width }}">
               <div class="featured-blog__post">
-                 {% include 'featured-blog', article: article %}
+                {% include 'featured-blog', article: article %}
               </div>
             </div>
           {% endif %}
@@ -89,8 +83,8 @@
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Blogopslag",
@@ -156,8 +150,7 @@
         "zh-CN": "博客",
         "zh-TW": "部落格"
       }
-    },
-    {
+    }, {
       "id": "blog",
       "type": "blog",
       "label": {
@@ -180,8 +173,7 @@
         "zh-CN": "博客",
         "zh-TW": "部落格"
       }
-    },
-    {
+    }, {
       "type": "range",
       "id": "post_limit",
       "label": {
@@ -208,8 +200,7 @@
       "max": 3,
       "step": 1,
       "default": 3
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "blog_show_date",
       "label": {
@@ -233,8 +224,7 @@
         "zh-TW": "顯示日期"
       },
       "default": true
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "blog_show_author",
       "label": {
@@ -258,8 +248,7 @@
         "zh-TW": "顯示作者"
       },
       "default": false
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "blog_show_image",
       "label": {
@@ -283,8 +272,7 @@
         "zh-TW": "顯示封面圖片"
       },
       "default": false
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "blog_show_excerpt",
       "label": {
@@ -308,8 +296,7 @@
         "zh-TW": "顯示摘要"
       },
       "default": true
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "show_view_all",
       "label": {
@@ -383,4 +370,5 @@
     }
   ]
 }
+
 {% endschema %}

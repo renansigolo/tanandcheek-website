@@ -1,48 +1,48 @@
 {%- if section.blocks.size > 0 -%}
-<style>
+  <style>
   .cards {
     background-color: {{ section.settings.bg_color }};
   }
 </style>
-<div class="container">
-  {% unless section.settings.cards_heading == blank %}  
-    <h5 class="heading">{{ section.settings.cards_heading | escape }}</h5>
-  {% endunless %}
-  <div class="cards-grid">
-    <div class="grid-{{ section.settings.grid_size }}">
-      {%- for block in section.blocks -%}
-        <div class="card" {{ block.shopify_attributes }}>
-          {%- if section.settings.show_bg_numbers -%}
-            <span class="card__background">{{ forloop.index }}</span>
-          {%- endif -%}
-          <div class="card__content" {% if section.settings.show_bg_numbers %}style="margin: -32px 0 0 32px;"{% endif %}>
-            <div>
-              {%- if block.settings.title != blank -%}
-              <h4 class="card__title">{{ block.settings.title }}</h4>
+  <div class="container">
+    {% unless section.settings.cards_heading == blank %}
+      <h5 class="heading">{{ section.settings.cards_heading | escape }}</h5>
+    {% endunless %}
+    <div class="cards-grid">
+      <div class="grid-{{ section.settings.grid_size }}">
+        {%- for block in section.blocks -%}
+          <div class="card" {{ block.shopify_attributes }}>
+            {%- if section.settings.show_bg_numbers -%}
+              <span class="card__background">{{ forloop.index }}</span>
             {%- endif -%}
+            <div class="card__content" {% if section.settings.show_bg_numbers %} style="margin: -32px 0 0 32px;" {% endif %}>
+              <div>
+                {%- if block.settings.title != blank -%}
+                  <h4 class="card__title">{{ block.settings.title }}</h4>
+                {%- endif -%}
 
-            {%- if block.settings.description != blank -%}
-              <p class="card__description">{{ block.settings.description }}</p>
-            {%- endif -%}
-            </div>
-            
-            {%- if block.settings.link != blank -%}
-              <div class="card__footer">
-                <a href="{{ block.settings.link }}" class="btn">{{ block.settings.btn_card_text }}</a>
+                {%- if block.settings.description != blank -%}
+                  <p class="card__description">{{ block.settings.description }}</p>
+                {%- endif -%}
               </div>
-            {%- endif -%}
+
+              {%- if block.settings.link != blank -%}
+                <div class="card__footer">
+                  <a href="{{ block.settings.link }}" class="btn">{{ block.settings.btn_card_text }}</a>
+                </div>
+              {%- endif -%}
+            </div>
+
           </div>
-            
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+      </div>
     </div>
+    {%- unless section.settings.btn_url == blank -%}
+      <div class="row u-pull-right">
+        <a href="{{ section.settings.btn_url}}" class="btn">{{ section.settings.btn_text}}</a>
+      </div>
+    {%- endunless -%}
   </div>
-  {%- unless section.settings.btn_url == blank -%}
-  <div class="row u-pull-right">
-    <a href="{{ section.settings.btn_url}}" class="btn">{{ section.settings.btn_text}}</a>
-  </div>
-  {%- endunless -%}
-</div>
 {%- endif -%}
 
 {% schema %}

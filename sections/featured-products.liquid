@@ -20,12 +20,12 @@
 
       {% if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products] == empty or collections[section.settings.home_featured_products].products_count == 0 %}
 
-      {% comment %}
+        {% comment %}
         For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
       {% endcomment %}
-      {% unless emptyState %}
-        {% assign emptyState = true %}
-      {% endunless %}
+        {% unless emptyState %}
+          {% assign emptyState = true %}
+        {% endunless %}
         {% include 'onboarding-featured-products' %}
       {% else %}
 
@@ -59,8 +59,8 @@
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Udvalgt kollektion",
@@ -126,8 +126,7 @@
         "zh-CN": "特色产品系列",
         "zh-TW": "精選商品系列"
       }
-    },
-    {
+    }, {
       "type": "collection",
       "id": "home_featured_products",
       "label": {
@@ -150,8 +149,7 @@
         "zh-CN": "收藏",
         "zh-TW": "商品系列"
       }
-    },
-    {
+    }, {
       "type": "select",
       "id": "collection_products_grid",
       "label": {
@@ -197,8 +195,7 @@
             "zh-CN": "拼贴画",
             "zh-TW": "拼貼"
           }
-        },
-        {
+        }, {
           "value": "grid",
           "label": {
             "da": "Gitter",
@@ -270,4 +267,5 @@
   ],
   "blocks": []
 }
+
 {% endschema %}

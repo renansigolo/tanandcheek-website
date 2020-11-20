@@ -1,54 +1,54 @@
 <div class="wrapper">
   <div class="custom-content">
-  {% for block in section.blocks %}
-    {% case block.settings.width %}
-      {% when '25%' %}
-        {%- assign block_width = 'small--one-whole one-quarter' -%}
-      {% when '33%' %}
-        {%- assign block_width = 'small--one-whole one-third' -%}
-      {% when '50%' %}
-        {%- assign block_width = 'small--one-whole one-half' -%}
-      {% when '66%' %}
-        {%- assign block_width = 'small--one-whole two-thirds' -%}
-      {% when '75%' %}
-        {%- assign block_width = 'small--one-whole three-quarters' -%}
-      {% when '100%' %}
-        {%- assign block_width = 'one-whole' -%}
-    {% endcase %}
-    <div class="custom__item {{ block_width }} {% if block.settings.alignment %}align--{{ block.settings.alignment }}{% endif %}" {{ block.shopify_attributes }}>
-      <div class="custom__item-inner custom__item-inner--{{ block.type }}">
-        {% case block.type %}
-          {% when 'html' %}
-            {% if block.settings.code != blank %}
-              <div class="rte" data-section-id="{{ section.id }}" data-section-type="featured-content-section">
-                {{ block.settings.code }}
-              </div>
-            {% else %}
-              <div class="rte text-center">
-                {{ 'home_page.onboarding.no_content' | t }}
-              </div>
-            {% endif %}
-        {% endcase %}
+    {% for block in section.blocks %}
+      {% case block.settings.width %}
+        {% when '25%' %}
+          {%- assign block_width = 'small--one-whole one-quarter' -%}
+        {% when '33%' %}
+          {%- assign block_width = 'small--one-whole one-third' -%}
+        {% when '50%' %}
+          {%- assign block_width = 'small--one-whole one-half' -%}
+        {% when '66%' %}
+          {%- assign block_width = 'small--one-whole two-thirds' -%}
+        {% when '75%' %}
+          {%- assign block_width = 'small--one-whole three-quarters' -%}
+        {% when '100%' %}
+          {%- assign block_width = 'one-whole' -%}
+      {% endcase %}
+      <div class="custom__item {{ block_width }} {% if block.settings.alignment %}align--{{ block.settings.alignment }}{% endif %}" {{ block.shopify_attributes }}>
+        <div class="custom__item-inner custom__item-inner--{{ block.type }}">
+          {% case block.type %}
+            {% when 'html' %}
+              {% if block.settings.code != blank %}
+                <div class="rte" data-section-id="{{ section.id }}" data-section-type="featured-content-section">
+                  {{ block.settings.code }}
+                </div>
+              {% else %}
+                <div class="rte text-center">
+                  {{ 'home_page.onboarding.no_content' | t }}
+                </div>
+              {% endif %}
+          {% endcase %}
+        </div>
       </div>
-    </div>
-  {% endfor %}
-  {% if section.blocks.size == 0 %}
-    <div class="wrapper">
-      <div class="grid">
-        <div class="grid__item">
-          <div class="rte text-center">
-            {{ 'home_page.onboarding.no_content' | t }}
+    {% endfor %}
+    {% if section.blocks.size == 0 %}
+      <div class="wrapper">
+        <div class="grid">
+          <div class="grid__item">
+            <div class="rte text-center">
+              {{ 'home_page.onboarding.no_content' | t }}
+            </div>
           </div>
         </div>
       </div>
-   </div>
-  {% endif %}
+    {% endif %}
   </div>
 </div>
 
 
-
 {% schema %}
+
 {
   "name": {
     "da": "Tilpasset HTML",
@@ -138,8 +138,7 @@
             "zh-CN": "<div style='text-align:center;'><h2>使用 HTML 设置文本格式，以便轻松阅读。</h2>此文本可用于与客户分享有关您的品牌的信息。</div>",
             "zh-TW": "<div style='text-align:center;'><h2>使用 HTML 來設定文字格式，使文字易於閱讀。</h2>您可以利用此段文字跟顧客分享品牌資訊。</div>"
           }
-        },
-        {
+        }, {
           "type": "select",
           "id": "width",
           "label": {
@@ -186,8 +185,7 @@
                 "zh-CN": "25％",
                 "zh-TW": "25%"
               }
-            },
-            {
+            }, {
               "value": "33%",
               "label": {
                 "da": "33 %",
@@ -209,8 +207,7 @@
                 "zh-CN": "33%",
                 "zh-TW": "33%"
               }
-            },
-            {
+            }, {
               "value": "50%",
               "label": {
                 "da": "50 %",
@@ -232,8 +229,7 @@
                 "zh-CN": "50%",
                 "zh-TW": "50%"
               }
-            },
-            {
+            }, {
               "value": "66%",
               "label": {
                 "da": "66 %",
@@ -255,8 +251,7 @@
                 "zh-CN": "66%",
                 "zh-TW": "66%"
               }
-            },
-            {
+            }, {
               "value": "75%",
               "label": {
                 "da": "75 %",
@@ -278,8 +273,7 @@
                 "zh-CN": "75%",
                 "zh-TW": "75%"
               }
-            },
-            {
+            }, {
               "value": "100%",
               "label": {
                 "da": "100 %",
@@ -303,8 +297,7 @@
               }
             }
           ]
-        },
-        {
+        }, {
           "type": "select",
           "id": "alignment",
           "label": {
@@ -351,8 +344,7 @@
                 "zh-CN": "顶部",
                 "zh-TW": "頂部"
               }
-            },
-            {
+            }, {
               "value": "center",
               "label": {
                 "da": "I midten",
@@ -374,8 +366,7 @@
                 "zh-CN": "中间",
                 "zh-TW": "中央"
               }
-            },
-            {
+            }, {
               "value": "bottom-middle",
               "label": {
                 "da": "Bund",
@@ -453,4 +444,5 @@
     }
   ]
 }
+
 {% endschema %}

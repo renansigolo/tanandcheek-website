@@ -13,7 +13,7 @@
       <h2 class="collection-row__title">{{ collection.title | escape }}</h2>
     </div>
 
-    <div class="row">      
+    <div class="row">
       {%- for product in products -%}
         <div class="three columns">
           <div class="product">
@@ -26,10 +26,10 @@
             </a>
           </div>
         </div>
-        
+
         <!-- Limit the display of products to 4 -->
         {% if forloop.index == 4 %}
-        {% break %}
+          {% break %}
         {% endif %}
 
       {%- endfor -%}
@@ -49,8 +49,7 @@
       "id": "bg_color",
       "label": "Background color",
       "default": "#f9fafc"
-    },
-    {
+    }, {
       "type": "collection",
       "id": "collection",
       "label": "Collection",
