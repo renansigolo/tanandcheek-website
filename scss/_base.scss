@@ -91,7 +91,12 @@ p {
   margin-top: 0;
 }
 
+.btn--secondary {
+  line-height: 1 !important;
+}
+
 .btn,
+.btn--secondary,
 .vtl-product-card__atc-button {
   transition: all 0.15s ease-in;
   &:hover {
@@ -100,6 +105,12 @@ p {
     color: #fff !important;
     background-color: $orange !important;
     box-shadow: $card-1;
+  }
+
+  &:active,
+  &:focus {
+    color: #fff;
+    border: 1px solid transparent;
   }
 }
 

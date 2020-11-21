@@ -6,7 +6,7 @@
     - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
 
 {% endcomment %}
-<div class="grid">
+<div class="grid container">
   <div class="grid__item large--five-sixths push--large--one-twelfth">
     {% if cart.item_count > 0 %}
       <div class="section-header" style="margin-top: 128px;">
@@ -200,13 +200,16 @@
               {%- endcapture -%}
 
               <p class="rte"><em>{{ taxes_shipping_checkout }}</em></p>
+              
               <button type="submit" name="update" class="btn--secondary update-cart">{{ 'cart.general.update' | t }}</button>
+              <a href="https://tanandcheek.com/" class="btn--secondary" style="padding-top: 11.5px; padding-bottom: 11.5px;">
+                Continue Shopping
+              </a>
+              <br />
               <button type="submit" name="checkout" class="btn cart__checkout">
                 {{ 'cart.general.checkout' | t }} <span class="icon icon-arrow-right" aria-hidden="true"></span>
               </button>
-              <a href="https://tanandcheek.com/"  class="btn">
-                Continue Shopping
-              </a>
+
 
               {% if additional_checkout_buttons and settings.cart_type != 'drawer' %}
                 <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
