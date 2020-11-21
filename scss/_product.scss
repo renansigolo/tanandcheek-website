@@ -175,6 +175,16 @@ button.accordion {
   top: 20px;
   right: 35vw;
 
+  @media (min-width: 590px) {
+    top: 0;
+    right: 12vw;
+  }
+
+  @media (min-width: 768px) {
+    top: 0;
+    right: 40vw;
+  }
+
   @include desktop {
     top: 0;
     right: 120px;

@@ -8,11 +8,11 @@
         <div class="note form-success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
       {% else %}
         <div class="row newsletter__card">
-          <div class="seven columns">
+          <div class="seven columns" style="overflow: auto;">
             <label class="newsletter__label hidden-label" for="Email">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
             <input name="contact[tags]" type="hidden" value="newsletter">
             {%- if section.settings.image != blank -%}
-              <img src="{{ section.settings.image | img_url: '1060x370' }}" style="object-fit: cover; height: 100%;">
+              <img src="{{ section.settings.image | img_url: '1060x370' }}">
             {%- else -%}
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
