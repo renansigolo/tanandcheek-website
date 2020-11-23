@@ -323,12 +323,11 @@
                     </span>
                   </button>
                 </div>
-                {% comment %}
+                
                 {% if current_variant.next_incoming_date %}
                 <br />
                 <p>Ships on {{ current_variant.next_incoming_date | date: "%A, %v" }}</p>
                 {% endif %}
-                {% endcomment %}
               {% endform %}
   
             </div>

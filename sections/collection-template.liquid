@@ -41,7 +41,7 @@
 {%- endif -%}
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
-  {%- paginate collection.products by 12 -%}
+  {%- paginate collection.products by 20 -%}
   <div class="header-absolute">
     <h1>{{ collection.title }}</h1>
     {%- if collection.description != blank -%}
@@ -53,7 +53,6 @@
         </div>
       </div>
     {%- endif -%}
-    <!-- <div class="hr-page"></div> -->
 
     <div class="grid--full collection-sorting{% if section.settings.collection_sort_enable %} collection-sorting--enabled{% endif %}">
       {%- if section.settings.collection_sort_enable -%}

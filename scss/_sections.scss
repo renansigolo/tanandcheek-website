@@ -449,8 +449,10 @@
 
   .content {
     padding: 8px;
+    color: #fff;
     h3 {
       font-weight: 700;
+      color: #fff;
     }
   }
 }
@@ -460,10 +462,6 @@
   &__sidebar {
     border-bottom: 1px solid $dark-gray;
     margin-bottom: 32px;
-
-    @include desktop {
-      margin-bottom: 40vh;
-    }
 
     h3 {
       font-weight: 600;
