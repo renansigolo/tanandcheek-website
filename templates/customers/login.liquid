@@ -81,8 +81,7 @@
     {% if shop.checkout.guest_login %}
       <hr class="hr--clear">
 
-      <h1>{{ 'customer.login.guest_title' | t }}</h1>
-      <hr class="hr--small">
+      <h3 style="margin: 3rem auto 2rem">{{ 'customer.login.guest_title' | t }}</h3>
 
       {% form 'guest_login' %}
         <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">

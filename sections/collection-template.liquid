@@ -42,8 +42,9 @@
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
   {%- paginate collection.products by 20 -%}
+  
   <div class="header-absolute">
-    <h1>{{ collection.title }}</h1>
+    <div class="container"><h1>{{ collection.title }}</h1></div>
     {%- if collection.description != blank -%}
       <div class="grid">
         <div class="grid__item">
@@ -98,7 +99,6 @@
       <hr class="hr--small hr--clear">
     {%- endif -%}
   </div>
-
 <div class="container">
   {%- if section.settings.collection_products_grid == 'collage' -%}
     <div class="grid grid-collage">

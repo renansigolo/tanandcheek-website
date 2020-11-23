@@ -11,7 +11,7 @@ footer {
   }
   .social-icons {
     display: flex;
-    @include mobile {
+    @media (max-width: $mobile) {
       justify-content: center;
     }
     li {

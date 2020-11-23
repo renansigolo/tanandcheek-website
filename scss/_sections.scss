@@ -243,7 +243,7 @@
     //   padding-right: 10%;
     // }
 
-    @include mobile {
+    @media (max-width: $mobile) {
       .btn {
         min-width: 100%;
       }
@@ -440,16 +440,37 @@
 
 /* Featured Banner */
 .featured-banner {
-  .section {
+  .bg-image {
     background-position: center;
     background-size: cover;
-    border-radius: 8px;
-    filter: brightness(0.9);
+    border-radius: 4px;
+    min-height: 400px;
+    min-width: 100%;
   }
 
+  .overlay {
+    background-color: #00000012;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    border-radius: 4px;
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
   .content {
-    padding: 8px;
+    padding: 16px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 520px;
+
+    @include desktop {
+      width: 50%;
+    }
+
     h3 {
       font-weight: 700;
       color: #fff;

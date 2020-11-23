@@ -132,7 +132,7 @@ there.
 
 // Small devices (landscape phones, 550px and up)
 @mixin mobile {
-  @media (max-width: $mobile) {
+  @media (min-width: $mobile) {
     @content;
   }
 }

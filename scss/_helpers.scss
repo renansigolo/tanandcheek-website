@@ -76,9 +76,13 @@
 
 .header-absolute {
   position: absolute;
-  top: 20%;
-  left: 5%;
+  top: 12%;
   color: $light-gray;
+  width: 100%;
+
+  @include mobile {
+    top: 23%;
+  }
   h1 {
     color: $light-gray;
   }
