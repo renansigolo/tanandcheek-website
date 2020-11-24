@@ -109,6 +109,7 @@
   </head>
 
   {% if template contains 'collection' %}{{ 'ajaxinate.min.js' | asset_url | script_tag }}{% endif %}
+  {% include 'ajaxify-cart' %}
 
     {% comment %} Add the page template as a class for easy page or template
   specific styling. {% endcomment %}

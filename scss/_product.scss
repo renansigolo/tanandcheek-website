@@ -4,10 +4,14 @@
 #ProductSection--product-template {
   margin-top: 115px;
 }
+.shopify-payment-button__button {
+  max-width: 160px !important;
+}
 .product-single__add-to-cart {
   .btn {
     min-height: 44px !important;
     max-height: 60px !important;
+    max-width: 160px !important;
     // font-weight: 500;
     &--secondary-accent {
       box-shadow: $card-1;

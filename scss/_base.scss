@@ -114,6 +114,15 @@ p {
   }
 }
 
+.disabled {
+  &:hover {
+    cursor: default !important;
+    color: #717171 !important;
+    background-color: #f6f6f6 !important;
+    box-shadow: unset;
+  }
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*

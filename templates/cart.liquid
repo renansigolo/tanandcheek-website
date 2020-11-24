@@ -210,10 +210,12 @@
                 {{ 'cart.general.checkout' | t }} <span class="icon icon-arrow-right" aria-hidden="true"></span>
               </button>
 
-
+              {% comment %}
               {% if additional_checkout_buttons and settings.cart_type != 'drawer' %}
                 <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
               {% endif %}
+              {% endcomment %}
+
             </div>
         </div>
 
