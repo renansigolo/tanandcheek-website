@@ -41,7 +41,7 @@
 {%- endif -%}
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
-  {%- paginate collection.products by 20 -%}
+  {%- paginate collection.products by 3 -%}
   
   <div class="header-absolute">
     <div class="container"><h1>{{ collection.title }}</h1></div>
@@ -54,12 +54,6 @@
         </div>
       </div>
     {%- endif -%}
-
-    <div class="grid--full collection-sorting{% if section.settings.collection_sort_enable %} collection-sorting--enabled{% endif %}">
-      {%- if section.settings.collection_sort_enable -%}
-        {%- include 'collection-sorting' -%}
-      {%- endif -%}
-    </div>
 
     {%- if section.settings.collection_tags_enable -%}
       {%- if collection.all_tags.size > 0 -%}
@@ -99,7 +93,14 @@
       <hr class="hr--small hr--clear">
     {%- endif -%}
   </div>
-<div class="container">
+
+  <div class="container">
+    <div class="grid--full collection-sorting{% if section.settings.collection_sort_enable %} collection-sorting--enabled{% endif %}">
+      {%- if section.settings.collection_sort_enable -%}
+        {%- include 'collection-sorting' -%}
+      {%- endif -%}
+    </div>
+    
   {%- if section.settings.collection_products_grid == 'collage' -%}
     <div class="grid grid-collage">
       {% comment %}
@@ -131,10 +132,10 @@
           </div>
         {%- endif -%}
       {%- endfor -%}
-
     </div>
+
   {%- elsif section.settings.collection_products_grid == 'grid' -%}
-    <div class="grid-uniform" style="margin-top: 64px;">
+    <div id="AjaxinateContainer" class="grid-uniform" style="margin-top: 64px;">
       {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
       {%- for product in collection.products -%}
         {%- include 'product-grid-item' -%}
@@ -156,11 +157,13 @@
     </div>
   {%- endif -%}
 
-  {%- if paginate.pages > 1 -%}
-    {%- include 'pagination' -%}
-  {%- endif -%}
-</div>
+  <div id="AjaxinatePagination" style="text-align: center; margin-bottom: 16px;">
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}">Loading More</a>
+    {% endif %}
+  </div>
 
+</div>
   {%- endpaginate -%}
 </div>
 
@@ -416,3 +419,12 @@
 }
 
 {% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#AjaxinateContainer',
+      pagination: '#AjaxinatePagination'
+    });
+  });
+</script>

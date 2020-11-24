@@ -310,9 +310,6 @@
                 {% endif %}
   
                 <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
-                  {% if section.settings.enable_payment_button %}
-                    {{ form | payment_button }}
-                  {% endif %}
                   <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                     <span class="btn__text">
                       {% if current_variant.available %}
@@ -322,12 +319,8 @@
                       {% endif %}
                     </span>
                   </button>
+                  {{ form | payment_button }}
                 </div>
-                
-                {% if current_variant.next_incoming_date %}
-                <br />
-                <p>Ships on {{ current_variant.next_incoming_date | date: "%A, %v" }}</p>
-                {% endif %}
               {% endform %}
   
             </div>

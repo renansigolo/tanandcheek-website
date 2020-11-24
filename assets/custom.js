@@ -10,16 +10,31 @@ jQuery(document).ready(function () {
   })
 
   // Accordion
-  let acc = document.querySelectorAll(".accordion");
+  let acc = document.querySelectorAll('.accordion')
   for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      let panel = this.nextElementSibling;
+    acc[i].addEventListener('click', function () {
+      this.classList.toggle('active')
+      let panel = this.nextElementSibling
       if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
+        panel.style.maxHeight = null
       } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = panel.scrollHeight + 'px'
       }
-    });
+    })
   }
+
+  // $('body').on(
+  //   'click',
+  //   '[name="checkout"], [name="goto_pp"], [name="goto_gc"]',
+  //   function () {
+  //     if ($('#agree').is(':checked')) {
+  //       $(this).trigger('submit')
+  //     } else {
+  //       alert(
+  //         'You must agree with the terms and conditions of sales to check out.'
+  //       )
+  //       return false
+  //     }
+  //   }
+  // )
 })

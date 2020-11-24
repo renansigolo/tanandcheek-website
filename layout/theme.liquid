@@ -108,6 +108,8 @@
     </script>
   </head>
 
+  {% if template contains 'collection' %}{{ 'ajaxinate.min.js' | asset_url | script_tag }}{% endif %}
+
     {% comment %} Add the page template as a class for easy page or template
   specific styling. {% endcomment %}
     <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">

@@ -8,6 +8,7 @@
   .btn {
     min-height: 44px !important;
     max-height: 60px !important;
+    // font-weight: 500;
     &--secondary-accent {
       box-shadow: $card-1;
       border: 1px solid $dark-gray;
@@ -160,6 +161,11 @@ button.accordion {
 // Buy Now Button
 .shopify-payment-button__button--unbranded {
   border-radius: 4px !important;
+  // font-weight: 700 !important;
+}
+
+.shopify-payment-button__more-options {
+  display: none !important;
 }
 
 .return-link {
