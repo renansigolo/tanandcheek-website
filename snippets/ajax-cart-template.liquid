@@ -6,7 +6,7 @@
   handlebar.js template tags as available hooks.
 
 {% endcomment %}
-  <script id="CartTemplate" type="text/template">
+<script id="CartTemplate" type="text/template">
   {% raw %}
     <form action="{% endraw %}{{ routes.cart_url }}{% raw %}" method="post" novalidate class="cart ajaxcart">
       <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer">
@@ -22,6 +22,9 @@
                   <a href="{{url}}" class="ajaxcart__product-name">{{{name}}}</a>
                   {{#if variation}}
                     <span class="ajaxcart__product-meta">{{variation}}</span>
+                  {{/if}}
+                  {{#if sellingPlanAllocation}}
+                    <span class="ajaxcart__product-meta">{{sellingPlanAllocation.selling_plan.name}}</span>
                   {{/if}}
                   {{#properties}}
                     {{#each this}}

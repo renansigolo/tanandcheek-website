@@ -9,10 +9,6 @@
   Loop through each collection, except 'frontpage'.
 {% endcomment %}
 
-<div class="section container">
-  <h1>{{ 'collections.general.catalog_title' | t }}</h1>
-</div>
-
 {%- assign collection_count = 0 -%}
 {%- assign isEmpty = true -%}
 
@@ -45,7 +41,7 @@
 {%- assign divisible_by_three = collection_count | modulo: 3 -%}
 {%- assign divisible_by_two = collection_count | modulo: 2 -%}
 
-<div class="container">
+<div class="container" style="margin: 64px auto;">
   <div class="grid collection-grid">
     {% if section.settings.display_type == 'all' %}
       {% if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' %}
