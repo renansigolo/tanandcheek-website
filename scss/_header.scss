@@ -109,6 +109,9 @@ header {
 }
 
 #logo_id {
+  // img {
+  //   z-index: 999;
+  // }
   @media all and (max-width: 1200px) {
     img {
       transition: 0.2s ease-in;
@@ -117,7 +120,7 @@ header {
     }
   }
   @media all and (max-width: $desktop) {
-    position: absolute;
+    // position: absolute;
     width: 100%;
     align-self: center;
   }
