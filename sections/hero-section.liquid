@@ -1,4 +1,4 @@
-<div id="hero__section">
+<div id="hero__section" {% if request.page_type == 'index' %}style="margin-top: 76px"{% endif %}>
   <video autoplay muted loop id="myVideo" poster="{{section.settings.banner}}">
     <source src="{{section.settings.video}}" type="video/mp4">
   </video>
