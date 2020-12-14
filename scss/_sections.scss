@@ -300,6 +300,16 @@
       }
     }
   }
+
+  &__banner {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    @include desktop {
+      object-fit: cover;
+    }
+  }
 }
 
 /* Collection Row */

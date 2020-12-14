@@ -5,6 +5,7 @@
   {% if section.settings.home_page_only == false or request.page_type == 'index' %}
     <style>
       .announcement-bar {
+        z-index: 999;
         background-color: {{ section.settings.color_bg }};
       }
 
@@ -55,11 +56,11 @@
         </button>
       </div>
       <!-- logo  -->
-      <div id="logo_id"class="logo">
-        <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
+      <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
+      <div id="logo_id" class="logo">
           <img class="site-header__logo-image" src="{{'logo.svg' | asset_url }}" alt=" Tan + Cheek" itemprop="logo">
-        </a>
-      </div>
+        </div>
+      </a>
       <!-- desktop nav items -->
       <nav class="nav-items">
         <ul class="site-nav" id="AccessibleNav">
