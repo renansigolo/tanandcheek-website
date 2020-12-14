@@ -322,12 +322,11 @@
                   <!-- {% if section.settings.enable_payment_button %} -->
                     {{ form | payment_button }}
                 <!-- {% endif %} -->
-
                 </div>
+                <div id="notify-sold-out" class="notify-sold-out"></div>
               {% endform %}  
             </div>
   
-            <div id="notify-sold-out" class="notify-sold-out"></div>
 
             <div class="product-single__description rte" itemprop="description">
                 {%- unless product.description == blank -%}
