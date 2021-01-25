@@ -12,23 +12,23 @@
         <p>{{ section.settings.section_description }}</p>
         {% for block in section.blocks %}
           {%- assign product = all_products[block.settings.product] -%}
-          <a href="{{ product.url }}">
+          <a href="{{ product.url }}" style="line-height: 0;">
             <div class="card">
-              <img src="{{ product.featured_image | img_url }}" alt="">
+              <img src="{{ product.featured_image | img_url: '560x620' }}" alt="Product Image">
               <div class="card__content">
                 <div class="inner-content">
                   <h4>{{ product.title }}</h4>
                   <span>{{ product.price | money }}</span>
                 </div>
-
-                <p>{{ product.description }}</p>
+                <a class="btn" style="align-self: flex-end;" href="{{ product.url }}">Shop Now</a>
+                <!-- <p>{{ product.description }}</p> -->
               </div>
 
             </div>
           </a>
         {% endfor %}
 
-        <a class="btn" href="#">Add to cart</a>
+        <!-- <a class="btn" href="#">Add to cart</a> -->
         <!-- {%- assign current_variant = product.selected_or_first_available_variant -%} -->
 
       </div>

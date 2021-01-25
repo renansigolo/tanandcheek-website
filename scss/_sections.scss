@@ -396,11 +396,15 @@
     img {
       height: auto;
       max-height: inherit;
+      min-width: 100%;
       border-radius: 8px;
       object-fit: cover;
       @include tablet {
-        max-width: 40%;
-        min-width: 200px;
+        // max-width: 40%;
+        // min-width: 200px;
+        max-width: 60%;
+        min-width: 280px;
+        max-height: 306px;
       }
     }
 
@@ -415,10 +419,15 @@
         display: flex;
         align-items: center;
         font-weight: 600;
+        align-items: flex-end;
+        flex-direction: column;
+        text-align: end;
+        line-height: 1.2;
 
         h4 {
           font-weight: inherit;
           margin-right: 16px;
+          font-size: 2rem;
         }
 
         span {
@@ -640,7 +649,7 @@
         grid-area: 2 / 1 / 4 / 7;
       }
       .card-4 {
-        grid-area: 2 / 7 / 4 / 10;
+        grid-area: 2 / 7 / 4 / 13;
       }
       .card-5 {
         grid-area: 2 / 10 / 3 / 13;
