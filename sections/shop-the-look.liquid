@@ -2,19 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="one column">
-        <!-- <h2 class="shop-the-look__title">{{ section.settings.title }}</h2> -->
-        <h2 class="shop-the-look__title">SHOP
-          <span>the look</span>
-        </h2>
+        <h2 class="shop-the-look__title title last-two-bold">{{ section.settings.title }}</h2>
       </div>
       <div class="five columns">
         {{ section.settings.image | img_url: '750x915' | img_tag: section.settings.image.alt }}
       </div>
       <div class="six columns">
-        <h3>Summertime
-          <span>Madness</span>
-        </h3>
-        <!-- <h3>{{ section.settings.section_title }}</h3> -->
+        <h3 class="title last-bold">{{ section.settings.section_title }}</h3>
         <p>{{ section.settings.section_description }}</p>
         {% for block in section.blocks %}
           {%- assign product = all_products[block.settings.product] -%}
@@ -61,7 +55,7 @@
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
-      "default": "Summertime Madness (not active)"
+      "default": "Summertime Madness"
     }, {
       "type": "textarea",
       "id": "section_description",
@@ -107,3 +101,43 @@
 }
 
 {% endschema %}
+
+<script>
+  // Replaces the last word with bold
+  function lastBold() {
+		const allTitles = document.querySelectorAll('.title')
+		for (const title of allTitles) {
+			// Change the last word to bold
+			if (title.className.includes('last-bold')) {
+				const wordsArray = title.innerHTML.trim().split(' ')
+				const lastWord = `<span>${wordsArray.pop()}</span>`
+				title.innerHTML = wordsArray.join(' ') + ' ' + lastWord
+			}
+			// Change the whole setence to bold
+			if (title.className.includes('all-bold')) {
+				title.style.fontWeight = 'bold'
+			}
+		}
+  }
+
+  // Replaces the last two words with bold
+  function lastTwoBold() {
+		const allTitles = document.querySelectorAll('.title')
+		for (const title of allTitles) {
+			// Change the last two words to bold
+			if (title.className.includes('last-two-bold')) {
+        const wordsArray = title.innerHTML.trim().split(' ')
+        let words = []
+        words[0] = wordsArray.pop()
+        words[1] = wordsArray.pop()
+				title.innerHTML = `${wordsArray.join(' ')} <span>${words[1]} ${words[0]}</span>`
+			}
+			// Change the whole setence to bold
+			if (title.className.includes('all-bold')) {
+				title.style.fontWeight = 'bold'
+			}
+		}
+  }
+  lastBold()
+  lastTwoBold()
+</script>

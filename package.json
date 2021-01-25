@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "theme deploy --allow-live",
     "watch": "sass --watch --style=compressed scss/custom.scss:assets/custom.css",
-    "start": "theme watch --allow-live",
+    "start": "(npm run watch) & theme watch --allow-live",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
