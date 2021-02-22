@@ -1,0 +1,66 @@
+<div {{ block.shopify_attributes }}>  
+  {%- if section.settings.video_1 != blank -%}
+  <iframe width="560" height="315" src="{{section.settings.video_1}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  {%- else -%}
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6EeNP8V4bas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  {%- endif -%}
+  
+  <br /><br />
+
+  {%- if section.settings.video_2 != blank -%}
+  <iframe width="560" height="315" src="{{section.settings.video_2}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  {%- else -%}
+  <img alt="Image Placeholder" src="https://placeholder.pics/svg/940x800" style="object-fit: contain; width: 100%; height: auto;">
+  {%- endif -%}
+  
+  <br /><br />
+
+  {%- if section.settings.image_model != blank -%}
+    <img src="{{ section.settings.image_model | img_url: '940x800' }}" style="object-fit: contain; width: 100%; height: auto;">
+  {%- else -%}
+    <img alt="Image Placeholder" src="https://placeholder.pics/svg/940x800" style="object-fit: contain; width: 100%; height: auto;">
+  {%- endif -%}
+
+  {%- if section.settings.image != blank -%}
+    <img src="{{ section.settings.image | img_url: '940x830' }}" style="object-fit: contain; width: 100%; height: auto;">
+  {%- else -%}
+    <img alt="Image Placeholder" src="https://placeholder.pics/svg/940x830" style="object-fit: contain; width: 100%; height: auto;">
+  {%- endif -%}
+</div>
+
+{% schema %}
+
+{
+  "name": "Youtube Videos",
+  "class": "container",
+  "settings": [
+  {
+    "type": "url",
+    "id": "video_1",
+    "label": "Video 01"
+  },
+  {
+    "type": "url",
+    "id": "video_2",
+    "label": "Video 02"
+  },
+    {
+      "type": "image_picker",
+      "id": "image_model",
+      "label": "Model Sizing Guide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Size Measurement Guide"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Youtube Videos",
+      "category": "Advanced layout"
+    }
+  ]
+}
+
+{% endschema %}
