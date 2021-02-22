@@ -23,6 +23,19 @@ jQuery(document).ready(function () {
     })
   }
 
+  // let acc2 = document.querySelectorAll('.accordion-2')
+  // for (let i = 0; i < acc2.length; i++) {
+  //   acc2[i].addEventListener('click', function () {
+  //     this.classList.toggle('active')
+  //     let panel = this.nextElementSibling
+  //     if (panel.style.maxHeight) {
+  //       panel.style.maxHeight = null
+  //     } else {
+  //       panel.style.maxHeight = panel.scrollHeight + 'px'
+  //     }
+  //   })
+  // }
+
   // $('body').on(
   //   'click',
   //   '[name="checkout"], [name="goto_pp"], [name="goto_gc"]',

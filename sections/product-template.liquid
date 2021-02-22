@@ -301,6 +301,37 @@
                     {% endif %}
                   {% endfor %}
                 </select>
+                
+                <!-- Add Here -->
+                <div class="product-single__description rte" itemprop="description">  
+                  {%- for block in section.blocks -%}
+                  {%- if forloop.index == 1 -%}
+                  {%- if block.settings.title != blank -%}
+                  <button class="accordion">
+                    {{ block.settings.title }}
+                    {% include 'icon-plus-solid' %}
+                    {% include 'icon-minus-solid' %}
+                  </button>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                  <div class="panel">
+                    {%- unless block.settings.image == blank -%}
+                      <img src="{{ block.settings.image | img_url: '940x830' }}" style="object-fit: contain; width: 100%; height: auto;">
+                    {%- endunless -%}
+  
+                    {% unless block.settings.btn_url == blank %}
+                      <a href="{{ block.settings.btn_url }}">
+                        {{ block.settings.btn_text }}
+                      </a>
+                    {% endunless %}
+  
+                    <p>{{ block.settings.description }}</p>
+                  </div>
+                  {% break %}
+                  {%- endif -%}
+                  {%- endif -%}
+                  {%- endfor -%}
+              </div>
   
                 {% if section.settings.quantity_enabled %}
                 <div class="product-single__quantity">
@@ -337,6 +368,7 @@
                 {%- endunless -%}
 
                 {%- for block in section.blocks -%}
+                {%- if forloop.index >= 2 -%}
                 {%- if block.settings.title != blank -%}
                 <button class="accordion">
                   {{ block.settings.title }}
@@ -358,6 +390,7 @@
 
                   <p>{{ block.settings.description }}</p>
                 </div>
+                {%- endif -%}
                 {%- endif -%}
                 {%- endfor -%}
             </div>
