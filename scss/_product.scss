@@ -136,7 +136,8 @@
 }
 
 // Toggle Button Appearance
-button.accordion.active {
+button.accordion.active,
+span.accordion.active {
   .icon-plus-solid {
     display: none;
   }
@@ -144,13 +145,30 @@ button.accordion.active {
     display: block;
   }
 }
-button.accordion {
+button.accordion,
+span.accordion {
   .icon-plus-solid {
     display: block;
   }
   .icon-minus-solid {
     display: none;
   }
+}
+
+span.accordion {
+  color: #ccc;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0 0 16px 0;
+  width: 100%;
+  font-family: 'ITC Avant Garde Gothic', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
 .panel {

@@ -302,16 +302,14 @@
                   {% endfor %}
                 </select>
                 
-                <!-- Add Here -->
-                <div class="product-single__description rte" itemprop="description">  
+                <div class="product-single__description rte" itemprop="description">
                   {%- for block in section.blocks -%}
-                  {%- if forloop.index == 1 -%}
-                  {%- if block.settings.title != blank -%}
-                  <button class="accordion">
+                  {%- if forloop.index == 1 and block.settings.title != blank -%}
+                  <span class="accordion">
                     {{ block.settings.title }}
                     {% include 'icon-plus-solid' %}
                     {% include 'icon-minus-solid' %}
-                  </button>
+                  </span>
                   {%- endif -%}
                   {%- if block.settings.description != blank -%}
                   <div class="panel">
@@ -329,9 +327,8 @@
                   </div>
                   {% break %}
                   {%- endif -%}
-                  {%- endif -%}
                   {%- endfor -%}
-              </div>
+              </div> 
   
                 {% if section.settings.quantity_enabled %}
                 <div class="product-single__quantity">
