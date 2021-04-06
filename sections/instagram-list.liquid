@@ -14,6 +14,9 @@
 <div class="insta-list container">
   <h3 class="insta-list__title">{{ section.settings.title | escape }}</h3>
 
+  <div class="embedsocial-hashtag" data-ref="fb52f1f47ff49d276f6fb1066df1a217df15d4d0" ></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
+
+  {% comment %}
   {%- if section.blocks.size > 0 -%}
     <div class="insta-row">
       {%- for block in section.blocks -%}
@@ -35,6 +38,8 @@
       {%- endfor -%}
     </div>
   {%- endif -%}
+  {% endcomment %}
+
 </div>
 
 {% schema %}
