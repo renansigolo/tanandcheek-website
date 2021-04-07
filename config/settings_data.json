@@ -66,6 +66,7 @@
     "sections": {
       "newsletter": {
         "type": "newsletter",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Message_in_a_Bottle_2.png",
           "heading": "Stay connected, babe!",
@@ -165,11 +166,12 @@
           "title": "Luxe Minimalist Bikini Heaven",
           "link": "shopify:\/\/collections",
           "linktext": "Shop Now",
-          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/Home_Page_Lounge_v1_1080p.mp4?v=1603863314"
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/Zarina_St_Tropez_5.mp4?v=1615331244"
         }
       },
       "1584938948381": {
         "type": "staff-picks",
+        "disabled": true,
         "settings": {
           "collection": "staff-picks-summer-2020",
           "button-text": "Shop Now"
@@ -263,25 +265,25 @@
           "1602219033385": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE8059_04e3ece8-ecd6-469c-a650-e2ff3c98e1c6.jpg"
+              "image": "shopify:\/\/shop_images\/IG_1_6213c686-c3cd-4ce8-8b72-f1636e5402c5.png"
             }
           },
           "1602219035817": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE8621_025e8b85-91fd-4e27-981a-a69b562d2b4e.jpg"
+              "image": "shopify:\/\/shop_images\/IG2_29074819-0ea9-4ac8-a643-96b482bb46d3.png"
             }
           },
           "1602219036670": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE7897_64f2f97e-1de2-4c54-8cfc-ed3b1fb1c48b.jpg"
+              "image": "shopify:\/\/shop_images\/IG3_4c9c40aa-d27c-49d2-aefe-ca64f6c480e5.png"
             }
           },
           "1602219037568": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE7322_7e3dab15-36c6-4382-85a0-3a085451c67c.jpg"
+              "image": "shopify:\/\/shop_images\/IG4_c8dd2d06-3b1d-4c17-a136-1e6e617258c7.png"
             }
           }
         },
@@ -428,25 +430,25 @@
           "1602469387647-0": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE8059.jpg"
+              "image": "shopify:\/\/shop_images\/IG_1.png"
             }
           },
           "1602469387647-1": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE8621.jpg"
+              "image": "shopify:\/\/shop_images\/IG2.png"
             }
           },
           "1602469387647-2": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE7897.jpg"
+              "image": "shopify:\/\/shop_images\/IG3.png"
             }
           },
           "1602469387647-3": {
             "type": "insta_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/OLIE7322.jpg"
+              "image": "shopify:\/\/shop_images\/IG4.png"
             }
           }
         },
@@ -527,14 +529,14 @@
           "1602822596233": {
             "type": "image_block",
             "settings": {
-              "image_square": "shopify:\/\/shop_images\/About_Us_Page_-_Work_With_Us_1_png_6a572b8c-0a59-45f5-a0a9-c4faa01a709f.png",
+              "image_square": "shopify:\/\/shop_images\/Shop_Top_Bottom.png",
               "text": "Become a Brand Ambassador"
             }
           },
           "1602822614455": {
             "type": "image_block",
             "settings": {
-              "image_square": "shopify:\/\/shop_images\/About_Us_Page_-_Work_With_Us_2_png_27f0c80c-13f6-470e-b581-19d2ca71f85e.png",
+              "image_square": "shopify:\/\/shop_images\/Shop_Top_Bottom_b0b3eee6-e777-46d6-b0ec-9bde37c278ed.png",
               "text": "Become a Stockist"
             }
           }
@@ -546,8 +548,7 @@
         "settings": {
           "title": "Work With Us",
           "description": "Tan + Cheek lives and breathes luxe minimalist bikinis. If you do too, then what are you waiting for - be a T+C babe! Whether it be a collaborator, influencer, media or stockist, get in touch with us!",
-          "btn_text": "",
-          "image_full_width": "shopify:\/\/shop_images\/About_Us_Page_-_Work_with_Us_Banner_png_6e002b80-85e1-4dda-8044-e42b64eb706a.png"
+          "btn_text": ""
         }
       },
       "1602809347883": {
@@ -587,6 +588,7 @@
       },
       "1602815575114": {
         "type": "shop-the-look",
+        "disabled": true,
         "blocks": {
           "1602816563102": {
             "type": "featured_product",
@@ -646,6 +648,7 @@
       },
       "1602819844529": {
         "type": "featured-collection-row",
+        "disabled": true,
         "settings": {
           "bg_color": "#f9fafc",
           "collection": "highlighted-products"
@@ -797,11 +800,11 @@
       "featured-banner": {
         "type": "featured-banner",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Feature_Banner_png_2bd21900-e292-4560-9a5c-ebc690b8858b.png",
+          "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Feature_Banner.png",
           "title": "Love the Look",
-          "description": "With thin straps creating beautiful shapes over your body, a high thong rear to avoid unsightly tan lines + minimal coverage all over, the Aruba is a must have one-piece.",
+          "description": "With a plunging neckline creating beautiful cleavage for your body, a high thong rear to avoid unsightly tan lines + minimal coverage all over, the St Tropez is a must have one-piece.",
           "btn_text": "Start Shopping",
-          "btn_url": "shopify:\/\/products\/one-piece-1"
+          "btn_url": "shopify:\/\/products\/st-tropez-one-piece-in-lipstick"
         }
       },
       "frequent-questions": {
@@ -810,7 +813,7 @@
           "1603074760916": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/OLIE6926.jpg",
+              "bg_image": "shopify:\/\/shop_images\/FAQ_1_b56bf300-fc9f-45cc-b791-04a038f776a0.png",
               "text": "General FAQ's",
               "btn_link": "shopify:\/\/pages\/faqs"
             }
@@ -818,7 +821,7 @@
           "1603074838590": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_2_1.png",
+              "bg_image": "shopify:\/\/shop_images\/FAQ_1.png",
               "text": "100% Satisfaction Guarantee",
               "btn_link": "shopify:\/\/pages\/returns"
             }
@@ -826,7 +829,7 @@
           "1603074860084": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_3_1.png",
+              "bg_image": "shopify:\/\/shop_images\/FAQ_1_b15a4242-c1a3-4852-811d-481d35696274.png",
               "text": "Sizing Chart",
               "btn_link": "shopify:\/\/pages\/sizing-guide"
             }
@@ -834,7 +837,7 @@
           "1603074877160": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_4.png",
+              "bg_image": "shopify:\/\/shop_images\/FAQ_1_17174ae2-8e2f-45c6-b393-97e142af7a21.png",
               "text": "Shipping",
               "btn_link": "shopify:\/\/pages\/shipping-policy"
             }
@@ -842,7 +845,7 @@
           "1603074889269": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Photo_Grid_5_png_820a99df-3af2-4681-a4ae-d8c94a6907ab.png",
+              "bg_image": "shopify:\/\/shop_images\/FAQ_1_06a19e50-6d1e-464c-a616-61137849790f.png",
               "text": "Returns",
               "btn_link": "shopify:\/\/pages\/refund-policy"
             }
@@ -945,7 +948,7 @@
       "contact-form": {
         "type": "contact-form",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Stay_Connected_1_1.png"
+          "image": "shopify:\/\/shop_images\/Stay_Connected_1_2b6c6c47-9c6d-43b5-9cdc-cf8e5cad7aa8.png"
         }
       },
       "article-template": {
