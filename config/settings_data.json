@@ -163,10 +163,10 @@
       "1584604707985": {
         "type": "hero-section",
         "settings": {
-          "title": "Luxe Minimalist Bikini Heaven",
+          "title": "Luxe Minimalist Bikinis",
           "link": "shopify:\/\/collections",
           "linktext": "Shop Now",
-          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/Zarina_St_Tropez_5.mp4?v=1615331244"
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0341\/9009\/8571\/files\/Zarina_St_Tropez_4_2.mp4?v=1623236937"
         }
       },
       "1584938948381": {
@@ -520,7 +520,7 @@
         "type": "image-full-width",
         "settings": {
           "image_height": 50,
-          "image": "shopify:\/\/shop_images\/Collections_One_Piece_Page_-_Full_Banner_png.png"
+          "image": "shopify:\/\/shop_images\/EKS02177_copy_902af722-d85a-44f9-970c-b47e2074bb61.jpg"
         }
       },
       "work-with-us": {
@@ -571,7 +571,7 @@
           "1602809347883-2": {
             "type": "highlighted_link",
             "settings": {
-              "text": "Buy Now, Pay Later with Afterpay",
+              "text": "Buy Now, Pay Later | Afterpay | LatitudePay",
               "link": "shopify:\/\/pages\/ordering-payment"
             }
           }
@@ -674,7 +674,7 @@
           "1602823010073": {
             "type": "highlighted_link",
             "settings": {
-              "text": "Buy Now, Pay Later with Afterpay",
+              "text": "Buy Now, Pay Later | Afterpay | LatitudePay",
               "link": "shopify:\/\/pages\/ordering-payment"
             }
           }
@@ -800,9 +800,9 @@
       "featured-banner": {
         "type": "featured-banner",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/Contact_Us_Page_-_Feature_Banner.png",
+          "bg_image": "shopify:\/\/shop_images\/EKS01165_copy.jpg",
           "title": "Love the Look",
-          "description": "With a plunging neckline creating beautiful cleavage for your body, a high thong rear to avoid unsightly tan lines + minimal coverage all over, the St Tropez is a must have one-piece.",
+          "description": "With a plunging neckline creating beautiful cleavage for your body, a high thong rear to avoid unsightly tan lines + minimal coverage all over, the St Tropez is the must have one-piece.",
           "btn_text": "Start Shopping",
           "btn_url": "shopify:\/\/products\/st-tropez-one-piece-in-lipstick"
         }
@@ -813,7 +813,7 @@
           "1603074760916": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/FAQ_1_b56bf300-fc9f-45cc-b791-04a038f776a0.png",
+              "bg_image": "shopify:\/\/shop_images\/EKS00771_copy.jpg",
               "text": "General FAQ's",
               "btn_link": "shopify:\/\/pages\/faqs"
             }
@@ -821,7 +821,7 @@
           "1603074838590": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/FAQ_1.png",
+              "bg_image": "shopify:\/\/shop_images\/EKS01861_copy.jpg",
               "text": "100% Satisfaction Guarantee",
               "btn_link": "shopify:\/\/pages\/returns"
             }
@@ -829,7 +829,7 @@
           "1603074860084": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/FAQ_1_b15a4242-c1a3-4852-811d-481d35696274.png",
+              "bg_image": "shopify:\/\/shop_images\/EKS02177_copy.jpg",
               "text": "Sizing Chart",
               "btn_link": "shopify:\/\/pages\/sizing-guide"
             }
@@ -837,7 +837,7 @@
           "1603074877160": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/FAQ_1_17174ae2-8e2f-45c6-b393-97e142af7a21.png",
+              "bg_image": "shopify:\/\/shop_images\/EKS02322_copy.jpg",
               "text": "Shipping",
               "btn_link": "shopify:\/\/pages\/shipping-policy"
             }
@@ -845,7 +845,7 @@
           "1603074889269": {
             "type": "section_block",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/FAQ_1_06a19e50-6d1e-464c-a616-61137849790f.png",
+              "bg_image": "shopify:\/\/shop_images\/EKS02258_copy.jpg",
               "text": "Returns",
               "btn_link": "shopify:\/\/pages\/refund-policy"
             }
@@ -941,7 +941,7 @@
           "description": "If a one-piece could talk, the St Tropez would be saying \"Hello, Boys (+ Girls)\". This one-piece is a spin on a classic with its plunging neck line showing off the deepest V + the little strap running across creating the most flattering cleavage. The gorgeous lines cut across the body, creating beautiful shapes with minimal coverage + the sculptured thong makes sure you get just as much attention on your cheeks as you will in front.",
           "btn_text": "Buy Now",
           "btn_link": "shopify:\/\/products\/st-tropez-one-piece-in-neon-yellow",
-          "image_small": "shopify:\/\/shop_images\/OLIE6873.jpg",
+          "image_small": "shopify:\/\/shop_images\/EKS00145_copy.jpg",
           "image_big": "shopify:\/\/shop_images\/OLIE8301.jpg"
         }
       },
