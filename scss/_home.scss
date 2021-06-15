@@ -5,18 +5,40 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 60vh;
+  min-height: 30vh;
+  @include tablet {
+    min-height: 60vh;
+  }
   video {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 100vw;
-    height: 60vh;
+    height: 30vh;
     object-fit: cover;
     object-position: center;
+    @include tablet {
+      height: 60vh;
+    }
+  }
+  img {
+    object-fit: cover;
+    min-height: 30vh;
+    min-width: 100%;
+    @include tablet {
+      min-height: 60vh;
+    }
   }
   .container {
     min-height: 30vh;
+    position: absolute;
+    max-width: fit-content;
+    top: 0;
+    left: 0;
+    @include desktop {
+      top: 20%;
+      left: 10%;
+    }
     .row {
       min-height: 250px;
       display: inline-flex;
@@ -25,6 +47,7 @@
       h1 {
         font-weight: 700;
         color: #fff;
+        padding: 0 16px;
       }
       .sub-headings {
         display: flex;

@@ -1,7 +1,14 @@
 <div id="hero__section" {% if request.page_type == 'index' %}style="margin-top: 76px"{% endif %}>
+  {% if section.settings.video == blank %}
+    {% if section.settings.banner != blank %}
+    <div style="background-image: url({{ section.settings.banner | img_url: 'master' }});"></div>
+      <img src="{{ section.settings.banner | img_url: 'master' }}">
+    {% endif %}
+  {% else %}
   <video autoplay muted loop id="myVideo" poster="{{section.settings.banner}}">
     <source src="{{section.settings.video}}" type="video/mp4">
   </video>
+  {% endif %}
   <div class="container">
     <div class="row">
       <div class="sub-headings">
@@ -44,7 +51,7 @@
     }, {
       "type": "image_picker",
       "id": "banner",
-      "label": "Video Banner"
+      "label": "Banner Image"
     }
   ],
   "blocks": [
