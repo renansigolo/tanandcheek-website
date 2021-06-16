@@ -3,8 +3,6 @@
 
 /* Highlighted Links */
 .highlighted-links {
-  margin-bottom: 32px;
-
   .flex {
     display: flex;
     flex-direction: column;
@@ -100,9 +98,9 @@
     margin-bottom: 32px;
   }
 }
-.section-product-featured {
-  margin: 64px 0;
-}
+// .section-product-featured {
+//   margin: 64px 0;
+// }
 
 .product-featured-row {
   background-color: $light-gray;

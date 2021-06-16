@@ -1,9 +1,9 @@
 <div {{ block.shopify_attributes }}>
   {%- if section.settings.image != blank -%}
     <!-- {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }} -->
-    <img src="{{ section.settings.image | img_url: '1600x330' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
+    <img src="{{ section.settings.image | img_url: 'master' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
   {%- else -%}
-    <img alt="Image Placeholder" src="https://placeholder.pics/svg/1600x330" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
+    <div style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;"></div>
   {%- endif -%}
 </div>
 

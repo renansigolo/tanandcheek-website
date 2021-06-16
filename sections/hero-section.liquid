@@ -18,7 +18,9 @@
         {% endfor %}
       </div>
       <h1>{{ section.settings.title }}</h1>
-      <!-- <a href="{{section.settings.link}}" class="btn">{{section.settings.linktext}}</a> -->
+      {% if section.settings.link != blank %}
+        <a href="{{section.settings.link}}" class="btn">{{section.settings.linktext}}</a>
+      {% endif %}
     </div>
   </div>
 </div>
