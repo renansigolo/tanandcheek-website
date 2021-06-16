@@ -1,9 +1,13 @@
 <div {{ block.shopify_attributes }}>
-  {%- if section.settings.image != blank -%}
-    <!-- {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }} -->
-    <img src="{{ section.settings.image | img_url: 'master' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
+  {%- if section.settings.disable_section == false -%}
+    {%- if section.settings.image != blank -%}
+      <!-- {{ block.settings.image | img_url: '1600x330' | img_tag: block.settings.image.alt }} -->
+      <img src="{{ section.settings.image | img_url: 'master' }}" style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;">
+    {%- else -%}
+      <div style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;"></div>
+    {%- endif -%}
   {%- else -%}
-    <div style="object-fit: cover; width: 100%; height: {{ section.settings.image_height }}vh;"></div>
+  <div style="height: 112px">.</div>
   {%- endif -%}
 </div>
 
@@ -12,6 +16,12 @@
 {
   "name": "Image Full Width",
   "settings": [
+      {
+        "type": "checkbox",
+        "id": "disable_section",
+        "default": false,
+        "label": "Disable this section?"
+    },
     {
       "type":      "range",
       "id":        "image_height",

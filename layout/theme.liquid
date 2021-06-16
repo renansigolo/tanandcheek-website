@@ -200,26 +200,22 @@
         </li>
       </ul>
 
-      <!-- BEGIN GCR Badge Code -->
-      <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+      <!-- <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
       <script>
         window.renderBadge = function() {
           var ratingBadgeContainer = document.createElement("div");
           document.body.appendChild(ratingBadgeContainer);
           window.gapi.load('ratingbadge', function() {
-            window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": 324886058});
+            window.gapi.ratingbadge.render(ratingBadgeContainer, {
+              "merchant_id": 324886058,
+              "position": "BOTTOM_RIGHT"
+            });
           });
         }
-      </script>
-      <!-- END GCR Badge Code -->
-
-      <!-- BEGIN GCR Language Code -->
-      <script>
         window.___gcfg = {
-          lang: 'en-AU'
-        };
-      </script>
-      <!-- END GCR Language Code -->
+        lang: '{{ shop_locale.iso_code }}'
+      };
+      </script> -->
     </body>
   </head>
 </html>
