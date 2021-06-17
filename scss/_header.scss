@@ -126,6 +126,18 @@ header {
   }
 }
 
+.collection-hero__image {
+  @include desktop {
+    max-height: 100%;
+  }
+}
+
+.collection-hero {
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
 .collection-hero__image-wrapper {
   max-height: 60vh;
   filter: brightness(0.9);
