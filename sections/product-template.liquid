@@ -215,7 +215,11 @@
             {% endif %}
   
             <h1 class="product-single__title" itemprop="name">{{ product.title }}</h1>
-  
+
+            <!-- {% for tag in product.tags %}
+              {{ tag }}
+            {% endfor %} -->
+
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               {% comment %}
                 Optionally show the 'compare at' or original price of the product.
